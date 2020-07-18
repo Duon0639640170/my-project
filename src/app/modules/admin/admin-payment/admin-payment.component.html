@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <table class="table bg-light">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">รหัสสินค้า</th>
+                    <th scope="col">ชื่อผู้ซื้อ</th>
+                    <th scope="col">ว/ด/ป สั่งซื้อ</th>
+                    <th scope="col">ยอดรวม</th>
+                    <th scope="col">สลิปการโอน</th>
+                    <th scope="col">หัก 5%</th>
+                    <th scope="col">แนบสลิปการโอนให้ร้าน</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of dataList">
+                   
+                    <td>
+                        {{data.pm_id}}
+                    </td>
+                    <td>
+                        {{data.user_id}}
+                    </td>
+                    <td>
+                        {{data.pd_id}}
+                    </td>
+
+                    <td>
+                        {{data.pm_totalpric}}
+                    </td>
+                    <td>
+                        {{data.pm_img}}
+                    </td>
+                    <td>
+                        {{data.pm_date}}
+                    </td>
+                    <td>
+                        {{data.pm_status}}
+                    </td>
+                    <td>
+                        <!-- <button class="btn btn-lg btn-success btn-block">
+                            เพิ่ม
+                        </button> -->
+                        <button class="btn btn-lg btn-lg btn-block " (click)="deleteData(data)">
+                            แนบสลิป
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <table class="table bg-light">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">ชื่อร้าน</th>
+                    <th scope="col">รูปร้าน</th>
+                    <th scope="col">ที่อยู่ร้าน</th>
+                    <th scope="col">เบอร์โทรร้าน</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of dataList">
+                    <!-- <td>
+                        {{data.shop_nameFull}}
+                    </td> -->
+                    <td>
+                        {{data.shop_name}}
+                    </td>
+                    <td>
+                        {{data.shop_img}}
+                    </td>
+                    <td>
+                        {{data.shop_address}}
+                    </td>
+                    <td>
+                        {{data.shop_tel}}
+                    </td>
+                    <td>
+                        <!-- <button class="btn btn-lg btn-success btn-block">
+                            เพิ่ม
+                        </button> -->
+                        <button class="btn btn-lg btn-danger btn-block " (click)="deleteData(data)">
+                            ลบ
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

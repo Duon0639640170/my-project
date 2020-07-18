@@ -1,32 +1,70 @@
-<nav *ngIf="userType === 'home'" class="navbar navbar-expand-lg navbar-light bg-secondary bottom-2">
+<nav *ngIf="userType === 'home'" class="navbar navbar-expand-lg navbar-light bg-warning bottom-2">
   <a class="navbar-brand" routerLink="/home">HOME</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/home">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/home">หน้าหลัก<span class="sr-only">(current)</span></a>
       </li>
+    </ul>
+  </div>
+  <ul class="nav navbar-nav navbar-right">
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/home/register">สมัครสมาชิก<span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/home/login">เข้าสู่ระบบ<span class="sr-only">(current)</span></a>
+    </li>
+  </ul>
+</nav>
+
+
+<nav *ngIf="userType === 'admin'" class="navbar navbar-expand-lg navbar-light bg-warning bottom-2">
+  <a class="navbar-brand" routerLink="/admin">ADMIN</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/home/login">Login<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/home/register">Register<span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/admin">หน้าหลัก<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          จัดการข้อมูล
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/home/login">Login</a>
-          <a class="dropdown-item" routerLink="/home/register">Register</a>
+          <a class="dropdown-item" routerLink="/admin/product">ข้อมูลสินข้า</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="/admin/shop">ข้อมูลร้านค้า</a>
         </div>
       </li>
     </ul>
   </div>
+  <ul class="nav navbar-nav navbar-right">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" routerLink="/admin/profile" id="navbarDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        ชื่อผู้ใช้งาน
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" routerLink="/admin/payment">ชำระเงิน</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" routerLink="/admin/parcel">แจ้งเลขพัสดุ</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" routerLink="/admin/shop">รายงาน</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" (click)="logout()">Logout</a>
+      </div>
+    </li>
+  </ul>
 </nav>
 
 <nav *ngIf="userType === 'user'" class="navbar navbar-expand-lg navbar-light bg-secondary bottom-2">
@@ -39,19 +77,18 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/user">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/user">หน้าหลัก<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          ชื่อผู้ใช้งาน
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" (click)="logout()">Logout</a>
+          <a class="dropdown-item" (click)="logout()">ออกจากระบบ</a>
         </div>
       </li>
     </ul>
   </div>
 </nav>
-
 <router-outlet></router-outlet>

@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
     private router: Router
   ) {
     homeService.$userType.subscribe(data => {
+      console.log('LOGGGG >>> :: userType ::', data);
       this.userType = data;
     });
   }
