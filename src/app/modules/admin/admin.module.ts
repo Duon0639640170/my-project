@@ -6,6 +6,10 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { AdminShopComponent } from './admin-shop/admin-shop.component';
 import { AdminProductComponent } from './admin-product/admin-product.component';
 import { AdminPaymentComponent } from './admin-payment/admin-payment.component';
+import { AdminParcelComponent } from './admin-parcel/admin-parcel.component';
+import { AdminReportComponent } from './admin-report/admin-report.component';
+import { AdminDoproductComponent } from './admin-doproduct/admin-doproduct.component';
+import { AdminSlipComponent } from './admin-slip/admin-slip.component';
 
 
 
@@ -16,6 +20,10 @@ import { AdminPaymentComponent } from './admin-payment/admin-payment.component';
     AdminShopComponent,
     AdminProductComponent,
     AdminPaymentComponent,
+    AdminParcelComponent,
+    AdminReportComponent,
+    AdminDoproductComponent,
+    AdminSlipComponent,
     
     
   ],

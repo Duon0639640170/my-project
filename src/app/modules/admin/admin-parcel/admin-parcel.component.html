@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <table class="table bg-light">
+            <thead>
+                <tr>
+
+                    <th scope="col">รหัสสินค้า</th>
+                    <th scope="col">ชื่อผู้ซื้อ</th>
+                    <th scope="col">ว/ด/ป ที่สั่งซื้อ</th>
+                    <th scope="col">สถานะ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of dataList">
+
+                    <td>
+                        {{data.pd_id}}
+                    </td>
+                    <td>
+                        {{data.name}}
+                    </td>
+                    <td>
+                        {{data.order_date}}
+                    </td>
+                    <td>
+                        {{data.pm_status}}
+                    </td>
+                    <td>
+                        <!-- <button class="btn btn-lg btn-success btn-block">
+                            เพิ่ม
+                        </button> -->
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -35,35 +35,41 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink="/admin">หน้าหลัก<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          จัดการข้อมูล
-        </a>
+      <div class="d-flex">
+        <div class="btn-group">
+          <a  class="btn btn-warning"  >จัดการข้อมูล</a>
+        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" routerLink="/admin/product">ข้อมูลสินข้า</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" routerLink="/admin/shop">ข้อมูลร้านค้า</a>
         </div>
-      </li>
+      </div>
+    </div>
     </ul>
   </div>
   <ul class="nav navbar-nav navbar-right">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" routerLink="/admin/profile" id="navbarDropdown" role="button" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        ชื่อผู้ใช้งาน
-      </a>
+    <div class="d-flex">
+    <div class="btn-group">
+      <button type="button" class="btn btn-warning"  routerLink="/admin/profile">ชื่อผู้ใช้งาน</button>
+      <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" routerLink="/admin/payment">ชำระเงิน</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" routerLink="/admin/parcel">แจ้งเลขพัสดุ</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" routerLink="/admin/shop">รายงาน</a>
+        <a class="dropdown-item" routerLink="/admin/report">รายงาน</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" (click)="logout()">Logout</a>
       </div>
-    </li>
+    
+    </div>
+    </div>
   </ul>
 </nav>
 

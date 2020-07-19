@@ -9,7 +9,6 @@
                     <th scope="col">ว/ด/ป สั่งซื้อ</th>
                     <th scope="col">ยอดรวม</th>
                     <th scope="col">สลิปการโอน</th>
-                    <th scope="col">หัก 5%</th>
                     <th scope="col">แนบสลิปการโอนให้ร้าน</th>
                 </tr>
             </thead>
@@ -17,32 +16,28 @@
                 <tr *ngFor="let data of dataList">
                    
                     <td>
-                        {{data.pm_id}}
-                    </td>
-                    <td>
-                        {{data.user_id}}
-                    </td>
-                    <td>
                         {{data.pd_id}}
+                    </td>
+                    <td>
+                        {{data.id}}
+                    </td>
+                    <td>
+                        {{data.pm_date}}
                     </td>
 
                     <td>
                         {{data.pm_totalpric}}
                     </td>
                     <td>
+                        {{data.pd_img}}
+                    </td>
+                    <td>
                         {{data.pm_img}}
                     </td>
+                    
                     <td>
-                        {{data.pm_date}}
-                    </td>
-                    <td>
-                        {{data.pm_status}}
-                    </td>
-                    <td>
-                        <!-- <button class="btn btn-lg btn-success btn-block">
-                            เพิ่ม
-                        </button> -->
-                        <button class="btn btn-lg btn-lg btn-block " (click)="deleteData(data)">
+                       
+                        <button class="btn btn-lg btn-lg btn-block " routerLink="/admin/slip" >
                             แนบสลิป
                         </button>
                     </td>

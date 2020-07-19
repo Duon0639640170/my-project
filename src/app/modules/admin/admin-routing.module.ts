@@ -5,6 +5,10 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { AdminShopComponent } from './admin-shop/admin-shop.component';
 import { AdminProductComponent } from './admin-product/admin-product.component';
 import { AdminPaymentComponent } from './admin-payment/admin-payment.component';
+import { AdminParcelComponent } from './admin-parcel/admin-parcel.component';
+import { AdminReportComponent } from './admin-report/admin-report.component';
+import { AdminDoproductComponent } from './admin-doproduct/admin-doproduct.component';
+import { AdminSlipComponent } from './admin-slip/admin-slip.component';
 
 const routes: Routes = [
     { path: '', component: AdminHomeComponent },
@@ -12,6 +16,11 @@ const routes: Routes = [
     { path: 'shop', component: AdminShopComponent },
     { path: 'product', component: AdminProductComponent },
     { path: 'payment', component: AdminPaymentComponent },
+    { path: 'parcel', component: AdminParcelComponent },
+    { path: 'report', component: AdminReportComponent },
+    { path: 'doproduct', component: AdminDoproductComponent },
+    { path: 'slip', component: AdminSlipComponent },
+    
 ];
 @NgModule({
     imports: [RouterModule.forChild(routes)],
