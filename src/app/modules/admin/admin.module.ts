@@ -10,6 +10,7 @@ import { AdminParcelComponent } from './admin-parcel/admin-parcel.component';
 import { AdminReportComponent } from './admin-report/admin-report.component';
 import { AdminDoproductComponent } from './admin-doproduct/admin-doproduct.component';
 import { AdminSlipComponent } from './admin-slip/admin-slip.component';
+import { AdminEditprofileComponent } from './admin-editprofile/admin-editprofile.component';
 
 
 
@@ -24,6 +25,7 @@ import { AdminSlipComponent } from './admin-slip/admin-slip.component';
     AdminReportComponent,
     AdminDoproductComponent,
     AdminSlipComponent,
+    AdminEditprofileComponent,
     
     
   ],

@@ -73,7 +73,7 @@
   </ul>
 </nav>
 
-<nav *ngIf="userType === 'user'" class="navbar navbar-expand-lg navbar-light bg-secondary bottom-2">
+<nav *ngIf="userType === 'user'" class="navbar navbar-expand-lg navbar-light bg-warning  bottom-2">
   <a class="navbar-brand" routerLink="/user">USER</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,16 +85,31 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink="/user">หน้าหลัก<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          ชื่อผู้ใช้งาน
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" (click)="logout()">ออกจากระบบ</a>
-        </div>
-      </li>
+     
     </ul>
   </div>
+  <ul class="nav navbar-nav navbar-right">
+    <div class="d-flex">
+    <div class="btn-group">
+      <button type="button" class="btn btn-warning"  routerLink="/user/profile">ชื่อผู้ใช้งาน</button>
+      <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" routerLink="/user/shop">ร้านฉัน</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" routerLink="/user/payment">ชำระเงิน</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" routerLink="/user/parcel">แจ้งเลขพัสดุ</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" routerLink="/user/report">รายงาน</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" (click)="logout()">Logout</a>
+      </div>
+    
+    </div>
+    </div>
+  </ul>
 </nav>
 <router-outlet></router-outlet>

@@ -6,6 +6,7 @@ import { UserHomeComponent } from './user-home/user-home.component';
 const routes: Routes = [
     { path: '', component: UserHomeComponent },
     { path: 'profile', component: UserProfileComponent },
+    { path: 'home', component: UserHomeComponent },
 ];
 
 @NgModule({
