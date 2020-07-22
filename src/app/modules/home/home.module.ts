@@ -6,6 +6,7 @@ import { HomeRegisterComponent } from './home-register/home-register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from '../../shared/shared.module';
+import { HomeDoproductComponent } from './home-doproduct/home-doproduct.component';
 
 
 
@@ -13,7 +14,8 @@ import { SharedModule } from '../../shared/shared.module';
   declarations: [
     HomePageComponent,
     HomeLoginComponent,
-    HomeRegisterComponent
+    HomeRegisterComponent,
+    HomeDoproductComponent
   ],
   imports: [
     CommonModule,
