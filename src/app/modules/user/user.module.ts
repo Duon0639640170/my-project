@@ -9,6 +9,11 @@ import { UserStatusComponent } from './user-status/user-status.component';
 import { UserEditproductComponent } from './user-editproduct/user-editproduct.component';
 import { UserHomeshopComponent } from './user-homeshop/user-homeshop.component';
 import { UserDoproductComponent } from './user-doproduct/user-doproduct.component';
+import { UserPaymentComponent } from './user-payment/user-payment.component';
+import { UserParcelComponent } from './user-parcel/user-parcel.component';
+import { UserDoparcelComponent } from './user-doparcel/user-doparcel.component';
+import { UserReportComponent } from './user-report/user-report.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +24,13 @@ import { UserDoproductComponent } from './user-doproduct/user-doproduct.componen
     UserStatusComponent,
     UserEditproductComponent,
     UserHomeshopComponent,
-    UserDoproductComponent],
+    UserDoproductComponent,
+    UserPaymentComponent,
+    UserParcelComponent,
+    UserDoparcelComponent,
+    UserReportComponent,
+  
+  ],
     
   imports: [
     CommonModule,

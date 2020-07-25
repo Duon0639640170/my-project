@@ -8,6 +8,11 @@ import { UserStatusComponent } from './user-status/user-status.component';
 import { UserEditproductComponent } from './user-editproduct/user-editproduct.component';
 import { UserHomeshopComponent } from './user-homeshop/user-homeshop.component';
 import { UserDoproductComponent } from './user-doproduct/user-doproduct.component';
+import { UserPaymentComponent } from './user-payment/user-payment.component';
+import { UserParcelComponent } from './user-parcel/user-parcel.component';
+import { UserDoparcelComponent } from './user-doparcel/user-doparcel.component';
+import { UserReportComponent } from './user-report/user-report.component';
+
 
 const routes: Routes = [
     { path: '', component: UserHomeComponent },
@@ -19,8 +24,10 @@ const routes: Routes = [
     { path: 'editproduct', component: UserEditproductComponent },
     { path: 'homeshop', component: UserHomeshopComponent },
     { path: 'doproduct', component: UserDoproductComponent },
-    
-    
+    { path: 'payment', component: UserPaymentComponent },
+    { path: 'parcel', component: UserParcelComponent },
+    { path: 'doparcel', component: UserDoparcelComponent },
+    { path: 'report', component: UserReportComponent },
     
     
 ];

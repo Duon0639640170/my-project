@@ -1,0 +1,43 @@
+
+<div class="container">
+    <div class="row">
+        <table class="table bg-light">
+            <thead>
+                <tr>
+                   
+                    <th scope="col">ชื่อร้าน</th>
+                    <th scope="col">รายการสั่งซื้อ</th>
+                    <th scope="col">จำนวน</th>
+                    <th scope="col">ราคา</th>
+                    <th scope="col">สลิป</th>
+                    <th scope="col">ว/ด/ป</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of dataList">
+                   
+                    <td>
+                        {{data.shop_name}}
+                    </td>
+                    <td>
+                        {{data.order_id}}
+                    </td>
+                    <td>
+                        {{data.order_number}}
+                    </td>
+                    <td>
+                        {{data.pm_totalpric}}
+                    </td>
+                    <td>
+                        {{data.pd_img}}
+                    </td>
+                    <td>
+                        {{data.pm_date}}
+                    </td>
+                    
+                   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
