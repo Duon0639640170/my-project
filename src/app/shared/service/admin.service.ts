@@ -37,20 +37,19 @@ export class AdminService {
       {
         
         pd_id: '1',
-        id: '1',
+        first_name:'dd',
         pm_date: '12/02/2563',
         pm_totalpric: 'ddd',
         pd_img: 'ddddd',
-        pm_img: 'fff',
+
       },
       {
-      
+
         pd_id: '2',
-        id: '1',
+        first_name:'dd',
         pm_date: '02121212168',
         pm_totalpric: 'ddd',
         pd_img: 'ddddd',
-        pm_img: 'fff',
       },
     ];
     return dataList;
@@ -85,7 +84,6 @@ export class AdminService {
     order_name: 'คุณกอ',
     order_number: '002',
     pd_price: '100',
-    pm_totalpric: '200',
     pm_img: 'fff',
     rp_date: '01/02/2563',
       },
@@ -95,7 +93,6 @@ export class AdminService {
         order_name: 'คุณกอ',
         order_number: '002',
         pd_price: '100',
-        pm_totalpric: '200',
         pm_img: 'fff',
         rp_date: '01/02/2563',
       },
