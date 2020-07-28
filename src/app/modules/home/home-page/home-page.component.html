@@ -12,69 +12,35 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xl-4">
-      <div class="card" style="width: 18rem;">
-        <img src="\assets\image\m.jpg" class="card-img-top">
-        <div class="card-body">
-          <p class="card-text">ส้ม สดใหม่</p>
-          <button class="btn btn-lg btn-primary btn-block "  >
-            ดูสินค้า
-        </button>
-
+    <div  class="col-xl-4">
+      <div *ngFor="let data of dataCard" class="col-4">
+        <div class="card" style="width: 18rem;">
+            <img src={{data.img}} class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">{{ data.deteil }}</p>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col-xl-4">
-      <div class="card" style="width: 18rem;">
-        <img src="\assets\image\m.jpg" class="card-img-top">
-        <div class="card-body">
-          <p class="card-text">ส้ม สดใหม่</p>
-          <button class="btn btn-lg btn-primary btn-block "  >
-            ดูสินค้า
+        <button class="btn btn-outline-primary btn-block " type="button" routerLink="/home/doproduct">
+          ดูสินค้า
         </button>
-
-        </div>
       </div>
+     
     </div>
-    <div class="col-xl-4">
-      <div class="card" style="width: 18rem;">
-        <img src="\assets\image\m.jpg" class="card-img-top">
-        <div class="card-body">
-          <p class="card-text">ส้ม สดใหม่</p>
-          <button class="btn btn-lg btn-primary btn-block " >
-            ดูสินค้า
+    <div  class="col-xl-4">
+      <div *ngFor="let data of dataCard" class="col-4">
+        <div class="card" style="width: 18rem;">
+            <img src={{data.img}} class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">{{ data.deteil }}</p>
+            </div>
+        </div>
+        <button class="btn btn-outline-primary btn-block " type="button" routerLink="/home/doproduct">
+          ดูสินค้า
         </button>
-
-        </div>
       </div>
+     
     </div>
-    <div class="col-xl-4">
-      <div class="card" style="width: 18rem;">
-        <img src="\assets\image\m.jpg" class="card-img-top">
-        <div class="card-body">
-          <p class="card-text">ส้ม สดใหม่</p>
-          <button class="btn btn-lg btn-primary btn-block " >
-            ดูสินค้า
-        </button>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="col-xl-4">
-      <div class="card" style="width: 18rem;">
-        <img src="\assets\image\m.jpg" class="card-img-top">
-        <div class="card-body">
-          <p class="card-text">ส้ม สดใหม่</p>
-          <button class="btn btn-lg btn-primary btn-block " >
-            ดูสินค้า
-        </button>
-
-        </div>
-      </div>
-
-    </div>
-    <br>
-
   </div>
 </div>
+
+   

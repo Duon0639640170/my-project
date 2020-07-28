@@ -12,6 +12,7 @@ import { UserPaymentComponent } from './user-payment/user-payment.component';
 import { UserParcelComponent } from './user-parcel/user-parcel.component';
 import { UserDoparcelComponent } from './user-doparcel/user-doparcel.component';
 import { UserReportComponent } from './user-report/user-report.component';
+import { UserDopaymentComponent } from './user-dopayment/user-dopayment.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,8 @@ const routes: Routes = [
     { path: 'parcel', component: UserParcelComponent },
     { path: 'doparcel', component: UserDoparcelComponent },
     { path: 'report', component: UserReportComponent },
-    
+    { path: 'report', component: UserDopaymentComponent },
+
     
 ];
 

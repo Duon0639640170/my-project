@@ -1,33 +1,39 @@
 <div class="container">
-
     <div class="card ">
         <div class="card-body">
             <ul class="nav navbar-nav navbar-right">
                 <div class="col-xl-5">
+                
                     <div class="card" style="width: 18rem;" class="card-body text-center">
                         <img src="\assets\image\m.jpg" class="card-img-top">
                     </div>
-                    <form >
-                        <p>ชื่อร้าน</p>
+                    <form [formGroup]="loginForm">
+
                         <div class="form-group">
-                            <input class="form-control" placeholder="" formControlName="username" type="text"
-                                required />
+                            <label for="disabledTextInput">ชื่อร้าน</label>
+                            <label type="text " id="disabledTextInput" class="form-control" formControlName="username"
+                                placeholder=""></label>
                         </div>
-                        <p>ชื่อสินค้า</p>
                         <div class="form-group">
-                            <input class="form-control" placeholder="" formControlName="username" type="text"
-                                required />
+                            <label for="disabledTextInput">ชื่อสินค้า</label>
+                            <label type="text" id="disabledTextInput" class="form-control" formControlName="nameproduct"
+                                placeholder=""></label>
                         </div>
-                        <p>ราคา</p>
                         <div class="form-group">
-                            <input class="form-control" placeholder="" formControlName="username" type="text"
-                                required />
+                            <label for="disabledTextInput">ราคา</label>
+                            <label type="text" id="disabledTextInput" class="form-control" formControlName="xxx"
+                                placeholder=""></label>
+                        </div>
+                        <div class="form-group">
+                            <label for="disabledTextInput">จำนวน</label>
+                            <label type="text" id="disabledTextInput" class="form-control" formControlName="xxxxx"
+                                placeholder=""></label>
                         </div>
                         <p>รายละเอียด</p>
                         <select class="custom-select" multiple>
                             <div class="form-group">
-                                <input class="form-control" placeholder="" formControlName="username" type="text"
-                                    required />
+                                <label type="text" id="disabledTextInput" class="form-control"
+                                    formControlName="xxxxx" placeholder=""></label>
                             </div>
                         </select>
                     </form>

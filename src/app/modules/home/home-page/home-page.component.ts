@@ -10,7 +10,7 @@ export class HomePageComponent implements OnInit {
   // proJect = 'อะไรก้อได้';
   // nameTh1 = 'กอล์ฟ';
   // nameTh2 = 'ปอ';
-  dataCard: any;
+  dataCard: Array<any>;
   constructor() { }
 
   ngOnInit(): void {
@@ -19,7 +19,10 @@ export class HomePageComponent implements OnInit {
 
   private getDataCard() {
     const data = [
-      
+      {
+        img: '/assets/image/1.jpg',
+        deteil: 'ลูฟี่ กัปตันเรือ กลุ่มโจรสลัดหมวกฟาง'
+      }, 
     ];
     this.dataCard = data;
   }

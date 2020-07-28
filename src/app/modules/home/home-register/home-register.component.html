@@ -9,16 +9,44 @@
                         autocomplete="off">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Username" formControlName="username"
+                                <input class="form-control" placeholder="firstname" formControlName="first_name"
+                                    type="text" required />
+                            </div>
+                            <div *ngIf="form.first_name.invalid && (form.first_name.dirty || form.first_name.touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="form.first_name.errors.required">
+                                    firstname is required.
+                                </div>
+                                <div *ngIf="form.username.errors.minlength">
+                                    firstname must be at least 4 characters long.
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control" placeholder="lastname" formControlName="last_name"
+                                    type="text" required />
+                            </div>
+                            <div *ngIf="form.last_name.invalid && (form.last_name.dirty || form.last_name.touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="form.last_name.errors.required">
+                                    lastname is required.
+                                </div>
+                                <div *ngIf="form.last_name.errors.minlength">
+                                    lastname must be at least 4 characters long.
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control" placeholder="username" formControlName="username"
                                     type="text" required />
                             </div>
                             <div *ngIf="form.username.invalid && (form.username.dirty || form.username.touched)"
                                 class="alert alert-danger">
                                 <div *ngIf="form.username.errors.required">
-                                    Username is required.
+                                    username is required.
                                 </div>
                                 <div *ngIf="form.username.errors.minlength">
-                                    Username must be at least 4 characters long.
+                                    username must be at least 4 characters long.
                                 </div>
                             </div>
 
@@ -37,54 +65,26 @@
                             </div>
 
                             <div class="form-group">
-                                <input class="form-control" placeholder="ชื่อผู้ใช้งาน" formControlName="user_name"
+                                <input class="form-control" placeholder="ที่อยู่" formControlName="address"
                                     type="text" required />
                             </div>
-                            <div *ngIf="form.user_name.invalid && (form.user_name.dirty || form.user_name.touched)"
+                            <div *ngIf="form.address.invalid && (form.address.dirty || form.address.touched)"
                                 class="alert alert-danger">
-                                <div *ngIf="form.user_name.errors.required">
-                                    Name is required.
-                                </div>
-                                <div *ngIf="form.user_name.errors.minlength">
-                                    Name must be at least 4 characters long.
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <input class="form-control" placeholder="นามสกุล" formControlName="user_lastname"
-                                    type="text" required />
-                            </div>
-                            <div *ngIf="form.user_lastname.invalid && (form.user_lastname.dirty || form.user_lastname.touched)"
-                                class="alert alert-danger">
-                                <div *ngIf="form.user_lastname.errors.required">
-                                    Last-Name is required.
-                                </div>
-                                <div *ngIf="form.user_lastname.errors.minlength">
-                                    Last-Name must be at least 4 characters long.
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <input class="form-control" placeholder="ที่อยู่" formControlName="user_address"
-                                    type="text" required />
-                            </div>
-                            <div *ngIf="form.user_address.invalid && (form.user_address.dirty || form.user_address.touched)"
-                                class="alert alert-danger">
-                                <div *ngIf="form.user_address.errors.required">
+                                <div *ngIf="form.address.errors.required">
                                     Address is required.
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <input class="form-control" placeholder="เบอร์โทร" formControlName="user_tel"
+                                <input class="form-control" placeholder="เบอร์โทร" formControlName="tel"
                                     type="text" required />
                             </div>
-                            <div *ngIf="form.user_tel.invalid && (form.user_tel.dirty || form.user_tel.touched)"
+                            <div *ngIf="form.tel.invalid && (form.tel.dirty || form.tel.touched)"
                                 class="alert alert-danger">
-                                <div *ngIf="form.user_tel.errors.required">
+                                <div *ngIf="form.tel.errors.required">
                                     Phone Number is required.
                                 </div>
-                                <div *ngIf="form.user_tel.errors.minlength">
+                                <div *ngIf="form.tel.errors.minlength">
                                     Phone Number must be at least 10 characters long.
                                 </div>
                             </div>
