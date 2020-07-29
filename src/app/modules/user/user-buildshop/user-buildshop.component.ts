@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-buildshop.component.css']
 })
 export class UserBuildshopComponent implements OnInit {
-  buildshpForm: FormGroup;
+  buildshopForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -17,7 +17,7 @@ export class UserBuildshopComponent implements OnInit {
     private router: Router
   ) { }
   ngOnInit(): void {
-    this.buildshpForm = this.fb.group({
+    this.buildshopForm = this.fb.group({
       shop_img: ['', [Validators.required]],
       shop_name: ['', [Validators.required]],
       shop_address: ['', [Validators.required]],
@@ -32,42 +32,21 @@ export class UserBuildshopComponent implements OnInit {
   // save
   submitForm() {
     // case notfound in condition
-    if (this.buildshpForm.invalid) {
-      console.log('LOG DATA FN() invalid >>>submitForm<<<::', this.buildshpForm.value);
+    if (this.buildshopForm.invalid) {
       return false;
 
-    } else { // case success
-      console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.buildshpForm.value);
-      // register
-      // this.shaerdService.saveshop(this.buildshpForm.value).subscribe(
-      //   (error) => console.log(error)
-      // );
-      this.shaerdService.getAllShopByShop('3').subscribe((res) => {
-        console.log('LOGGGG LISTSHOP', res);
-        this.router.navigate(['/user/home']);
-      });
+  } else { // case success
+    console.log(this.buildshopForm.value);
+    console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.buildshopForm.value);
+    this.router.navigate(['/user/shopme']);
+    // register
+    this.shaerdService.saveshop(this.buildshopForm.value).subscribe((res) => {
+      console.log('LOGGGG LISTSHOP', res);
+    });
     }
   }
+ 
 
-
-  // get form() { return this.buildshpForm.controls; }
-
-  // saveOrder() {
-  //   const data = {
-  //     "id": 0,
-  //     "shop_img": "",
-  //     "shop_name": "",
-  //     "shop_address": "",
-  //     "shop_tel": "",
-  //     "bank_name": "",
-  //     "bank_account_no": ""
-  //   }
-  //   console.log('LOG DATA FN() >>>saveOrder<<<::', data);
-
-  //   this.shaerdService.saveshop(data).subscribe(
-  //     (error) => console.log(error)
-  //   );
-  // }
 
 
 }

@@ -28,11 +28,11 @@ export class ShaerdService {
 
   public saveshop(body: any) {
     const http = 'http://localhost:9081';
-    return this.http.post<any>(`${http}` + '/shop/save', body, this.httpOption);
+    return this.http.post<any>(`${http}` + '/it-api/shop/save', body, this.httpOption);
   }
   public saveProduct(body: any) {
     const http = 'http://localhost:9081';
-    return this.http.post<any>(`${http}` + '/order/save', body, this.httpOption);
+    return this.http.post<any>(`${http}` + '/it-api/product/save', body, this.httpOption);
   }
 
 
