@@ -39,9 +39,11 @@ export class UserPaymentComponent implements OnInit {
       const userType = 'home';
       this.router.navigate([`${userType}`]);
     }
-
-
-
+    // this.shaerdService.getAllShopByShop('3').subscribe((res) => {
+    //   console.log('LOGGGG LISTSHOP', res);
+    //   this.homeService.$userType = of(res);
+    //   this.router.navigate(['/user/dopayment']);
+    // });
   }
 
 }

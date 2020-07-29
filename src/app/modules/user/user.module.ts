@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserRoutingModule } from './user-routing.module';
-import { UserBuildshopComponent } from './user-buildshp/user-buildshop.component';
+import { UserBuildshopComponent } from './user-buildshop/user-buildshop.component';
 import { UserShopmeComponent } from './user-shopme/user-shopme.component';
 import { UserStatusComponent } from './user-status/user-status.component';
 import { UserEditproductComponent } from './user-editproduct/user-editproduct.component';

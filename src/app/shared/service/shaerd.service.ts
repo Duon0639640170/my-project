@@ -25,7 +25,7 @@ export class ShaerdService {
     const http = 'http://localhost:9000';
     return this.http.post<any>(`${http}` + '/user/save', body, this.httpOption);
   }
-  
+
   public saveshop(body: any) {
     const http = 'http://localhost:9081';
     return this.http.post<any>(`${http}` + '/shop/save', body, this.httpOption);
@@ -42,6 +42,8 @@ export class ShaerdService {
   }
 
   public getAllShopByShop(body: any) {
+    console.log('LOGG >>> getAllShopByShop()>::', this.API_URL + '/shop/' + `${body}`); // http://localhost:9081/it-api/shop/&{3}
+
     return this.http.get<any>(this.API_URL + '/shop/' + `${body}`);
   }
 

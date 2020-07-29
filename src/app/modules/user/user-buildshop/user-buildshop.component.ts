@@ -4,9 +4,9 @@ import { ShaerdService } from 'src/app/shared/service/shaerd.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user-buildshp',
-  templateUrl: './user-buildshp.component.html',
-  styleUrls: ['./user-buildshp.component.css']
+  selector: 'app-user-buildshop',
+  templateUrl: './user-buildshop.component.html',
+  styleUrls: ['./user-buildshop.component.css']
 })
 export class UserBuildshopComponent implements OnInit {
   buildshpForm: FormGroup;
@@ -42,7 +42,7 @@ export class UserBuildshopComponent implements OnInit {
       // this.shaerdService.saveshop(this.buildshpForm.value).subscribe(
       //   (error) => console.log(error)
       // );
-      this.shaerdService.saveshop(this.buildshpForm.value).subscribe((res) => {
+      this.shaerdService.getAllShopByShop('3').subscribe((res) => {
         console.log('LOGGGG LISTSHOP', res);
         this.router.navigate(['/user/home']);
       });
