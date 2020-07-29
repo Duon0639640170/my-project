@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShaerdService } from 'src/app/shared/service/shaerd.service';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-user-homeshop',
@@ -9,8 +10,11 @@ import { Router } from '@angular/router';
 })
 export class UserHomeshopComponent implements OnInit {
 
-  shopList: Array<any>;
+  productList: Array<any>;
+  API_URL_IMG = environment.api_url + "/images/"
   product;
+
+  dataCard: { img: string; deteil: string; }[];
 
   
   constructor(
@@ -27,7 +31,7 @@ export class UserHomeshopComponent implements OnInit {
   getProductList() {
     this.shaerdService.getAllProduct().subscribe((data) => {
       console.log('LOGGGG LISTSHOP', data);
-      this.shopList = data
+      this.productList = data
     });
   };
 
@@ -40,4 +44,13 @@ export class UserHomeshopComponent implements OnInit {
   }
 
 
+  private getDataCard() {
+    const data = [
+      {
+        img: '/assets/image/1.jpg',
+        deteil: 'ลูฟี่ กัปตันเรือ กลุ่มโจรสลัดหมวกฟาง'
+      }, 
+    ];
+    this.dataCard = data;
+  }
 }

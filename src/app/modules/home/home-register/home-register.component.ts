@@ -8,7 +8,6 @@ import { ShaerdService } from 'src/app/shared/service/shaerd.service';
   styleUrls: ['./home-register.component.css']
 })
 export class HomeRegisterComponent implements OnInit {
-
   registerForm: FormGroup;
 
   constructor(

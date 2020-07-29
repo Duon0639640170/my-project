@@ -26,32 +26,37 @@ export class ShaerdService {
     return this.http.post<any>(`${http}` + '/user/save', body, this.httpOption);
   }
   
-
+  public saveshop(body: any) {
+    const http = 'http://localhost:9081';
+    return this.http.post<any>(`${http}` + '/shop/save', body, this.httpOption);
+  }
   public saveProduct(body: any) {
     const http = 'http://localhost:9081';
-    
-
-    return this.http.post<any>(`${http}` + '/it-api/order/save', body, this.httpOption);
+    return this.http.post<any>(`${http}` + '/order/save', body, this.httpOption);
   }
 
+
+
   public getAllShop() {
-    return this.http.get<any>(this.API_URL + '/it-api/shop');
+    return this.http.get<any>(this.API_URL + '/shop');
   }
 
   public getAllShopByShop(body: any) {
-    return this.http.get<any>(this.API_URL + '/it-api/shop/' + `${body}`);
+    return this.http.get<any>(this.API_URL + '/shop/' + `${body}`);
   }
 
   public getProductByPD_id(body: any) {
-    return this.http.get<any>(this.API_URL + '/it-api/product/' + `${body}`);
+    return this.http.get<any>(this.API_URL + '/product/' + `${body}`);
   }
 
   public getAllProduct() {
-    return this.http.get<any>(this.API_URL + '/it-api/product');
+    return this.http.get<any>(this.API_URL + '/product');
   }
 
   // http://localhost:9081/it-api/order/save
+  //http://localhost:9081/it-api/shop/save
   // http://localhost:9081/it-api/shop
   //http://localhost:9081/it-api/product
   //http://localhost:9081/it-api/product/getAllProduct
+
 }

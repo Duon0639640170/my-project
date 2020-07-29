@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ShaerdService } from 'src/app/shared/service/shaerd.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home-page',
@@ -6,23 +9,49 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
+  productList: Array<any>;
+  API_URL_IMG = environment.api_url + "/images/"
+  product;
+ 
 
-  // proJect = 'อะไรก้อได้';
-  // nameTh1 = 'กอล์ฟ';
-  // nameTh2 = 'ปอ';
-  dataCard: Array<any>;
-  constructor() { }
+
+  dataCard: { img: string; deteil: string; }[];
+
+
+  constructor(
+    private shaerdService: ShaerdService,
+    private router: Router
+  ) {
+
+  }
 
   ngOnInit(): void {
-    this.getDataCard();
+    this.getProductList();
+    
   }
+
+  getProductList() {
+    this.shaerdService.getAllProduct().subscribe((data) => {
+      console.log('LOGGGG LISTSHOP', data);
+      this.productList = data
+    });
+  };
+
+  onDoproduct(data) {
+    this.shaerdService.getProductByPD_id(data.pd_id).subscribe((res) => {
+      console.log('LOGGGG LISTSHOP', res);
+      this.product = res;
+      this.router.navigate(['']);
+    });
+  }
+
 
   private getDataCard() {
     const data = [
       {
-        img: '/assets/image/1.jpg',
+        img: '/assets/image/ff.jpg',
         deteil: 'ลูฟี่ กัปตันเรือ กลุ่มโจรสลัดหมวกฟาง'
-      }, 
+      },
     ];
     this.dataCard = data;
   }

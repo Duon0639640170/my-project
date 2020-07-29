@@ -3,9 +3,9 @@
         <h2 >ร้านฉัน</h2>
      </div> -->
     <div class="row">
-        <div *ngFor="let data of shopList"  class="col-xl-4">
+        <div *ngFor="let data of productList" class="col-xl-4">
             <div class="card" style="width: 18rem;">
-                <img src="\assets\image\m.jpg" class="card-img-top">
+                <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <p class="card-text">{{data.pd_name}}</p>
                     <p class="card-text">{{data.pd_price}}</p>
@@ -17,6 +17,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>

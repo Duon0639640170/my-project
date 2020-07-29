@@ -9,38 +9,22 @@
 <ul></ul> -->
 
 <ul></ul>
-
 <div class="container">
   <div class="row">
-    <div  class="col-xl-4">
-      <div *ngFor="let data of dataCard" class="col-4">
-        <div class="card" style="width: 18rem;">
-            <img src={{data.img}} class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">{{ data.deteil }}</p>
-            </div>
+    <div *ngFor="let data of productList" class="col-xl-4">
+      <div class="card" style="width: 15rem; ">
+        <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top" alt="..." style="width: 15rem; height: 15rem;">
+        <div class="card-body">
+          <div class="card-body">
+            <p class="card-text">ชื่อสินค้า {{data.pd_name}}</p>
+            <p class="card-text">ราคา {{data.pd_price}}</p>
+            <p class="card-text">จำนวนสินค้า {{data.pd_number}}</p>
+            <ul>
+              <button  type="button" class="btn btn-outline-info btn-block " (click)="onDoproduct(data)"> ดูสินค้า</button>
+            </ul>
+          </div>
         </div>
-        <button class="btn btn-outline-primary btn-block " type="button" routerLink="/home/doproduct">
-          ดูสินค้า
-        </button>
       </div>
-     
-    </div>
-    <div  class="col-xl-4">
-      <div *ngFor="let data of dataCard" class="col-4">
-        <div class="card" style="width: 18rem;">
-            <img src={{data.img}} class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">{{ data.deteil }}</p>
-            </div>
-        </div>
-        <button class="btn btn-outline-primary btn-block " type="button" routerLink="/home/doproduct">
-          ดูสินค้า
-        </button>
-      </div>
-     
     </div>
   </div>
 </div>
-
-   
