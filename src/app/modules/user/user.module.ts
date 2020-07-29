@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserRoutingModule } from './user-routing.module';
-import { UserBuildshpComponent } from './user-buildshp/user-buildshp.component';
+import { UserBuildshopComponent } from './user-buildshp/user-buildshop.component';
 import { UserShopmeComponent } from './user-shopme/user-shopme.component';
 import { UserStatusComponent } from './user-status/user-status.component';
 import { UserEditproductComponent } from './user-editproduct/user-editproduct.component';
@@ -14,13 +14,14 @@ import { UserParcelComponent } from './user-parcel/user-parcel.component';
 import { UserDoparcelComponent } from './user-doparcel/user-doparcel.component';
 import { UserReportComponent } from './user-report/user-report.component';
 import { UserDopaymentComponent } from './user-dopayment/user-dopayment.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     UserHomeComponent,
     UserProfileComponent,
-    UserBuildshpComponent,
+    UserBuildshopComponent,
     UserShopmeComponent,
     UserStatusComponent,
     UserEditproductComponent,
@@ -31,12 +32,12 @@ import { UserDopaymentComponent } from './user-dopayment/user-dopayment.componen
     UserDoparcelComponent,
     UserReportComponent,
     UserDopaymentComponent,
-  
   ],
-    
+
   imports: [
+    ReactiveFormsModule,
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
   ]
 })
 export class UserModule { }
