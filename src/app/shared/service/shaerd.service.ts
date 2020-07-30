@@ -34,6 +34,10 @@ export class ShaerdService {
     const http = 'http://localhost:9081';
     return this.http.post<any>(`${http}` + '/it-api/product/save', body, this.httpOption);
   }
+  public updateProduct(body: any) {
+    const http = 'http://localhost:9081';
+    return this.http.post<any>(`${http}` + '/it-api/product/update', body, this.httpOption);
+  }
 
 
 
@@ -60,5 +64,5 @@ export class ShaerdService {
   // http://localhost:9081/it-api/shop
   //http://localhost:9081/it-api/product
   //http://localhost:9081/it-api/product/getAllProduct
-
+//http://localhost:9081/it-api/product/update
 }

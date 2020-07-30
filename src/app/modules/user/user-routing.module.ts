@@ -21,7 +21,7 @@ const routes: Routes = [
     { path: 'buildshop', component: UserBuildshopComponent },
     { path: 'shopme', component: UserShopmeComponent },
     { path: 'status', component: UserStatusComponent },
-    { path: 'editproduct', component: UserEditproductComponent },
+    { path: 'editproduct/:pd_id', component: UserEditproductComponent },
     { path: 'homeshop', component: UserHomeshopComponent },
     { path: 'doproduct', component: UserDoproductComponent },
     { path: 'payment', component: UserPaymentComponent },

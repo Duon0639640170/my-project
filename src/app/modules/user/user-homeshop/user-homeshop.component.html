@@ -11,7 +11,8 @@
                     <p class="card-text">{{data.pd_price}}</p>
                     <p class="card-text">{{data.pd_number}}</p>
                     <ul>
-                        <button type="button" class="btn btn-outline-success" (click)="onEdit(data)">แก้ไข</button>
+                        <button type="button" class="btn btn-outline-success" [routerLink]="['/user/editproduct', data.pd_id]" routerLinkActive="router-link-active" >แก้ไข</button>
+                        &nbsp;
                         <button type="button" class="btn btn-outline-danger"> ลบ </button>
                     </ul>
                 </div>

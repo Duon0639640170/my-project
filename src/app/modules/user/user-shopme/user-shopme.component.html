@@ -1,34 +1,32 @@
 <div class="container">
-    <div class="card ">
+   
+    <a href="#" class="float " routerLink="/user/status">
+       <p class="my-float">เพิ่ม</p> 
+    </a>
+
+
+    <div class="card text-center">
+        <div class="card-header">
+            <h2 class="float-none">ร้านฉัน</h2>
+        </div>
         <div class="card-body">
-            <div class="card" style="width: 18rem;" class="card-body text-center">
-                <h2>ร้านฉัน</h2>
-            </div>
-
-            <button class="btn btn-lg btn-info " routerLink="/user/status">
-                โพสต์สินค้า
-            </button>
-
-            <p></p>
             <div class="container">
                 <div class="row">
                     <div *ngFor="let data of productList" class="col-xl-4">
-                        <div class="card" style="width: 15rem; ">
-                            <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top" alt="..."
-                                style="width: 15rem; height: 15rem;">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top" alt="{{data.pd_img}}">
                             <div class="card-body">
-                                <div class="card-body">
-                                    <p class="card-text">ชื่อสินค้า {{data.pd_name}}</p>
-                                    <p class="card-text">ราคา {{data.pd_price}}</p>
-                                    <p class="card-text">จำนวนสินค้า {{data.pd_number}}</p>
-
-                                </div>
+                                <h5 class="card-title">ชื่อสินค้า : {{data.pd_name}}</h5>
+                                <p class="card-text">ราคา : {{data.pd_price}} บาท</p>
+                                <p class="card-text">จำนวนสินค้า : {{data.pd_number}} ชิ้น</p>
                             </div>
-                        </div>
+                        </div><br>
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="card-footer text-muted">
+           ใส่อะไรก็ได้
         </div>
     </div>
 
