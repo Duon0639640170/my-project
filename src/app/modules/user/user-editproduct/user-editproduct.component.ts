@@ -75,7 +75,7 @@ export class UserEditproductComponent implements OnInit {
         pd_price: res.pd_price,
         pd_details: res.pd_details,
         pd_number: res.pd_number
-      })
+      });
 
       this.pd_img = res.pd_img;
     });
@@ -85,7 +85,7 @@ export class UserEditproductComponent implements OnInit {
   initShopSelect() {
     this.shaerdService.getAllShop().subscribe((res) => {
       this.shopList = res;
-    })
+    });
 
   }
 

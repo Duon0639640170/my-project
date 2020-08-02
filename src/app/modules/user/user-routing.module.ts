@@ -28,7 +28,7 @@ const routes: Routes = [
     { path: 'parcel', component: UserParcelComponent },
     { path: 'doparcel', component: UserDoparcelComponent },
     { path: 'report', component: UserReportComponent },
-    { path: 'dopayment', component: UserDopaymentComponent },
+    { path: 'dopayment/:pm_id', component: UserDopaymentComponent },
 ];
 
 @NgModule({

@@ -41,7 +41,7 @@ export class UserHomeComponent implements OnInit {
     this.shaerdService.getProductByPD_id(data.pd_id).subscribe((res) => {
       console.log('LOGGGG LISTSHOP', res);
       this.product = res;
-      this.router.navigate(['']);
+      this.router.navigate(['/user/doproduct']);
     });
   }
 

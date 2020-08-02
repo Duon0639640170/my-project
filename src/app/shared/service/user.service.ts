@@ -11,21 +11,19 @@ export class UserService {
     const dataList = [
       {
 
-        shop_name: 'แม่ปุ้ย',
         id: 'คุณกอ',
-        order_id: 'hhh',
-        order_number: '1',
-        pm_totalpric: '200',
+        pm_totalpric: '100',
+        pm_img: '1',
+        pm_date: '200',
         pd_img: 'fff',
         pm_status: 'จ่ายแล้ว',
       },
       {
 
-        shop_name: 'แม่ปุ้ย',
         id: 'คุณกอ',
-        order_id: '002',
-        order_number: '100',
-        pm_totalpric: '200',
+        pm_totalpric: '100',
+        pm_img: '1',
+        pm_date: '200',
         pd_img: 'fff',
         pm_status: 'จ่ายแล้ว',
       },

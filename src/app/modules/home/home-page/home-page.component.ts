@@ -34,14 +34,15 @@ export class HomePageComponent implements OnInit {
     this.shaerdService.getAllProduct().subscribe((data) => {
       console.log('LOGGGG LISTSHOP', data);
       this.productList = data
+     
     });
   };
 
-  onDoproduct(data) {
+   onEdit(data) {
     this.shaerdService.getProductByPD_id(data.pd_id).subscribe((res) => {
       console.log('LOGGGG LISTSHOP', res);
       this.product = res;
-      this.router.navigate(['']);
+      this.router.navigate(['/home/doproduct']);
     });
   }
 

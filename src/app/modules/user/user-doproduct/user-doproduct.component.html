@@ -1,43 +1,62 @@
 <div class="container">
-    <div class="col-md-5 offset-md-5">
-      <div class="card text-center">
+    <div class="card ">
         <div class="card-body">
             <ul class="nav navbar-nav navbar-right">
-                
-                    <div class="card" style="width: 18rem;" class="card-body text-center">
-                        <img src="\assets\image\m.jpg" class="card-img-top">
-                    </div>
-                    <form>
-                         
-                        <div class="form-group">
-                            <label for="disabledTextInput">ชื่อร้าน</label>
-                            <label type="text " id="disabledTextInput" class="form-control" formControlName="shop_id"
-                                placeholder=""></label>
-                        </div>
-                        <div class="form-group">
-                            <label for="disabledTextInput">ชื่อสินค้า</label>
-                            <label type="text" id="disabledTextInput" class="form-control" formControlName="pd_name"
-                                placeholder=""></label>
-                        </div>
-                        <div class="form-group">
-                            <label for="disabledTextInput">ราคา</label>
-                            <label type="text" id="disabledTextInput" class="form-control" formControlName="pd_price"
-                                placeholder=""></label>
-                        </div>
-                        <div class="form-group">
-                            <label for="disabledTextInput">จำนวน</label>
-                            <label type="text" id="disabledTextInput" class="form-control" formControlName="pd_number"
-                                placeholder=""></label>
-                        </div>
-                        <p>รายละเอียด</p>
-                        <select class="custom-select" multiple>
-                            <div class="form-group">
-                                <label type="text" id="disabledTextInput" class="form-control"
-                                    formControlName="pd_details" placeholder=""></label>
+                <form [formGroup]="doproductForm" accept-charset="UTF-8" autocomplete="off">
+                    <fieldset>
+                        <div class="col-4 mx-auto text-center">
+                            <div class="card" style="width: 18rem;">
+                                <img [src]="API_URL_IMG + pd_img" class="card-img-top" alt="...">
                             </div>
-                        </select>
-                    </form>
-               
+                        </div><br>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                                <label for="inputEmail4">ชื่อร้าน</label>
+                                <select class="custom-select" (change)="changShopSelected($event.target.value)"
+                                    formControlName="shop_id" [value]="form.shop_id" disabled="disabled">
+                                    <option selected>Open this select menu</option>
+                                    <option *ngFor="let shop of shopList" [value]="shop.shop_id">{{shop.shop_name}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label for="inputPassword4">ชื่อสินค้า</label>
+                                <input class="form-control" placeholder="" formControlName="pd_name" type="text"
+                                disabled="disabled" required />
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="inputPassword4">ราคา</label>
+                                <input class="form-control" placeholder="" formControlName="pd_price" type="number"
+                                    min="0" disabled="disabled" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pd_details">รายละเอียด</label>
+                            <textarea class="form-control" formControlName="pd_details" rows="3" disabled="disabled"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group  col-md-4">
+                                <label for="pd_number">จำนวน</label>
+                                <input class="form-control" placeholder="" formControlName="pd_number" type="number"
+                                    min="0" disabled="disabled" required />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col text-center">
+                                <button class="btn btn-lg btn-outline-success"routerLink="/user/home" >
+                                    ตกลง
+                                </button> &nbsp;
+                                <button class="btn btn-lg btn-outline-danger" routerLink="/user/home">
+                                    ยกเลิก
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
             </ul>
         </div>
     </div>

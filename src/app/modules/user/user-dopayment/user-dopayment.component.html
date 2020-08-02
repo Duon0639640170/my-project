@@ -1,1 +1,66 @@
-<p>user-dopayment works!</p>
+<div class="container">
+    <div class="card text-center">
+        <div class="card-body">
+
+            <div class="card-header">
+                <h2 class="float-none">รายละเอียดการชำระเงิน</h2>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <form [formGroup]="dopaymentForm" accept-charset="UTF-8" autocomplete="off">
+                    <fieldset>
+                        <div class="col-4 mx-auto text-center">
+                            <!-- <div class="card" style="width: 18rem;">
+                                <img [src]="API_URL_IMG + pm_img" class="card-img-top" alt="...">
+                            </div> -->
+                        </div><br>
+                        <div class="col-4 mx-auto text-center">
+                            <div class="form-group text-center">
+                                <label for="pm_img">สลิป</label>
+                                <div class="card" style="width: 18rem;">
+                                    <img [src]="API_URL_IMG + pm_img" class="card-img-top" cl alt="...">
+                                </div>
+                                <!-- <textarea class="form-control" formControlName="pm_img" rows="3" ></textarea> -->
+                            </div>
+                        </div><br>
+
+                        <div class="form-row">
+
+                            <div class="form-group col-md-5">
+                                <label for="id">ชื่อผู้ซื้อ</label>
+                                <input class="form-control" placeholder="" formControlName="id" type="text" required />
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="pm_totalpric">จำนวนเงิน</label>
+                                <input class="form-control" placeholder="" formControlName="pm_totalpric" type="number"
+                                    min="0" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pm_date">รายละเอียด</label>
+                            <textarea class="form-control" formControlName="pm_date" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="pm_status">สถานะ</label>
+                            <input class="form-control" placeholder="" formControlName="pm_status" type="text"
+                                required />
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col text-center">
+                                <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
+                                    ตกลง
+                                </button> &nbsp;
+                                <button class="btn btn-lg btn-outline-danger" routerLink="/user/payment">
+                                    ยกเลิก
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </ul>
+
+        </div>
+    </div>
+</div>

@@ -11,6 +11,7 @@ import { HomeService } from './shared/service/home.service';
 export class AppComponent implements OnInit {
   userType;
   userName;
+
   constructor(
     private homeService: HomeService,
     private router: Router

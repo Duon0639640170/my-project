@@ -1,20 +1,28 @@
 <div class="container">
-    <!-- <div class="card" style="width: 18rem;" class="card-body text-center">
-        <h2 >ร้านฉัน</h2>
-     </div> -->
-    <div class="row">
-        <div *ngFor="let data of productList" class="col-xl-4">
-            <div class="card" style="width: 18rem;">
-                <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">{{data.pd_name}}</p>
-                    <p class="card-text">{{data.pd_price}}</p>
-                    <p class="card-text">{{data.pd_number}}</p>
-                    <ul>
-                        <button type="button" class="btn btn-outline-success" [routerLink]="['/user/editproduct', data.pd_id]" routerLinkActive="router-link-active" >แก้ไข</button>
-                        &nbsp;
-                        <button type="button" class="btn btn-outline-danger"> ลบ </button>
-                    </ul>
+    <div class="card text-center">
+        <div class="card-header">
+            <h2 class="float-none">จัดการสินค้า</h2>
+        </div>
+        <div class="card-body">
+            <div class="container">
+                <div class="row">
+                    <div *ngFor="let data of productList" class="col-xl-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">ชื่อสินค้า : {{data.pd_name}}</p>
+                                <p class="card-text">ราคา : {{data.pd_price}}</p>
+                                <p class="card-text">จำนวน : {{data.pd_number}}</p>
+                                <ul>
+                                    <button type="button" class="btn btn-outline-success"
+                                        [routerLink]="['/user/editproduct', data.pd_id]"
+                                        routerLinkActive="router-link-active">แก้ไข</button>
+                                    &nbsp;
+                                    <button type="button" class="btn btn-outline-danger"> ลบ </button>
+                                </ul>
+                            </div>
+                        </div><br>
+                    </div>
                 </div>
             </div>
         </div>

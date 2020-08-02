@@ -38,7 +38,14 @@ export class ShaerdService {
     const http = 'http://localhost:9081';
     return this.http.post<any>(`${http}` + '/it-api/product/update', body, this.httpOption);
   }
-
+  public updatePayment(body: any) {
+    const http = 'http://localhost:9081';
+    return this.http.post<any>(`${http}` + '/it-api/payment/update', body, this.httpOption);
+  }
+  public savePayment(body: any) {
+    const http = 'http://localhost:9081';
+    return this.http.post<any>(`${http}` + '/it-api/payment/save', body, this.httpOption);
+  }
 
 
   public getAllShop() {
@@ -59,10 +66,22 @@ export class ShaerdService {
     return this.http.get<any>(this.API_URL + '/product');
   }
 
+  public getAllPayment() {
+    return this.http.get<any>(this.API_URL + '/payment');
+  }
+
+  public getPaymentByShop(body: any) {
+    return this.http.get<any>(this.API_URL + '/payment/' + `${body}`);
+  }
+
+
+  
   // http://localhost:9081/it-api/order/save
   //http://localhost:9081/it-api/shop/save
   // http://localhost:9081/it-api/shop
   //http://localhost:9081/it-api/product
   //http://localhost:9081/it-api/product/getAllProduct
 //http://localhost:9081/it-api/product/update
+//http://localhost:9081/it-api/payment
+//http://localhost:9081/it-api/payment/save
 }
