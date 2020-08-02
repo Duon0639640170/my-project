@@ -18,7 +18,7 @@
                                         [routerLink]="['/user/editproduct', data.pd_id]"
                                         routerLinkActive="router-link-active">แก้ไข</button>
                                     &nbsp;
-                                    <button type="button" class="btn btn-outline-danger"> ลบ </button>
+                                    <button type="button" class="btn btn-outline-danger" (click)="deleteData(data)"> ลบ </button>
                                 </ul>
                             </div>
                         </div><br>

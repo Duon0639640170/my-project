@@ -48,6 +48,7 @@ export class ShaerdService {
   }
 
 
+
   public getAllShop() {
     return this.http.get<any>(this.API_URL + '/shop');
   }
@@ -74,7 +75,9 @@ export class ShaerdService {
     return this.http.get<any>(this.API_URL + '/payment/' + `${body}`);
   }
 
-
+  public deleteProductByPD_id(pdId: any) {
+    return this.http.delete<any>(this.API_URL + '/product/' + pdId);
+  }
   
   // http://localhost:9081/it-api/order/save
   //http://localhost:9081/it-api/shop/save
@@ -84,4 +87,5 @@ export class ShaerdService {
 //http://localhost:9081/it-api/product/update
 //http://localhost:9081/it-api/payment
 //http://localhost:9081/it-api/payment/save
+//http://localhost:9081/it-api/product/delete
 }

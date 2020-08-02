@@ -20,21 +20,17 @@ export class UserHomeshopComponent implements OnInit {
   constructor(
     private shaerdService: ShaerdService,
     private router: Router
-  ) { 
-    
-  }
+  ) { }
 
   ngOnInit(): void {
     this.getProductList();
   }
-
   getProductList() {
     this.shaerdService.getAllProduct().subscribe((data) => {
       console.log('LOGGGG LISTSHOP', data);
-      this.productList = data
-    
+      this.productList = data;
     });
-  };
+  }
 
   onEdit(data) {
     this.shaerdService.getProductByPD_id(data.pd_id).subscribe((res) => {
@@ -44,6 +40,11 @@ export class UserHomeshopComponent implements OnInit {
     });
   }
 
+  deleteData(data: any) {
+    this.shaerdService.deleteProductByPD_id(data.pd_id).subscribe(() => {
+    window.location.reload();
+    });
+  }
 
   private getDataCard() {
     const data = [

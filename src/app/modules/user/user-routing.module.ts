@@ -25,10 +25,11 @@ const routes: Routes = [
     { path: 'homeshop', component: UserHomeshopComponent },
     { path: 'doproduct', component: UserDoproductComponent },
     { path: 'payment', component: UserPaymentComponent },
-    { path: 'parcel', component: UserParcelComponent },
+    { path: 'parcel/:pm_id', component: UserParcelComponent },
     { path: 'doparcel', component: UserDoparcelComponent },
     { path: 'report', component: UserReportComponent },
     { path: 'dopayment/:pm_id', component: UserDopaymentComponent },
+    
 ];
 
 @NgModule({

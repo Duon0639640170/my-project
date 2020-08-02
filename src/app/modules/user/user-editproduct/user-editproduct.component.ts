@@ -93,7 +93,7 @@ export class UserEditproductComponent implements OnInit {
     console.log('changShopSelected : value ==> ' + value)
     this.editproductForm.patchValue({
       shop_id: value
-    })
+    });
   }
 
   get form() { return this.editproductForm.controls; }
