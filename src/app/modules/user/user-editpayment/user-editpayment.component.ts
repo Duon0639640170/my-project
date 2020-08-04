@@ -1,26 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ShaerdService } from 'src/app/shared/service/shaerd.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-user-dopayment',
-  templateUrl: './user-dopayment.component.html',
-  styleUrls: ['./user-dopayment.component.css']
+  selector: 'app-user-editpayment',
+  templateUrl: './user-editpayment.component.html',
+  styleUrls: ['./user-editpayment.component.css']
 })
-export class UserDopaymentComponent implements OnInit {
-  paymentList: Array<any>;
-  API_URL_IMG = environment.api_url + "/images/";
-  payment: any;
-  pm_id: any;
-  pm_img: string = '';
-  shopList = [];
+export class UserEditpaymentComponent implements OnInit {
+  productList: Array<any>;
+  API_URL_IMG = environment.api_url + "/images/"
+  editpayment: any;
+  pm_id: any
+  pm_img: string = ''
+  paymentList = [];
+
 
   dataCard: { img: string; deteil: string; }[];
 
 
-  dopaymentForm: FormGroup;
+  editpaymentForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -38,7 +39,7 @@ export class UserDopaymentComponent implements OnInit {
     this.patchValueForm();
 
     // initShopSelect
-    this.initShopSelect();
+    this.initPaymentSelect();
 
   }
 
@@ -47,13 +48,14 @@ export class UserDopaymentComponent implements OnInit {
   }
 
   initFormGroup() {
-    this.dopaymentForm = this.fb.group({
-      pm_id: [''],
-      id: ['', [Validators.required]],
+    this.editpaymentForm = this.fb.group({
+      id:[''],
+  
       pm_totalpric: ['', [Validators.required]],
-      pm_img: ['', [Validators.required]],
       pm_date: ['', [Validators.required]],
+      tracking_no: ['', [Validators.required]],
       pm_status: ['', [Validators.required]],
+     
     });
   }
 
@@ -64,52 +66,62 @@ export class UserDopaymentComponent implements OnInit {
 
     await this.shaerdService.getPaymentByShop(this.pm_id).subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
-
+     
       // patch value to form
-      this.dopaymentForm.patchValue({
-        pm_id: res.pm_id,
+      this.editpaymentForm.patchValue({
+        
         id: res.id,
         pm_totalpric: res.pm_totalpric,
-        pm_img: res.pm_img,
         pm_date: res.pm_date,
-        pm_status: res.pm_status,
+        tracking_no: res.tracking_no,
+        pm_status: res.pm_status
       });
 
       this.pm_img = res.pm_img;
     });
-
   }
 
-  initShopSelect() {
+  initPaymentSelect() {
     this.shaerdService.getAllPayment().subscribe((res) => {
       this.paymentList = res;
     });
 
   }
 
-  changPaymentSelected(value: any) {
-    console.log('changPaymentSelected : value ==> ' + value);
-    this.dopaymentForm.patchValue({
+  changShopSelected(value: any) {
+    console.log('changPaymentSelected : value ==> ' + value)
+    this.editpaymentForm.patchValue({
       shop_id: value
     });
   }
+
+  get form() { return this.editpaymentForm.controls; }
+
+  // save
   submitForm() {
-    debugger
+    // debugger
     // case notfound in condition
-    if (this.dopaymentForm.invalid) {
+    if (this.editpaymentForm.invalid) {
       return false;
 
     } else { // case success
-      console.log(this.dopaymentForm.value);
-      console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.dopaymentForm.value);
+      console.log(this.editpaymentForm.value);
+      console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.editpaymentForm.value);
       this.router.navigate(['/user/payment']);
       // register
-      this.shaerdService.updatePayment(this.dopaymentForm.value).subscribe((res) => {
+      this.shaerdService.updatePayment(this.editpaymentForm.value).subscribe((res) => {
         console.log('LOGGGG LISTSHOP', res);
       });
     }
   }
 
-  get form() { return this.dopaymentForm.controls; }
-
+  private getDataCard() {
+    const data = [
+      {
+        img: '/assets/image/1.jpg',
+        deteil: 'ลูฟี่ กัปตันเรือ กลุ่มโจรสลัดหมวกฟาง'
+      },
+    ];
+    this.dataCard = data;
+  }
 }

@@ -76,7 +76,7 @@ export class UserDoproductComponent implements OnInit {
         pd_price: res.pd_price,
         pd_details: res.pd_details,
         pd_number: res.pd_number
-      })
+      });
 
       this.pd_img = res.pd_img;
     });
@@ -86,7 +86,7 @@ export class UserDoproductComponent implements OnInit {
   initShopSelect() {
     this.shaerdService.getAllShop().subscribe((res) => {
       this.shopList = res;
-    })
+    });
 
   }
 
@@ -94,7 +94,7 @@ export class UserDoproductComponent implements OnInit {
     console.log('changShopSelected : value ==> ' + value)
     this.doproductForm.patchValue({
       shop_id: value
-    })
+    });
   }
 
   get form() { return this.doproductForm.controls; }

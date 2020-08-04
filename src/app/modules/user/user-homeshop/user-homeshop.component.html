@@ -11,8 +11,8 @@
                             <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <p class="card-text">ชื่อสินค้า : {{data.pd_name}}</p>
-                                <p class="card-text">ราคา : {{data.pd_price}}</p>
-                                <p class="card-text">จำนวน : {{data.pd_number}}</p>
+                                <p class="card-text">ราคา : {{data.pd_price}} บาท</p>
+                                <p class="card-text">จำนวน : {{data.pd_number}} ชิ้น</p>
                                 <ul>
                                     <button type="button" class="btn btn-outline-success"
                                         [routerLink]="['/user/editproduct', data.pd_id]"

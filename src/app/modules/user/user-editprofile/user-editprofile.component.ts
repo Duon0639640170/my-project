@@ -1,27 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ShaerdService } from 'src/app/shared/service/shaerd.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-user-profile',
-  templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css']
+  selector: 'app-user-editprofile',
+  templateUrl: './user-editprofile.component.html',
+  styleUrls: ['./user-editprofile.component.css']
 })
-export class UserProfileComponent implements OnInit {
-  [x: string]: any;
-  profileList: Array<any>;
+export class UserEditprofileComponent implements OnInit {
+  productList: Array<any>;
   API_URL_IMG = environment.api_url + "/images/"
-  username: any;
+  editpayment: any;
   id: any
- 
   userList = [];
 
- 
+
+  dataCard: { img: string; deteil: string; }[];
 
 
-  profileForm: FormGroup;
+  editprofileForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -39,13 +38,13 @@ export class UserProfileComponent implements OnInit {
     this.patchValueForm();
 
     // initShopSelect
-    this.initShopSelect();
+    this.initPaymentSelect();
 
   }
 
 
   initFormGroup() {
-    this.profileForm = this.fb.group({
+    this.editprofileForm = this.fb.group({
       id:[''],
       first_name: ['', [Validators.required]],
       last_name: ['', [Validators.required]],
@@ -54,11 +53,12 @@ export class UserProfileComponent implements OnInit {
       address: ['', [Validators.required]],
       tel: ['', [Validators.required]],
       gender: ['', [Validators.required]],
+     
     });
   }
 
   async patchValueForm() {
-    // get id in request parameter router
+    // get pd_id in request parameter router
     this.id = this.activatedroute.snapshot.paramMap.get("id");
     console.log('patchValueForm : id => ', this.id);
 
@@ -66,7 +66,8 @@ export class UserProfileComponent implements OnInit {
       console.log('patchValueForm : Response => ', res);
      
       // patch value to form
-      this.profileForm.patchValue({
+      this.editprofileForm.patchValue({
+        
         id: res.id,
         first_name: res.first_name,
         last_name: res.last_name,
@@ -77,32 +78,41 @@ export class UserProfileComponent implements OnInit {
         gender: res.gender
       });
 
-      // this.pd_img = res.pd_img;
-    });
-
-  }
-  onEdit(data) {
-    this.shaerdService.getUser().subscribe((res) => {
-      console.log('LOGGGG LISTSHOP', res);
-      this.product = res;
-      this.router.navigate(['/user/editprofile']);
+     
     });
   }
 
-  // initShopSelect() {
-  //   this.shaerdService.getAllShop().subscribe((res) => {
-  //     this.shopList = res;
-  //   });
+  initPaymentSelect() {
+    this.shaerdService.listUser().subscribe((res) => {
+      this.userList = res;
+    });
 
-  // }
+  }
 
-  // changShopSelected(value: any) {
-  //   console.log('changShopSelected : value ==> ' + value)
-  //   this.doproductForm.patchValue({
-  //     shop_id: value
-  //   });
-  // }
+  changShopSelected(value: any) {
+    console.log('changPaymentSelected : value ==> ' + value)
+    this.editprofileForm.patchValue({
+      id: value
+    });
+  }
 
-  get form() { return this.profileForm.controls; }
+  get form() { return this.editprofileForm.controls; }
 
+  // save
+  submitForm() {
+    // debugger
+    // case notfound in condition
+    if (this.editprofileForm.invalid) {
+      return false;
+
+    } else { // case success
+      console.log(this.editprofileForm.value);
+      console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.editprofileForm.value);
+      this.router.navigate(['/user/profile']);
+      // register
+      this.shaerdService.updatePayment(this.editprofileForm.value).subscribe((res) => {
+        console.log('LOGGGG LISTSHOP', res);
+      });
+    }
+  }
 }

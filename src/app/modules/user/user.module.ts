@@ -11,11 +11,11 @@ import { UserEditproductComponent } from './user-editproduct/user-editproduct.co
 import { UserHomeshopComponent } from './user-homeshop/user-homeshop.component';
 import { UserDoproductComponent } from './user-doproduct/user-doproduct.component';
 import { UserPaymentComponent } from './user-payment/user-payment.component';
-import { UserParcelComponent } from './user-parcel/user-parcel.component';
 import { UserDoparcelComponent } from './user-doparcel/user-doparcel.component';
 import { UserReportComponent } from './user-report/user-report.component';
-import { UserDopaymentComponent } from './user-dopayment/user-dopayment.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserEditprofileComponent } from './user-editprofile/user-editprofile.component';
+import { UserEditpaymentComponent } from './user-editpayment/user-editpayment.component';
 
 
 @NgModule({
@@ -29,10 +29,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     UserHomeshopComponent,
     UserDoproductComponent,
     UserPaymentComponent,
-    UserParcelComponent,
     UserDoparcelComponent,
     UserReportComponent,
-    UserDopaymentComponent,
+    UserEditprofileComponent,
+    UserEditpaymentComponent,
   ],
 
   imports: [

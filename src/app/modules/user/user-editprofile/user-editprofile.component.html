@@ -5,61 +5,69 @@
                 <div class="card-body">
                     <h5 class="card-title text-center">ข้อมูลส่วนตัว</h5>
                     <p class="card-text"> </p>
-                    <form [formGroup]="profileForm" accept-charset="UTF-8" autocomplete="off">
+                    <form [formGroup]="editprofileForm" accept-charset="UTF-8" autocomplete="off">
                         <fieldset>
                             <div class="form-group">
                                 <label for="inputEmail4">ชื่อ</label>
                                 <input class="form-control" placeholder="firstname" formControlName="first_name"
-                                    type="text" required disabled="disabled" />
+                                    type="text" required />
                             </div>
 
 
                             <div class="form-group">
                                 <label for="inputEmail4">นามสกุล</label>
                                 <input class="form-control" placeholder="lastname" formControlName="last_name"
-                                    type="text" required disabled="disabled" />
+                                    type="text" required />
                             </div>
 
 
                             <div class="form-group">
                                 <label for="inputEmail4">username</label>
                                 <input class="form-control" placeholder="username" formControlName="username"
-                                    type="text" required disabled="disabled" />
+                                    type="text" required />
                             </div>
 
                             <div class="form-group">
                                 <label for="inputEmail4">Password</label>
                                 <input class="form-control" placeholder="Password" formControlName="password"
-                                    type="password" required disabled="disabled" />
+                                    type="password" required />
                             </div>
 
                             <div class="form-group">
                                 <label for="inputEmail4">ที่อยู่</label>
                                 <input class="form-control" placeholder="ที่อยู่" formControlName="address" type="text"
-                                    required disabled="disabled" />
+                                    required />
                             </div>
 
 
                             <div class="form-group">
                                 <label for="inputEmail4">เบอร์โทร</label>
                                 <input class="form-control" placeholder="เบอร์โทร" formControlName="tel" type="text"
-                                    required disabled="disabled" />
+                                    required />
                             </div>
 
 
                             <div class="form-group">
-                                <label for="inputEmail4">เพศ</label>
-                                <input class="form-control" placeholder="เพศ" formControlName="gender" name="gender"
-                                    type="text" required disabled="disabled" />
-                                    
+                                <label for="gender">เพศ</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                        formControlName="gender" name="gender" value="F" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        หญิง
+                                    </label>
+                                    <br>
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                        formControlName="gender" name="gender" value="M">
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        ชาย
+                                    </label>
+                                </div>
                             </div>
 
                             <div class="card-title text-center">
 
-                                <button class="btn btn-lg btn-outline-warning "
-                                    [routerLink]="['/user/editprofile', data.id]"
-                                    routerLinkActive="router-link-active">
-                                    แก้ไข
+                                <button class="btn btn-lg btn-outline-warning " (click)="submitForm()">
+                                    ตกลง
                                 </button>
                                 <button class="btn btn-lg btn-outline-danger " routerLink="/user/home">
                                     ยกเลิก

@@ -86,7 +86,7 @@ export class HomeDoproductComponent implements OnInit {
   initShopSelect() {
     this.shaerdService.getAllShop().subscribe((res) => {
       this.shopList = res;
-    })
+    });
 
   }
 

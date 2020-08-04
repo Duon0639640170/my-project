@@ -32,13 +32,13 @@ export class UserEditproductComponent implements OnInit {
   ngOnInit(): void {
 
     // init form group
-    this.initFormGroup()
+    this.initFormGroup();
 
     // patch value in response api to form 
-    this.patchValueForm()
+    this.patchValueForm();
 
     // initShopSelect
-    this.initShopSelect()
+    this.initShopSelect();
 
   }
 
@@ -79,7 +79,6 @@ export class UserEditproductComponent implements OnInit {
 
       this.pd_img = res.pd_img;
     });
-
   }
 
   initShopSelect() {
@@ -100,7 +99,7 @@ export class UserEditproductComponent implements OnInit {
 
   // save
   submitForm() {
-    debugger
+    // debugger
     // case notfound in condition
     if (this.editproductForm.invalid) {
       return false;
@@ -108,7 +107,7 @@ export class UserEditproductComponent implements OnInit {
     } else { // case success
       console.log(this.editproductForm.value);
       console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.editproductForm.value);
-      this.router.navigate(['/user/shopme']);
+      this.router.navigate(['/user/homeshop']);
       // register
       this.shaerdService.updateProduct(this.editproductForm.value).subscribe((res) => {
         console.log('LOGGGG LISTSHOP', res);

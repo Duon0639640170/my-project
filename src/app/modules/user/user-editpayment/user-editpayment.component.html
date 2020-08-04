@@ -6,7 +6,7 @@
                 <h2 class="float-none">รายละเอียดการชำระเงิน</h2>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <form [formGroup]="dopaymentForm" accept-charset="UTF-8" autocomplete="off">
+                <form [formGroup]="editpaymentForm" accept-charset="UTF-8" autocomplete="off">
                     <fieldset>
                         <div class="col-4 mx-auto text-center">
                             <!-- <div class="card" style="width: 18rem;">
@@ -39,6 +39,13 @@
                             <label for="pm_date">รายละเอียด</label>
                             <textarea class="form-control" formControlName="pm_date" rows="3"></textarea>
                         </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="tracking_no">เลขพัสดุ</label>
+                            <input class="form-control" placeholder="" formControlName="tracking_no" type="text"
+                                required />
+                        </div>
+
 
                         <div class="form-group col-md-5">
                             <label for="pm_status">สถานะ</label>

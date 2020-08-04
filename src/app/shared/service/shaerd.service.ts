@@ -49,6 +49,14 @@ export class ShaerdService {
 
 
 
+  public getUser() {
+    return this.http.get<any>(this.API_URL + '/user/{username}');
+  }
+
+  public listUser() {
+    return this.http.get<any>(this.API_URL + '/user/all');
+  }
+
   public getAllShop() {
     return this.http.get<any>(this.API_URL + '/shop');
   }
@@ -79,6 +87,9 @@ export class ShaerdService {
     return this.http.delete<any>(this.API_URL + '/product/' + pdId);
   }
   
+
+//http://localhost:9000/user/{username}
+  // http://localhost:9000/user/all
   // http://localhost:9081/it-api/order/save
   //http://localhost:9081/it-api/shop/save
   // http://localhost:9081/it-api/shop

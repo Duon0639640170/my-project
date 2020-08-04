@@ -9,11 +9,12 @@
                     <th scope="col">จำนวนเงิน</th>
                     <th scope="col">สลิป</th>
                     <th scope="col">รายละเอียด</th>
+                    <th scope="col">เลขพัสดุ</th>
                     <th scope="col">สถานะ</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let data of paymentList"   [routerLink]="['/user/dopayment', data.pm_id]"
+                <tr *ngFor="let data of paymentList"   [routerLink]="['/user/editpayment', data.pm_id]"
                 routerLinkActive="router-link-active"  >
                    
                     <td>
@@ -27,6 +28,9 @@
                     </td>
                     <td>
                         {{data.pm_date}}
+                    </td>
+                    <td>
+                        {{data.tracking_no}}
                     </td>
                     <td>
                         {{data.pm_status}}
