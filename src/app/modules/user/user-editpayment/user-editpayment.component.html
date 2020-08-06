@@ -3,7 +3,7 @@
         <div class="card-body">
 
             <div class="card-header">
-                <h2 class="float-none">รายละเอียดการชำระเงิน</h2>
+                <h2 class="float-none" class="text-center">รายละเอียดการชำระเงิน</h2>
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <form [formGroup]="editpaymentForm" accept-charset="UTF-8" autocomplete="off">
@@ -27,38 +27,41 @@
 
                             <div class="form-group col-md-5">
                                 <label for="id">ชื่อผู้ซื้อ</label>
-                                <input class="form-control" placeholder="" formControlName="id" type="text" required />
+                                <input class="form-control" placeholder="" formControlName="id" type="text"
+                                    disabled="disabled" required />
                             </div>
                             <div class="form-group col-md-2">
-                                <label for="pm_totalpric">จำนวนเงิน</label>
-                                <input class="form-control" placeholder="" formControlName="pm_totalpric" type="number"
-                                    min="0" required />
+                                <label for="pm_totalpric">ยอดเงินที่ชำระ</label>
+                                <input class="form-control" placeholder="" formControlName="pm_totalpric"
+                                    disabled="disabled" type="number" min="0" required />
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="pm_date">รายละเอียด</label>
-                            <textarea class="form-control" formControlName="pm_date" rows="3"></textarea>
-                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="pm_date">วันที่ทำการจ่ายเงิน</label>
+                                <textarea class="form-control" formControlName="pm_date" placeholder="" disabled="disabled"
+                                    rows=""></textarea>
+                            </div>
 
-                        <div class="form-group col-md-5">
+                            <!-- <div class="form-group col-md-5">
                             <label for="tracking_no">เลขพัสดุ</label>
                             <input class="form-control" placeholder="" formControlName="tracking_no" type="text"
                                 required />
+                        </div> -->
+
+
+                            <div class="form-group col-md-3">
+                                <label for="pm_status">สถานะการชำระเงิน</label>
+                                <input class="form-control" placeholder="" formControlName="pm_status" type="text"
+                                    disabled="disabled" required />
+                            </div>
                         </div>
-
-
-                        <div class="form-group col-md-5">
-                            <label for="pm_status">สถานะ</label>
-                            <input class="form-control" placeholder="" formControlName="pm_status" type="text"
-                                required />
-                        </div>
-
 
                         <div class="row">
                             <div class="col text-center">
-                                <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
+                                <!-- <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
                                     ตกลง
-                                </button> &nbsp;
+                                </button> &nbsp; -->
                                 <button class="btn btn-lg btn-outline-danger" routerLink="/user/payment">
                                     ยกเลิก
                                 </button>

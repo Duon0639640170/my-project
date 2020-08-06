@@ -1,9 +1,16 @@
 <div class="container">
    
     <a href="#" class="float " routerLink="/user/status">
-       <p class="my-float">เพิ่ม</p> 
+       <p class="my-float">เพิ่มสินค้า</p> 
     </a>
 
+    <a href="#" class="doshop " routerLink="">
+        <p class="my-doshop">ข้อมูลร้าน</p> 
+     </a>
+
+     <a href="#" class="editshop " routerLink="">
+        <p class="my-editshop">แก้ไขข้อมูลร้าน</p> 
+     </a>
 
     <div class="card text-center">
         <div class="card-header">
@@ -13,7 +20,7 @@
             <div class="container">
                 <div class="row">
                     <div *ngFor="let data of productList" class="col-xl-4">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card" style="width: 15rem;">
                             <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top" alt="{{data.pd_img}}">
                             <div class="card-body">
                                 <h5 class="card-title">ชื่อสินค้า : {{data.pd_name}}</h5>

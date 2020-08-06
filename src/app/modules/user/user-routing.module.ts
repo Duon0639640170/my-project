@@ -13,6 +13,8 @@ import { UserDoparcelComponent } from './user-doparcel/user-doparcel.component';
 import { UserReportComponent } from './user-report/user-report.component';
 import { UserEditprofileComponent } from './user-editprofile/user-editprofile.component';
 import { UserEditpaymentComponent } from './user-editpayment/user-editpayment.component';
+import { UserOrderComponent } from './user-order/user-order.component';
+import { UserDoorderComponent } from './user-doorder/user-doorder.component';
 
 const routes: Routes = [
     { path: '', component: UserHomeComponent },
@@ -29,6 +31,9 @@ const routes: Routes = [
     { path: 'report', component: UserReportComponent },
     { path: 'editprofile/:id', component: UserEditprofileComponent },
     { path: 'editpayment/:pm_id', component: UserEditpaymentComponent },
+    { path: 'order', component: UserOrderComponent },
+    { path: 'doorder/:order_id', component: UserDoorderComponent },
+    
     
     
 ];

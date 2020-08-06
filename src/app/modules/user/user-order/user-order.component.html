@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <table class="table table-hover bg-light">
+            <thead>
+                <tr>
+
+                    <th scope="col">หมายเลขออเดอร์</th>
+                    <th scope="col">รหัสสินค้า</th>
+                    <th scope="col">จำนวนสินค้า</th>
+                    <th scope="col">วันที่สั่งซื้อ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of orderList">
+
+                    <td>
+                        {{data.order_id}}
+                    </td>
+                    
+                    <td>
+                        {{data.pd_id}}
+                    </td>
+                    <td>
+                        {{data.order_number}}
+                    </td>
+                    <td>
+                        {{data.order_date}}
+                    </td>
+                
+                    <td>
+                        <button type="button" class="btn btn-outline-warning"
+                            [routerLink]="['/user/doorder', data.order_id]" routerLinkActive="router-link-active">
+                            ดูรายละเอียด
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

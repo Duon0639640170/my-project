@@ -35,7 +35,7 @@ export class UserHomeComponent implements OnInit {
       console.log('LOGGGG LISTSHOP', data);
       this.productList = data
     });
-  };
+  }
 
   onDoproduct(data) {
     this.shaerdService.getProductByPD_id(data.pd_id).subscribe((res) => {

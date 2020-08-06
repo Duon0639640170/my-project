@@ -1,60 +1,73 @@
 <div class="container">
-    <div class="card ">
+    <div class="card">
         <div class="card-body">
-            <ul class="nav navbar-nav navbar-right">
-                <div class="col-xl-5">
-                    <div class="card" style="width: 18rem;" class="card-body text-center">
-                        <h2>ร้านฉัน</h2>
+            <!-- <ul class="nav navbar-nav navbar-right"> -->
+            <div class="card" style="width: 18rem;" class="card-body text-center">
+                <h2 class="text-center">เพิ่มสินค้า</h2>
+            </div>
+            <!-- <div class="col-xl-5"> -->
+
+            <form [formGroup]="statusForm" accept-charset="UTF-8" autocomplete="off" >
+                <fieldset class="body-body-center">
+
+                    <div class="form-group col-md-5">
+                        <label for="pd_img">เพิ่มรูปภาพ</label>
+                        <input type="text" id="disabledTextInput" class="text-center" class="form-control"
+                            formControlName="pd_img" placeholder="">
                     </div>
-                    <form [formGroup]="statusForm" accept-charset="UTF-8" autocomplete="off">
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="pd_img">เพิ่มรูปภาพ</label>
-                                <input type="text" id="disabledTextInput" class="form-control" formControlName="pd_img" placeholder="">
+
+                   
+                        <div class="form-group col-md-5">
+                            <label for="pd_name">ชื่อสินค้า</label>
+                            <input class="form-control" placeholder="" formControlName="pd_name" type="text" required>
+                        </div>
+                   
+                    <div class="form-group col-md-5">
+                        <label for="shop_address">ที่อยู่ร้าน</label>
+                        <input class="form-control" placeholder="" formControlName="shop_address" type="text"
+                            required>
+                    </div>
+                    <div class="row">
+                        <div class="form-row col-md-5">
+                            <div class="form-group col-md-4">
+                                <label for="shop_tel">เบอร์โทร</label>
+                                    <input class="form-control" placeholder="" formControlName="shop_tel" type="text"
+                                        required>
                             </div>
 
-
-                            <div class="form-group">
-                                <label for="pd_name">ชื่อสินค้า</label>
-                                <input class="form-control" placeholder="" formControlName="pd_name" type="text"
-                                    required>
-                            </div>
-
-                            <label for="shop_address">ที่อยู่ร้าน</label>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="" formControlName="shop_address" type="text"
-                                    required>
-                            </div>
-
-                            <label for="shop_tel">เบอร์โทร</label>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="" formControlName="shop_tel" type="text"
-                                    required>
-                            </div>
-
-                            <div class="form-group">
+                            <div class="form-group col-md-4">
                                 <label for="pd_price">ราคา</label>
                                 <input class="form-control" placeholder="" formControlName="pd_price" type="text"
                                     required>
                             </div>
 
-                            <label for="pd_details">รายละเอียด</label>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="" formControlName="pd_details" type="text"
-                                    required>
+                            <div class="form-group  col-md-4">
+                                <label for="pd_number">จำนวน</label>
+                                <input class="form-control" placeholder="" formControlName="pd_number" type="number"
+                                    min="0" required />
                             </div>
-                            <p>
-                                <button class="btn btn-lg btn-outline-success btn-block " (click)="submitForm()">
-                                    ตกลง
-                                </button>
-                                <button class="btn btn-lg btn-outline-danger btn-block " routerLink="/user/home">
-                                    ยกเลิก
-                                </button>
-                            </p>
-                        </fieldset>
-                    </form>
-                </div>
-            </ul>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-5">
+                        <label for="pd_details">รายละเอียด</label>
+                        <textarea class="form-control" formControlName="pd_details" rows="3"></textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="col text-center ">
+                            <button class="btn btn-lg btn-outline-success " (click)="submitForm()">
+                                ตกลง
+                            </button>
+                            <button class="btn btn-lg btn-outline-danger " routerLink="/user/home">
+                                ยกเลิก
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <!-- </div> -->
+            <!-- </ul> -->
         </div>
     </div>
 </div>

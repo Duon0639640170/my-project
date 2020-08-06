@@ -2,9 +2,10 @@
 .float{
 	z-index: 1;
 	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
+	width:70px;
+	height:70px;
+	bottom:60px;
+	margin-bottom: 12em;
 	right:40px;
 	background-color:#28a745;
 	color:#FFF;
@@ -14,5 +15,43 @@
 }
 
 .my-float{
+	margin-top:22px;
+}
+
+.doshop{
+	z-index: 2;
+	position:fixed;
+	width:70px;
+	height:70px;
+	bottom:60px;
+	margin-bottom: 6em;
+	right:40px;
+	background-color:#41bccc;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-doshop{
+	margin-top:22px;
+}
+
+.editshop{
+	z-index: 3;
+	position:fixed;
+	width:80px;
+	height:80px;
+	bottom:60px;
+	margin-bottom: 0em;
+	right:35px;
+	background-color:#e56f21;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-editshop{
 	margin-top:22px;
 }

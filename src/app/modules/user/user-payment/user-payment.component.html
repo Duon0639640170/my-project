@@ -1,43 +1,40 @@
-
 <div class="container">
     <div class="row">
         <table class="table table-hover bg-light">
             <thead>
                 <tr>
 
-                    <th scope="col">ชื่อผู้ซื้อ</th>
-                    <th scope="col">จำนวนเงิน</th>
-                    <th scope="col">สลิป</th>
-                    <th scope="col">รายละเอียด</th>
-                    <th scope="col">เลขพัสดุ</th>
-                    <th scope="col">สถานะ</th>
+                    <th scope="col">หมายเลขคำสั่งซืื้อ</th>
+                    <th scope="col">ยอดเงินที่ชำระ</th>
+                    <th scope="col">วันที่ทำการจ่ายเงิน</th>
+                    <!-- <th scope="col">รหัสติดตามพัสดุ</th> -->
+                    <th scope="col">สถานะการชำระเงิน</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let data of paymentList"   [routerLink]="['/user/editpayment', data.pm_id]"
-                routerLinkActive="router-link-active"  >
-                   
+                <tr *ngFor="let data of paymentList">
+
                     <td>
-                        {{data.id}}
+                        {{data.pm_no}}
                     </td>
                     <td>
                         {{data.pm_totalpric}}
                     </td>
                     <td>
-                        {{data.pm_img}}
-                    </td>
-                    <td>
                         {{data.pm_date}}
                     </td>
-                    <td>
+                    <!-- <td>
                         {{data.tracking_no}}
-                    </td>
+                    </td> -->
                     <td>
                         {{data.pm_status}}
                     </td>
-                   
-                    
-                   
+                    <td>
+                        <button type="button" class="btn btn-outline-warning"
+                            [routerLink]="['/user/editpayment', data.pm_id]" routerLinkActive="router-link-active">
+                            ดูรายละเอียด
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>

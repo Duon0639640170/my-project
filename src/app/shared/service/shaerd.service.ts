@@ -61,6 +61,10 @@ export class ShaerdService {
     return this.http.get<any>(this.API_URL + '/shop');
   }
 
+  public deleteShopByShop_id(pdId: any) {
+    return this.http.delete<any>(this.API_URL + '/shop/' + pdId);
+  }
+
   public getAllShopByShop(body: any) {
     console.log('LOGG >>> getAllShopByShop()>::', this.API_URL + '/shop/' + `${body}`); // http://localhost:9081/it-api/shop/&{3}
 
@@ -87,16 +91,26 @@ export class ShaerdService {
     return this.http.delete<any>(this.API_URL + '/product/' + pdId);
   }
   
+  public getOrderByOrder(body: any) {
+    return this.http.get<any>(this.API_URL + '/order/' + `${body}`);
+  }
+ 
+  public getAllOrder() {
+    return this.http.get<any>(this.API_URL + '/order');
+  }
 
 //http://localhost:9000/user/{username}
   // http://localhost:9000/user/all
   // http://localhost:9081/it-api/order/save
   //http://localhost:9081/it-api/shop/save
   // http://localhost:9081/it-api/shop
+  //http://localhost:9081/it-api/shop
   //http://localhost:9081/it-api/product
   //http://localhost:9081/it-api/product/getAllProduct
 //http://localhost:9081/it-api/product/update
 //http://localhost:9081/it-api/payment
 //http://localhost:9081/it-api/payment/save
 //http://localhost:9081/it-api/product/delete
+//http://localhost:9081/it-api/order/{shop_id}
+//http://localhost:9081/it-api/order
 }

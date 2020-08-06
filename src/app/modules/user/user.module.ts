@@ -16,6 +16,8 @@ import { UserReportComponent } from './user-report/user-report.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserEditprofileComponent } from './user-editprofile/user-editprofile.component';
 import { UserEditpaymentComponent } from './user-editpayment/user-editpayment.component';
+import { UserOrderComponent } from './user-order/user-order.component';
+import { UserDoorderComponent } from './user-doorder/user-doorder.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { UserEditpaymentComponent } from './user-editpayment/user-editpayment.co
     UserReportComponent,
     UserEditprofileComponent,
     UserEditpaymentComponent,
+    UserOrderComponent,
+    UserDoorderComponent,
   ],
 
   imports: [

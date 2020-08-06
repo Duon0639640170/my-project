@@ -23,6 +23,7 @@ export class UserStatusComponent implements OnInit {
       shop_address: ['', [Validators.required]],
       shop_tel: ['', [Validators.required]],
       pd_price: ['', [Validators.required]],
+      pd_number: ['', [Validators.required]],
       pd_details: ['', [Validators.required]],
 
     });
@@ -42,6 +43,7 @@ export class UserStatusComponent implements OnInit {
     // register
     this.shaerdService.saveProduct(this.statusForm.value).subscribe((res) => {
       console.log('LOGGGG LISTSHOP', res);
+      window.location.reload();
     });
     }
   }

@@ -8,28 +8,36 @@
                     <th scope="col">รูปร้าน</th>
                     <th scope="col">ที่อยู่ร้าน</th>
                     <th scope="col">เบอร์โทรร้าน</th>
+                    <th scope="col">ชื่อบัญชี</th>
+                    <th scope="col">เลขบัญชี</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let data of dataList">
+                <tr *ngFor="let shop of shopList" >
                     <!-- <td>
                         {{data.shop_nameFull}}
                     </td> -->
                     <td>
-                        {{data.shop_name}}
+                        {{shop.shop_name}}
                     </td>
                     <td>
-                        {{data.shop_img}}
+                        {{shop.shop_img}}
                     </td>
                     <td>
-                        {{data.shop_address}}
+                        {{shop.shop_address}}
                     </td>
                     <td>
-                        {{data.shop_tel}}
+                        {{shop.shop_tel}}
+                    </td>
+                    <td>
+                        {{shop.bank_name}}
+                    </td>
+                    <td>
+                        {{shop.bank_account_no}}
                     </td>
                     <td>
 
-                        <button class="btn btn-lg btn-danger btn-block " (click)="deleteData(data)">
+                        <button  type="button" class="btn btn-outline-danger" (click)="deleteData(shop)">
                        ลบ
                         </button>
                     </td>
