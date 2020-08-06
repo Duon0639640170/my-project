@@ -39,7 +39,7 @@ export class UserStatusComponent implements OnInit {
   } else { // case success
     console.log(this.statusForm.value);
     console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.statusForm.value);
-    this.router.navigate(['/user/homeshop']);
+    this.router.navigate(['/user/shopme']);
     // register
     this.shaerdService.saveProduct(this.statusForm.value).subscribe((res) => {
       console.log('LOGGGG LISTSHOP', res);

@@ -18,6 +18,8 @@ import { UserEditprofileComponent } from './user-editprofile/user-editprofile.co
 import { UserEditpaymentComponent } from './user-editpayment/user-editpayment.component';
 import { UserOrderComponent } from './user-order/user-order.component';
 import { UserDoorderComponent } from './user-doorder/user-doorder.component';
+import { UserDoshopComponent } from './user-doshop/user-doshop.component';
+import { UserEditshopComponent } from './user-editshop/user-editshop.component';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { UserDoorderComponent } from './user-doorder/user-doorder.component';
     UserEditpaymentComponent,
     UserOrderComponent,
     UserDoorderComponent,
+    UserDoshopComponent,
+    UserEditshopComponent,
   ],
 
   imports: [

@@ -15,6 +15,7 @@ import { UserEditprofileComponent } from './user-editprofile/user-editprofile.co
 import { UserEditpaymentComponent } from './user-editpayment/user-editpayment.component';
 import { UserOrderComponent } from './user-order/user-order.component';
 import { UserDoorderComponent } from './user-doorder/user-doorder.component';
+import { UserDoshopComponent } from './user-doshop/user-doshop.component';
 
 const routes: Routes = [
     { path: '', component: UserHomeComponent },
@@ -33,6 +34,9 @@ const routes: Routes = [
     { path: 'editpayment/:pm_id', component: UserEditpaymentComponent },
     { path: 'order', component: UserOrderComponent },
     { path: 'doorder/:order_id', component: UserDoorderComponent },
+    { path: 'doshop', component: UserDoshopComponent },
+    { path: 'editshop', component: UserDoshopComponent },
+    
     
     
     
