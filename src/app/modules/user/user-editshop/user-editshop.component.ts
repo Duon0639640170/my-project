@@ -42,29 +42,31 @@ export class UserEditshopComponent implements OnInit {
 
   }
 
+
   getUrlImg(): string {
     return this.API_URL_IMG + this.shop_img
   }
 
   initFormGroup() {
     this.editshopForm = this.fb.group({
-      shop_id:[''],
+      shop_id: [''],
       shop_img: ['', [Validators.required]],
       shop_address: ['', [Validators.required]],
       shop_tel: ['', [Validators.required]],
       bank_name: ['', [Validators.required]],
       bank_account_no: ['', [Validators.required]],
     });
+   
   }
 
   async patchValueForm() {
     // get pd_id in request parameter router
-    this.shop_id = this.activatedroute.snapshot.paramMap.get("shop_id");
+    this.shop_id =  localStorage.getItem('shop');
     console.log('patchValueForm : shop_id => ', this.shop_id);
 
-    await this.shaerdService.getAllShopByShop(this.shop_id).subscribe((res) => {
+    await this.shaerdService.getShopByShop_id(this.shop_id).subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
-     
+
       // patch value to form
       this.editshopForm.patchValue({
         shop_id: res.shop_id,
@@ -113,5 +115,5 @@ export class UserEditshopComponent implements OnInit {
     }
   }
 
- 
+
 }

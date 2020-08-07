@@ -47,6 +47,8 @@ export class UserShopmeComponent implements OnInit {
     });
   }
 
+  
+
 
   private getDataCard() {
     const data = [

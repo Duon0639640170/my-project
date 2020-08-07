@@ -26,6 +26,14 @@ export class ShaerdService {
     return this.http.post<any>(`${http}` + '/user/save', body, this.httpOption);
   }
 
+  public updateProduct(body: any) {
+    const http = 'http://localhost:9081';
+    return this.http.post<any>(`${http}` + '/it-api/product/update', body, this.httpOption);
+  }
+
+
+ 
+
   public saveshop(body: any) {
     const http = 'http://localhost:9081';
     return this.http.post<any>(`${http}` + '/it-api/shop/save', body, this.httpOption);
@@ -34,9 +42,9 @@ export class ShaerdService {
     const http = 'http://localhost:9081';
     return this.http.post<any>(`${http}` + '/it-api/product/save', body, this.httpOption);
   }
-  public updateProduct(body: any) {
+  public updateShop(body: any) {
     const http = 'http://localhost:9081';
-    return this.http.post<any>(`${http}` + '/it-api/product/update', body, this.httpOption);
+    return this.http.post<any>(`${http}` + '/it-api/shop/update', body, this.httpOption);
   }
   public updatePayment(body: any) {
     const http = 'http://localhost:9081';
@@ -65,11 +73,15 @@ export class ShaerdService {
     return this.http.delete<any>(this.API_URL + '/shop/' + pdId);
   }
 
-  public getAllShopByShop(body: any) {
-    console.log('LOGG >>> getAllShopByShop()>::', this.API_URL + '/shop/' + `${body}`); // http://localhost:9081/it-api/shop/&{3}
-
+  public getShopByShop_id(body: any) {
     return this.http.get<any>(this.API_URL + '/shop/' + `${body}`);
   }
+
+  // public getShopByShop_id(body: any) {
+  //   console.log('LOGG >>> getShopByShop_id()>::', this.API_URL + '/shop/' + `${body}`); // http://localhost:9081/it-api/shop/&{3}
+
+  //   return this.http.get<any>(this.API_URL + '/shop/' + `${body}`);
+  // }
 
   public getProductByPD_id(body: any) {
     return this.http.get<any>(this.API_URL + '/product/' + `${body}`);
@@ -105,6 +117,7 @@ export class ShaerdService {
   //http://localhost:9081/it-api/shop/save
   // http://localhost:9081/it-api/shop
   //http://localhost:9081/it-api/shop
+ // http://localhost:9081/it-api/shop/update
   //http://localhost:9081/it-api/product
   //http://localhost:9081/it-api/product/getAllProduct
 //http://localhost:9081/it-api/product/update

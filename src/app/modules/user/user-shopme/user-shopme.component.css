@@ -2,11 +2,11 @@
 .float{
 	z-index: 1;
 	position:fixed;
-	width:70px;
-	height:70px;
+	width:80px;
+	height:80px;
 	bottom:60px;
-	margin-bottom: 12em;
-	right:40px;
+	margin-bottom: 11em;
+	right:39px;
 	background-color:#28a745;
 	color:#FFF;
 	border-radius:50px;
@@ -21,11 +21,11 @@
 .doshop{
 	z-index: 2;
 	position:fixed;
-	width:70px;
-	height:70px;
+	width:80px;
+	height:80px;
 	bottom:60px;
-	margin-bottom: 6em;
-	right:40px;
+	margin-bottom: 5.5em;
+	right:39px;
 	background-color:#41bccc;
 	color:#FFF;
 	border-radius:50px;
@@ -53,5 +53,24 @@
 }
 
 .my-editshop{
+	margin-top:22px;
+}
+
+.homeshop{
+	z-index: 3;
+	position:fixed;
+	width:80px;
+	height:80px;
+	bottom:60px;
+	margin-bottom: 16.6em;
+	right:35px;
+	background-color:#f10b1aa6;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-homeshop{
 	margin-top:22px;
 }

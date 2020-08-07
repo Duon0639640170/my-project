@@ -33,13 +33,13 @@ export class UserDoshopComponent implements OnInit {
   ngOnInit(): void {
 
     // init form group
-    this.initFormGroup()
+    this.initFormGroup();
 
     // patch value in response api to form 
-    this.patchValueForm()
+    this.patchValueForm();
 
     // initShopSelect
-    this.initShopSelect()
+    this.initShopSelect();
 
   }
 
@@ -49,7 +49,7 @@ export class UserDoshopComponent implements OnInit {
 
   initFormGroup() {
     this.doproductForm = this.fb.group({
-      shop_id:[''],
+      shop_id: [''],
       shop_img: ['', [Validators.required]],
       shop_address: ['', [Validators.required]],
       shop_tel: ['', [Validators.required]],
@@ -60,10 +60,10 @@ export class UserDoshopComponent implements OnInit {
 
   async patchValueForm() {
     // get shop_id in request parameter router
-    this.shop_id = this.activatedroute.snapshot.paramMap.get("shop_id");
+    this.shop_id =  localStorage.getItem('shop');
     console.log('patchValueForm : shop_id => ', this.shop_id);
 
-    await this.shaerdService.getAllShopByShop(this.shop_id).subscribe((res) => {
+    await this.shaerdService.getShopByShop_id(this.shop_id).subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
      
       // patch value to form
@@ -95,6 +95,23 @@ export class UserDoshopComponent implements OnInit {
     });
   }
 
-  get form() { return this.doshopForm.controls; }
+ 
   
+  submitForm() {
+    // debugger
+    // case notfound in condition
+    if (this.doshopForm.invalid) {
+      return false;
+
+    } else { // case success
+      console.log(this.doshopForm.value);
+      console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.doshopForm.value);
+      this.router.navigate(['/user/shopme']);
+      // register
+      this.shaerdService.updateShop(this.doshopForm.value).subscribe((res) => {
+        console.log('LOGGGG LISTSHOP', res);
+      });
+    }
+  }
+  // get form() { return this.doshopForm.controls; }
 }

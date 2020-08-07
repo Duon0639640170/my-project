@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ShaerdService } from 'src/app/shared/service/shaerd.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-register',
@@ -12,7 +13,8 @@ export class HomeRegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private shaerdService: ShaerdService
+    private shaerdService: ShaerdService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -37,6 +39,7 @@ export class HomeRegisterComponent implements OnInit {
     } else { // case success
       console.log(this.registerForm.value);
       console.log('LOG DATA FN() >>>submitForm<<<::', this.registerForm.value);
+      this.router.navigate(['/home/login']);
       // register
       this.shaerdService.register(this.registerForm.value).subscribe(
         (error) => console.log(error)

@@ -1,3 +1,72 @@
+
+<div class="container">
+    <div class="card ">
+        <div class="card-body">
+            <ul class="nav navbar-nav navbar-right">
+                <form [formGroup]="editshopForm" accept-charset="UTF-8" autocomplete="off">
+                    <fieldset>
+                        <div class="col-4 mx-auto text-center">
+                            <div class="card" style="width: 18rem;">
+                                <img [src]="API_URL_IMG + shop_img" class="card-img-top" alt="...">
+                            </div>
+                        </div><br>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                                <label for="inputEmail4">ชื่อร้าน</label>
+                                <select class="custom-select" (change)="changShopSelected($event.target.value)"
+                                    formControlName="shop_id" [value]="form.shop_id" >
+                                    <option selected>Open this select menu</option>
+                                    <option *ngFor="let shop of shopList" [value]="shop.shop_id">{{shop.shop_name}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label for="shop_address">ที่อยู่ร้าน</label>
+                                <input class="form-control" placeholder="" formControlName="shop_address" type="text"
+                                 required />
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="shop_tel">เบอร์โทร</label>
+                                <input class="form-control" placeholder="" formControlName="shop_tel" type="number"
+                                    min="0"  required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bank_name">ชื่อธนาคาร</label>
+                            <textarea class="form-control" formControlName="bank_name" rows="3" ></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group  col-md-4">
+                                <label for="bank_account_no">บัญชีธนาคาร</label>
+                                <input class="form-control" placeholder="" formControlName="bank_account_no" type="number"
+                                    min="0"  required />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col text-center">
+                                 <button class="btn btn-lg btn-outline-success"(click)="submitForm()" >
+                                    ตกลง
+                                </button> &nbsp; 
+                                <button class="btn btn-lg btn-outline-danger" routerLink="/user/shopme">
+                                    ยกเลิก
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </ul>
+        </div>
+    </div>
+</div> 
+ 
+
+
+
+<!-- 
 <div class="container">
     <div class="card ">
         <div class="card-body">
@@ -13,11 +82,11 @@
                         <div class="form-group col-md-5">
                             <label for="">ชื่อร้าน</label>
                             <input class="form-control" placeholder="" formControlName="shop_name" type="text"
-                                required />
+                               required />
                         </div>
                         <div class="form-group col-md-2">
                             <label for="">ที่อยู่ร้าน</label>
-                            <input class="form-control" placeholder="" formControlName="shop_address	" type="text"
+                            <input class="form-control" placeholder="" formControlName="shop_address" type="text"
                             required>
                         </div>
 
@@ -40,9 +109,9 @@
                         </div>
                         <div class="row">
                             <div class="col text-center">
-                                <!-- <button class="btn btn-lg btn-outline-success"routerLink="/user/home" >
+                                 <button class="btn btn-lg btn-outline-success"routerLink="/user/home" >
                                     ตกลง
-                                </button> &nbsp; -->
+                                </button> &nbsp; 
                                 <button class="btn btn-lg btn-outline-danger" routerLink="/user/shopme">
                                     ยกเลิก
                                 </button>
@@ -53,4 +122,4 @@
             </ul>
         </div>
     </div>
-</div>
+</div> -->
