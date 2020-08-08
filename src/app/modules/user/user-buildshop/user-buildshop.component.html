@@ -1,61 +1,56 @@
 <div class="container">
-  <div class="card ">
-    <div class="card-body">
-      <ul class="nav navbar-nav navbar-right">
-        <div class="col-xl-5">
-          <div class="card" style="width: 18rem;" class="card-body text-center">
-            <h2>สร้างร้าน</h2>
-          </div>
-          <div class="alert alert-danger" role="alert">
-            *หมายเหตุ หากทำการสร้างร้านทางระบบจะทำการหัก <a href="#" class="alert-link">5%</a> ทุกสิ้นเดือน
-          </div>
-
-          <form [formGroup]="buildshopForm" accept-charset="UTF-8" autocomplete="off">
-
-            <fieldset>
-              <div class="form-group">
-                <label for="shop_img">เพิ่มรูปภาพ</label>
-                <input type="text" id="shop_img" class="form-control" placeholder="" formControlName="shop_img">
-              </div>
-
-
-              <div class="form-group">
-                <label for="shop_name">ชื่อร้าน</label>
-                <input class="form-control" placeholder="" formControlName="shop_name" type="text" required>
-              </div>
-
-              <label for="shop_address">ที่อยู่ร้าน</label>
-              <div class="form-group">
-                <input class="form-control" placeholder="" formControlName="shop_address" type="text" required>
-              </div>
-
-              <label for="shop_tel">เบอร์โทร</label>
-              <div class="form-group">
-                <input class="form-control" placeholder="" formControlName="shop_tel" type="text" required>
-              </div>
-
-              <label for="bank_name">ชื่อธนาคาร</label>
-              <div class="form-group">
-                <input class="form-control" placeholder="" formControlName="bank_name" type="text" required>
-              </div>
-
-              <label for="bank_account_no">บัญชีธนาคาร</label>
-              <div class="form-group">
-                <input class="form-control" placeholder="" formControlName="bank_account_no" type="text" required>
-              </div>
-
-              <p>
-                <button class="btn btn-lg btn-outline-success btn-block" (click)="submitForm()">
-                  ตกลง
-                </button>
-                <button class="btn btn-lg btn-outline-danger btn-block" routerLink="/user/home">
-                  ยกเลิก
-                </button>
-              </p>
-            </fieldset>
-          </form>
+  <div class="col-md-10 offset-md-1">
+    <div class="card col-md-9 offset-md-2">
+      <div class="card-body">
+          <h2 class="text-center">สร้างร้าน</h2><br>
+        <div class="alert alert-danger" role="alert">
+          *หมายเหตุ หากทำการสร้างร้านทางระบบจะทำการหัก <a href="#" class="alert-link">5%</a> ทุกสิ้นเดือน
         </div>
-      </ul>
+
+        <form [formGroup]="buildshopForm" accept-charset="UTF-8" autocomplete="off" class="col-md-9 offset-md-1">
+
+          <fieldset>
+            <div class="form-group">
+              <label for="shop_img">เพิ่มรูปภาพ</label>
+              <input type="text" id="shop_img" class="form-control" placeholder="" formControlName="shop_img">
+            </div>
+
+
+            <div class="form-group">
+              <label for="shop_name">ชื่อร้าน</label>
+              <input class="form-control" placeholder="" formControlName="shop_name" type="text" required>
+            </div>
+
+            <label for="shop_address">ที่อยู่ร้าน</label>
+            <div class="form-group">
+              <input class="form-control" placeholder="" formControlName="shop_address" type="text" required>
+            </div>
+
+            <label for="shop_tel">เบอร์โทร</label>
+            <div class="form-group">
+              <input class="form-control" placeholder="" formControlName="shop_tel" type="text" required>
+            </div>
+
+            <label for="bank_name">ชื่อธนาคาร</label>
+            <div class="form-group">
+              <input class="form-control" placeholder="" formControlName="bank_name" type="text" required>
+            </div>
+
+            <label for="bank_account_no">บัญชีธนาคาร</label>
+            <div class="form-group">
+              <input class="form-control" placeholder="" formControlName="bank_account_no" type="text" required>
+            </div>
+          </fieldset>
+        </form>
+         <p class="text-center">
+              <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
+                ตกลง
+              </button>&nbsp; 
+              <button class="btn btn-lg btn-outline-danger" routerLink="/user/home">
+                ยกเลิก
+              </button>
+            </p>
+      </div>
     </div>
   </div>
 </div>

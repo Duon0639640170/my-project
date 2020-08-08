@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="card ">
+        <div class="card-body">
+
+            <div class="card-header">
+                <h2 class="float-none" class="text-center">รายละเอียดการชำระเงิน</h2>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <form [formGroup]="checkpaymentForm" accept-charset="UTF-8" autocomplete="off">
+                    <fieldset>
+                        <div class="col-4 mx-auto text-center">
+                            <!-- <div class="card" style="width: 18rem;">
+                                <img [src]="API_URL_IMG + pm_img" class="card-img-top" alt="...">
+                            </div> -->
+                        </div><br>
+                        <div class="col-4 mx-auto text-center">
+                            <div class="form-group text-center">
+                                <label for="pm_img">สลิป</label>
+                                <div class="card" style="width: 18rem;">
+                                    <img [src]="API_URL_IMG + pm_img" class="card-img-top" cl alt="...">
+                                </div>
+                                <!-- <textarea class="form-control" formControlName="pm_img" rows="3" ></textarea> -->
+                            </div>
+                        </div><br>
+
+                        <div class="form-row">
+
+                            <div class="form-group col-md-5">
+                                <label for="id">ชื่อผู้ซื้อ</label>
+                                <input class="form-control" placeholder="" formControlName="id" type="text"
+                                    required />
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="pm_totalpric">ยอดเงินที่ชำระ</label>
+                                <input class="form-control" placeholder="" formControlName="pm_totalpric"
+                                     type="number" min="0" required />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="pm_date">วันที่ทำการจ่ายเงิน</label>
+                                <textarea class="form-control" formControlName="pm_date" placeholder=""
+                                     rows=""></textarea>
+                            </div>
+
+                            <!-- <div class="form-group col-md-5">
+                            <label for="tracking_no">เลขพัสดุ</label>
+                            <input class="form-control" placeholder="" formControlName="tracking_no" type="text"
+                                required />
+                        </div> -->
+                        </div>
+
+                        <div class="form-group col-md-3" class="form-check">
+                            <label for="pm_status">สถานะการชำระเงิน</label><br>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                formControlName="pm_status" name="pm_status" value="Y" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                จ่ายแล้ว
+                            </label>
+                            <br>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                formControlName="pm_status" name="pm_status" value="N">
+                            <label class="form-check-label" for="exampleRadios1">
+                                ยังไม่จ่าย
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col text-center">
+                                <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
+                                    ตกลง
+                                </button> &nbsp;
+                                <button class="btn btn-lg btn-outline-danger" routerLink="/admin/payment">
+                                    ยกเลิก
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </ul>
+
+        </div>
+    </div>
+</div>

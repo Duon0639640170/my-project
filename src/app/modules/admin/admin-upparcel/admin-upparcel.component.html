@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="card ">
+        <div class="card-body">
+
+            <div class="card-header">
+                <h2 class="float-none" class="text-center">กรอกเลขพัสดุ</h2>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <form [formGroup]="upparcelForm" accept-charset="UTF-8" autocomplete="off">
+                    <fieldset>
+                        <div class="form-row">
+                            <div class="form-group col-md-5" >
+                                <label for="tracking_no"></label>
+                                <input class="form-control" placeholder="" formControlName="tracking_no" type="text"
+                                    required />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
+                                    ตกลง
+                                </button> &nbsp;
+                                <button class="btn btn-lg btn-outline-danger" routerLink="/admin/parcel">
+                                    ยกเลิก
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </ul>
+        </div>
+    </div>
+</div>

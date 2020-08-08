@@ -10,6 +10,8 @@ import { AdminReportComponent } from './admin-report/admin-report.component';
 import { AdminDoproductComponent } from './admin-doproduct/admin-doproduct.component';
 import { AdminSlipComponent } from './admin-slip/admin-slip.component';
 import { AdminEditprofileComponent } from './admin-editprofile/admin-editprofile.component';
+import { AdminCheckpaymentComponent } from './admin-checkpayment/admin-checkpayment.component';
+import { AdminUpparcelComponent } from './admin-upparcel/admin-upparcel.component';
 
 const routes: Routes = [
     { path: '', component: AdminHomeComponent },
@@ -22,7 +24,8 @@ const routes: Routes = [
     { path: 'doproduct', component: AdminDoproductComponent },
     { path: 'slip', component: AdminSlipComponent },
     { path: 'editprofile', component: AdminEditprofileComponent },
-    
+    { path: 'checkpayment/:pm_id', component: AdminCheckpaymentComponent },
+    { path: 'upparcel/:pm_id', component: AdminUpparcelComponent },
     
 ];
 @NgModule({

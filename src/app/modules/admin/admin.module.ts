@@ -11,6 +11,9 @@ import { AdminReportComponent } from './admin-report/admin-report.component';
 import { AdminDoproductComponent } from './admin-doproduct/admin-doproduct.component';
 import { AdminSlipComponent } from './admin-slip/admin-slip.component';
 import { AdminEditprofileComponent } from './admin-editprofile/admin-editprofile.component';
+import { AdminCheckpaymentComponent } from './admin-checkpayment/admin-checkpayment.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AdminUpparcelComponent } from './admin-upparcel/admin-upparcel.component';
 
 
 
@@ -26,12 +29,15 @@ import { AdminEditprofileComponent } from './admin-editprofile/admin-editprofile
     AdminDoproductComponent,
     AdminSlipComponent,
     AdminEditprofileComponent,
+    AdminCheckpaymentComponent,
+    AdminUpparcelComponent,
     
     
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

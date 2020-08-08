@@ -4,32 +4,32 @@
             <thead>
                 <tr>
 
-                    <th scope="col">รหัสสินค้า</th>
+                    <th scope="col">หมายเลขคำสั่งซืื้อ</th>
                     <th scope="col">ชื่อผู้ซื้อ</th>
-                    <th scope="col">ว/ด/ป ที่สั่งซื้อ</th>
-                    <th scope="col">สถานะ</th>
+                    <th scope="col">สถานะการชำระเงิน</th>
+                    <th scope="col">หมายเลขพัสดุ</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let data of dataList">
 
                     <td>
-                        {{data.pd_id}}
+                        {{data.pm_no}}
                     </td>
                     <td>
-                        {{data.name}}
-                    </td>
-                    <td>
-                        {{data.order_date}}
+                        {{data.id}}
                     </td>
                     <td>
                         {{data.pm_status}}
                     </td>
                     <td>
-                        <!-- <button class="btn btn-lg btn-success btn-block">
-                            เพิ่ม
-                        </button> -->
-
+                        {{data.tracking_no}}
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-outline-warning"
+                            [routerLink]="['/admin/upparcel', data.pm_id]" routerLinkActive="router-link-active">
+                            กรอกเลขพัสดุ
+                        </button>
                     </td>
                 </tr>
             </tbody>

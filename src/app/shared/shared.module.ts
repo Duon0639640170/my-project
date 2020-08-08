@@ -11,7 +11,7 @@ import { BoxCardComponent } from './component/box-card/box-card.component';
     CommonModule,
   ],
   exports: [
-    BoxCardComponent
+    BoxCardComponent,
   ]
 })
 export class SharedModule { }

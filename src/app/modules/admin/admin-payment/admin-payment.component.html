@@ -3,6 +3,54 @@
         <table class="table table-hover bg-light">
             <thead>
                 <tr>
+
+                    <th scope="col">หมายเลขคำสั่งซืื้อ</th>
+                    <th scope="col">ยอดเงินที่ชำระ</th>
+                    <th scope="col">วันที่ทำการจ่ายเงิน</th>
+                    <!-- <th scope="col">รหัสติดตามพัสดุ</th> -->
+                    <th scope="col">สถานะการชำระเงิน</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of paymentList">
+
+                    <td>
+                        {{data.pm_no}}
+                    </td>
+                    <td>
+                        {{data.pm_totalpric}}
+                    </td>
+                    <td>
+                        {{data.pm_date}}
+                    </td>
+                    <!-- <td>
+                        {{data.tracking_no}}
+                    </td> -->
+                    <td>
+                        {{data.pm_status}}
+                    </td>
+
+                    <td>
+                        <button type="button" class="btn btn-outline-warning"
+                            [routerLink]="['/admin/checkpayment', data.pm_id]" routerLinkActive="router-link-active">
+                            ตรวจสอบ
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="container">
+    <div class="row">
+        <table class="table table-hover bg-light">
+            <thead>
+                <tr>
                     <th scope="col">รหัสสินค้า</th>
                     <th scope="col">ชื่อผู้ซื้อ</th>
                     <th scope="col">ว/ด/ป สั่งซื้อ</th>
@@ -42,4 +90,4 @@
             </tbody>
         </table>
     </div>
-</div>
+</div> -->

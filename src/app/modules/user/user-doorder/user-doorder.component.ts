@@ -39,7 +39,7 @@ export class UserDoorderComponent implements OnInit {
     this.patchValueForm();
 
     // initShopSelect
-    this.initOrderSelect();
+    // this.initOrderSelect();
 
   }
 
@@ -65,7 +65,7 @@ export class UserDoorderComponent implements OnInit {
       console.log('patchValueForm : Response => ', res);
      
       // patch value to form
-      this.doproductForm.patchValue({
+      this.doorderForm.patchValue({
         order_id: res.order_id,
         id: res.id,
         pd_id: res.pd_id,
@@ -87,12 +87,12 @@ export class UserDoorderComponent implements OnInit {
 
   changOrderSelected(value: any) {
     console.log('changShopSelected : value ==> ' + value)
-    this.doproductForm.patchValue({
+    this.doorderForm.patchValue({
       id: value
     });
   }
 
-  get form() { return this.doproductForm.controls; }
+  get form() { return this.doorderForm.controls; }
 
 
 }
