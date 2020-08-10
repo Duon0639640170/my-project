@@ -55,9 +55,9 @@ export class AdminCheckpaymentComponent implements OnInit {
       pm_id: [''],
       pm_img: [''],
       pm_no: [''],
-      pm_totalpric: ['', [Validators.required]],
-      pm_date: ['', [Validators.required]],
-      tracking_no: ['', [Validators.required]],
+      pm_totalpric: [''],
+      pm_date: [''],
+      tracking_no: [''],
       pm_status: ['', [Validators.required]],
 
     });

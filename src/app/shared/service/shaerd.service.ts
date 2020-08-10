@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -53,6 +54,13 @@ export class ShaerdService {
   }
 
 
+
+  public generateReport(): any {
+    return this.http.get<any>(this.API_URL + '/report/generateReport', { responseType: 'blob' as 'json' }).pipe(map(respose => {
+      return new Blob([respose], { type: 'application/pdf' });
+    })
+    );
+  }
 
   public getUser() {
     return this.http.get<any>(this.API_URL + '/user/{username}');
@@ -123,4 +131,6 @@ export class ShaerdService {
   //http://localhost:9081/it-api/product/delete
   //http://localhost:9081/it-api/order/{shop_id}
   //http://localhost:9081/it-api/order
+
+  //http://localhost:9081/it-api/report/generateReport
 }

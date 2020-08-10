@@ -1,46 +1,65 @@
 <div class="container">
+    <div class="card">
+        <div class="col-md-10 offset-md-1">
+            <div class="col text-center"><br>
+                <div class="alert alert-warning" role="alert">
+                    รายละเอียดการสั่งซื้อสินค้า 
+                    สามารถดาวร์โหลดหรือปริ้นไฟล์ได้
+                </div>
+                <button type="button" class="btn btn-outline-warning btn-lg" (click)="submitForm() ">
+                    ไฟล์ PDF
+                </button>
+
+            </div><br>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="container">
     <div class="row">
         <table class="table table-hover bg-light">
             <thead>
                 <tr>
-                   
-                    <th scope="col">ชื่อร้าน</th>
-                    <th scope="col">รายการสินค้า</th>
-                    <th scope="col">จำนวน</th>
-                    <th scope="col">ราคา</th>
-                    <th scope="col">สลิปสั่งซื้อ</th>
-                    <th scope="col">ว/ด/ป</th>
+                    <th scope="col">รหัสสินค้า</th>
+                    <th scope="col">ชื่อผู้ซื้อ</th>
+                    <th scope="col">ว/ด/ป สั่งซื้อ</th>
+                    <th scope="col">ยอดรวม</th>
+                    <th scope="col">สลิปการโอน</th>
+                    <th scope="col">แนบสลิปการโอนให้ร้าน</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let data of dataList">
+                <tr *ngFor="let data of dataList" >
                    
                     <td>
-                        {{data.shop_name}}
+                        {{data.pd_id}}
                     </td>
                     <td>
-                        {{data.order_name}}
+                        {{data.first_name}}
                     </td>
                     <td>
-                        {{data.order_number}}
+                        {{data.pm_date}}
                     </td>
 
                     <td>
-                        {{data.pd_price}}
+                        {{data.pm_totalpric}}
                     </td>
                     <td>
-                        {{data.pm_img}}
+                        {{data.pd_img}}
                     </td>
-                    <td>
-                        {{data.rp_date}}
-                    </td>
+                    
                     
                     <td>
                        
-                       
+                        <button type="button" class="btn btn-outline-dark" routerLink="/admin/slip" >
+                            แนบสลิป
+                        </button>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-</div>
+</div> -->
