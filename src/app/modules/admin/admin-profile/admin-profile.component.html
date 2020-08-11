@@ -1,63 +1,76 @@
-<div class="aUyidf">
-    <div class="container">
-        <div class="col-md-4 offset-md-4">
-            <div class="card text-center">
+<div class="container">
+    <div class="card">
+        <ul class="nav navbar-nav navbar-right">
+            <div class="card ">
                 <div class="card-body">
-                    <h5 class="card-title">ข้อมูลส่วนตัว</h5>
-                    <form  accept-charset="UTF-8"autocomplete="off">
+                    <h5 class="card-title text-center">ข้อมูลส่วนตัว</h5>
+                    <p class="card-text"> </p>
+                    <form [formGroup]="profileForm" accept-charset="UTF-8" autocomplete="off">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Username" formControlName="username"
-                                    type="text" required />
+                                <label for="inputEmail4">ชื่อ</label>
+                                <input class="form-control" placeholder="firstname" formControlName="first_name"
+                                    type="text" required  />
                             </div>
-                            
+
 
                             <div class="form-group">
+                                <label for="inputEmail4">นามสกุล</label>
+                                <input class="form-control" placeholder="lastname" formControlName="last_name"
+                                    type="text" required  />
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="inputEmail4">username</label>
+                                <input class="form-control" placeholder="username" formControlName="username"
+                                    type="text" required  />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail4">Password</label>
                                 <input class="form-control" placeholder="Password" formControlName="password"
-                                    type="password" required />
+                                    type="password" required  />
                             </div>
-                          
 
                             <div class="form-group">
-                                <input class="form-control" placeholder="ชื่อผู้ใช้งาน" formControlName="user_name"
-                                    type="text" required />
+                                <label for="inputEmail4">ที่อยู่</label>
+                                <input class="form-control" placeholder="ที่อยู่" formControlName="address" type="text"
+                                    required  />
                             </div>
-                          
+
 
                             <div class="form-group">
-                                <input class="form-control" placeholder="นามสกุล" formControlName="user_lastname"
-                                    type="text" required />
+                                <label for="inputEmail4">เบอร์โทร</label>
+                                <input class="form-control" placeholder="เบอร์โทร" formControlName="tel" type="text"
+                                    required  />
                             </div>
-                          
+
 
                             <div class="form-group">
-                                <input class="form-control" placeholder="ที่อยู่" formControlName="user_address"
-                                    type="text" required />
-                            </div>
-                            
-                            <div class="form-group">
-                                <input class="form-control" placeholder="เบอร์โทร" formControlName="user_tel"
-                                    type="text" required />
-                            </div>
-                           
+                                <label for="inputEmail4">เพศ</label>
+                                <input class="form-control" placeholder="เพศ" formControlName="gender" name="gender"
+                                    type="text" required  />
 
-                            <div class="form-group">
-                                <input class="form-control" placeholder="เพศ" formControlName="gender"
-                                    type="text" required name="gender" value="F" checked />
                             </div>
-                          
-                            
 
-                            <button class="btn btn-lg btn-success btn-block" routerLink="/admin/editprofile">
-                               แก้ไข
-                            </button>
-                            <button class="btn btn-lg btn-danger btn-block" routerLink="/admin/home" >
-                                ยกเลิก
-                            </button>
+                            <div class="card-title text-center">
+
+                                <button class="btn btn-lg btn-outline-warning " [routerLink]="['/admin/editprofile']"
+                                    routerLinkActive="router-link-active">
+                                    แก้ไข
+                                </button>&nbsp;
+                                <button class="btn btn-lg btn-outline-danger " routerLink="/admin/home">
+                                    ยกเลิก
+                                </button>
+                            </div>
+                            <!-- <button class="btn btn-lg btn-danger btn-block" (click)="saveOrder()">
+                                สร้างออเดอร์
+                            </button> -->
                         </fieldset>
                     </form>
                 </div>
             </div>
-        </div>
+        </ul>
     </div>
 </div>

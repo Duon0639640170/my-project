@@ -35,7 +35,7 @@ export class HomeLoginComponent implements OnInit {
       this.homeService.$userType = of(userType);
       this.router.navigate([`${userType}`]);
       localStorage.setItem('shop', '5');
-      // localStorage.setItem('uerId', '5');
+      localStorage.setItem('user', 'joy');
     }
   }
 

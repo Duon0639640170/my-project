@@ -15,7 +15,7 @@ import { AdminUpparcelComponent } from './admin-upparcel/admin-upparcel.componen
 
 const routes: Routes = [
     { path: '', component: AdminHomeComponent },
-    { path: 'profile/:id', component: AdminProfileComponent },
+    { path: 'profile', component: AdminProfileComponent },
     { path: 'shop', component: AdminShopComponent },
     { path: 'product', component: AdminProductComponent },
     { path: 'payment', component: AdminPaymentComponent },

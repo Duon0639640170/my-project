@@ -62,7 +62,7 @@ export class UserProfileComponent implements OnInit {
     this.id = this.activatedroute.snapshot.paramMap.get("id");
     console.log('patchValueForm : id => ', this.id);
 
-    await this.shaerdService.getUser().subscribe((res) => {
+    await this.shaerdService.getUser(this.username).subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
      
       // patch value to form
@@ -82,7 +82,7 @@ export class UserProfileComponent implements OnInit {
 
   }
   onEdit(data) {
-    this.shaerdService.getUser().subscribe((res) => {
+    this.shaerdService.getUser(this.username).subscribe((res) => {
       console.log('LOGGGG LISTSHOP', res);
       this.product = res;
       this.router.navigate(['/user/editprofile']);

@@ -18,8 +18,17 @@ export class ShaerdService {
     }),
   };
 
+  // public findAll(body: any) {
+  //   return this.http.get<any>(this.APIREGISTER_URL + '/user/all',);
+  // }
+
   public register(body: any) {
     return this.http.post<any>(this.APIREGISTER_URL + '/user/save', body, this.httpOption);
+  }
+
+  public update(body: any) {
+    const http = 'http://localhost:9000';
+    return this.http.post<any>(`${http}` + '/user/update', body, this.httpOption);
   }
 
   public saveresgister(body: any) {
@@ -62,12 +71,12 @@ export class ShaerdService {
     );
   }
 
-  public getUser() {
-    return this.http.get<any>(this.API_URL + '/user/{username}');
+  public getUser(username: string) {
+    return this.http.get<any>(this.APIREGISTER_URL + '/user/' + `${username}`);
   }
 
   public listUser() {
-    return this.http.get<any>(this.API_URL + '/user/all');
+    return this.http.get<any>(this.APIREGISTER_URL + '/user/all');
   }
 
   public getAllShop() {
@@ -133,4 +142,6 @@ export class ShaerdService {
   //http://localhost:9081/it-api/order
 
   //http://localhost:9081/it-api/report/generateReport
+
+  //http://localhost:9000/user/all
 }

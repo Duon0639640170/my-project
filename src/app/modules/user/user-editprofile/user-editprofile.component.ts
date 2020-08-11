@@ -10,11 +10,11 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./user-editprofile.component.css']
 })
 export class UserEditprofileComponent implements OnInit {
-  productList: Array<any>;
-  API_URL_IMG = environment.api_url + "/images/"
-  editpayment: any;
-  id: any
-  userList = [];
+  // productList: Array<any>;
+  // API_URL_IMG = environment.api_url + "/images/"
+  editprofile: any;
+  id: any;
+  username: string;
 
 
   dataCard: { img: string; deteil: string; }[];
@@ -38,7 +38,7 @@ export class UserEditprofileComponent implements OnInit {
     this.patchValueForm();
 
     // initShopSelect
-    this.initPaymentSelect();
+    // this.initPaymentSelect();
 
   }
 
@@ -59,10 +59,10 @@ export class UserEditprofileComponent implements OnInit {
 
   async patchValueForm() {
     // get pd_id in request parameter router
-    this.id = this.activatedroute.snapshot.paramMap.get("id");
-    console.log('patchValueForm : id => ', this.id);
+    this.id = this.activatedroute.snapshot.paramMap.get("user");
+    console.log('patchValueForm : username => ', this.username);
 
-    await this.shaerdService.getUser().subscribe((res) => {
+    await this.shaerdService.getUser(this.username).subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
      
       // patch value to form
@@ -82,12 +82,12 @@ export class UserEditprofileComponent implements OnInit {
     });
   }
 
-  initPaymentSelect() {
-    this.shaerdService.listUser().subscribe((res) => {
-      this.userList = res;
-    });
+  // initPaymentSelect() {
+  //   this.shaerdService.listUser().subscribe((res) => {
+  //     this.userList = res;
+  //   });
 
-  }
+  // }
 
   changShopSelected(value: any) {
     console.log('changPaymentSelected : value ==> ' + value)
@@ -108,9 +108,9 @@ export class UserEditprofileComponent implements OnInit {
     } else { // case success
       console.log(this.editprofileForm.value);
       console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.editprofileForm.value);
-      this.router.navigate(['/user/profile']);
+      this.router.navigate(['/admin/profile']);
       // register
-      this.shaerdService.updatePayment(this.editprofileForm.value).subscribe((res) => {
+      this.shaerdService.update(this.editprofileForm.value).subscribe((res) => {
         console.log('LOGGGG LISTSHOP', res);
       });
     }
