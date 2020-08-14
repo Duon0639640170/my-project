@@ -11,9 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UserDoorderComponent implements OnInit {
   [x: string]: any;
-  productList: Array<any>;
   API_URL_IMG = environment.api_url + "/images/"
-  product: any;
   order_id: any
   order_img: string = ''
   orderList = []
@@ -43,39 +41,36 @@ export class UserDoorderComponent implements OnInit {
 
   }
 
- 
-
   initFormGroup() {
     this.doorderForm = this.fb.group({
-      order_id:[''],
+      order_id: [''],
       id: ['', [Validators.required]],
+      shop_id: [''],
       pd_id: ['', [Validators.required]],
+      order_name: [''],
       order_number: ['', [Validators.required]],
       order_date: ['', [Validators.required]],
-     
+
     });
   }
 
   async patchValueForm() {
     // get pd_id in request parameter router
     this.pd_id = this.activatedroute.snapshot.paramMap.get("order_id");
-    console.log('patchValueForm : order_id => ', this.order_id);
-
-    await this.shaerdService.getOrderByOrder(this.order_id).subscribe((res) => {
+    console.log('patchValueForm : order_id => ', this.pd_id);
+    await this.shaerdService.getOrderByOrder(this.pd_id).subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
-     
       // patch value to form
       this.doorderForm.patchValue({
         order_id: res.order_id,
         id: res.id,
+        shop_id: res.shop_id,
         pd_id: res.pd_id,
+        order_name: res.order_name,
         order_number: res.order_number,
         order_date: res.order_date,
       });
-
-    
     });
-
   }
 
   initShopSelect() {

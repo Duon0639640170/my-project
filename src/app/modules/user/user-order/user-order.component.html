@@ -1,13 +1,28 @@
 <div class="container">
     <div class="row">
         <table class="table table-hover bg-light">
-            <thead>
+            <style>
+                table,
+                th,
+                td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+
+                th,
+                td {
+                    padding: 12px;
+                    text-align: center;
+                }
+            </style>
+            <thead class="alert alert-warning">
                 <tr>
 
                     <th scope="col">หมายเลขออเดอร์</th>
                     <th scope="col">รหัสสินค้า</th>
                     <th scope="col">จำนวนสินค้า</th>
                     <th scope="col">วันที่สั่งซื้อ</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>

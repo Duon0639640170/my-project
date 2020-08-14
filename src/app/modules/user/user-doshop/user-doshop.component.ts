@@ -12,11 +12,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class UserDoshopComponent implements OnInit {
   [x: string]: any;
   doshopList: Array<any>;
-  API_URL_IMG = environment.api_url + "/images/"
+  API_URL_IMG = environment.api_url + '/images/';
   doshop: any;
-  shop_id: any
-  shop_img: string = ''
-  shopList = []
+  shopId: any;
+  public shopImg: string;
+  shopList = [];
 
   dataCard: { img: string; deteil: string; }[];
 
@@ -35,7 +35,7 @@ export class UserDoshopComponent implements OnInit {
     // init form group
     this.initFormGroup();
 
-    // patch value in response api to form 
+    // patch value in response api to form
     this.patchValueForm();
 
     // initShopSelect
@@ -44,7 +44,7 @@ export class UserDoshopComponent implements OnInit {
   }
 
   getUrlImg(): string {
-    return this.API_URL_IMG + this.shop_img
+    return this.API_URL_IMG + this.shopImg;
   }
 
   initFormGroup() {
@@ -60,12 +60,12 @@ export class UserDoshopComponent implements OnInit {
 
   async patchValueForm() {
     // get shop_id in request parameter router
-    this.shop_id =  localStorage.getItem('shop');
-    console.log('patchValueForm : shop_id => ', this.shop_id);
+    this.shopId = localStorage.getItem('shop');
+    console.log('patchValueForm : shop_id => ', this.shopId);
 
-    await this.shaerdService.getShopByShop_id(this.shop_id).subscribe((res) => {
+    await this.shaerdService.getShopByShop_id(this.shopId).subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
-     
+
       // patch value to form
       this.doproductForm.patchValue({
         shop_id: res.shop_id,
@@ -76,7 +76,7 @@ export class UserDoshopComponent implements OnInit {
         bank_account_no: res.bank_account_no,
       });
 
-      this.shop_img = res.shop_img;
+      this.shopImg = res.shop_img;
     });
 
   }
@@ -89,14 +89,14 @@ export class UserDoshopComponent implements OnInit {
   }
 
   changShopSelected(value: any) {
-    console.log('changShopSelected : value ==> ' + value)
+    console.log('changShopSelected : value ==> ' + value);
     this.doproductForm.patchValue({
       shop_id: value
     });
   }
 
- 
-  
+
+
   submitForm() {
     // debugger
     // case notfound in condition

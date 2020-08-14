@@ -37,10 +37,6 @@ const routes: Routes = [
     { path: 'doorder/:order_id', component: UserDoorderComponent },
     { path: 'doshop', component: UserDoshopComponent },
     { path: 'editshop', component: UserEditshopComponent },
-    
-    
-    
-    
 ];
 
 @NgModule({

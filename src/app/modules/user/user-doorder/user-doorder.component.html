@@ -6,49 +6,59 @@
             </div><br>
             <ul class="nav navbar-nav navbar-right">
                 <form [formGroup]="doorderForm" accept-charset="UTF-8" autocomplete="off">
-                    <fieldset>
+                    <!-- <fieldset> -->
 
-                        <div class="form-row">
+                    <div class="form-row">
 
-                            <div class="form-group col-md-5">
-                                <label for="">ชื่อผู้ซื้อ</label>
-                                <input class="form-control" placeholder="" formControlName="id" type="text"
-                                    disabled="disabled" required />
-                            </div>
-
-                            <div class="form-group col-md-5">
-                                <label for="order_id">หมายเลขออเดอร์</label>
-                                <input class="form-control" placeholder="" formControlName="order_id" type="text"
-                                    disabled="disabled" required />
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-2">
-                                <label for="pd_id">รหัสสินค้า</label>
-                                <input class="form-control" placeholder="" formControlName="pd_id" type="number" min="0"
-                                    disabled="disabled" required />
-                            </div>
-                            <div class="form-group col-md-2">
-                                <label for="order_number">จำนวนสินค้า</label>
-                                <input class="form-control" formControlName="order_number" disabled="disabled" />
-                            </div>
-                        </div>
                         <div class="form-group col-md-5">
-                            <label for="order_date">วันที่สั่งซื้อ</label>
-                            <input class="form-control" placeholder="" formControlName="order_date" type="text"
-                                disabled="disabled" required />
+                            <label>ชื่อผู้ซื้อ</label>
+                            <input class="form-control" placeholder="" formControlName="id" type="text"
+                                    min="0" disabled="disabled" required />
+                            <!-- <input class="form-control" placeholder="" formControlName="id" type="text"
+                                required></input> -->
                         </div>
-                        <div class="row">
-                            <div class="col text-center">
-                                <!-- <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
+
+                        <div class="form-group col-md-5">
+                            <label>หมายเลขออเดอร์</label>
+                            <input class="form-control" placeholder="" formControlName="order_id" type="text"
+                                    min="0" disabled="disabled" required />
+                            <!-- <label class="form-control" placeholder="" formControlName="order_id" type="text"
+                                required></label> -->
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label>หมายเลขรหัสสินค้า</label>
+                            <input class="form-control" placeholder="" formControlName="pd_id" type="text"
+                                    min="0" disabled="disabled" required />
+                            <!-- <label class="form-control" placeholder="" formControlName="pd_id" type="number" min="0"
+                                required></label> -->
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>จำนวนสินค้า</label>
+                            <input class="form-control" placeholder="" formControlName="order_number" type="text"
+                                    min="0" disabled="disabled" required />
+                            <!-- <label class="form-control" formControlName="order_number"></label> -->
+                        </div>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label>วันที่สั่งซื้อ</label>
+                        <input class="form-control" placeholder="" formControlName="order_date" type="text"
+                                min="0" disabled="disabled" required />
+                        <!-- <label class="form-control" placeholder="" formControlName="order_date" type="text"
+                            required></label> -->
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <!-- <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
                                     ตกลง
                                 </button> &nbsp; -->
-                                <button class="btn btn-lg btn-outline-danger" routerLink="/user/order">
-                                    ยกเลิก
-                                </button>
-                            </div>
+                            <button class="btn btn-lg btn-outline-danger" routerLink="/user/order">
+                                ยกเลิก
+                            </button>
                         </div>
-                    </fieldset>
+                    </div>
+                    <!-- </fieldset> -->
                 </form>
             </ul>
 
