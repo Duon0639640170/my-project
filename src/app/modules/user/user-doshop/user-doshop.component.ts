@@ -19,6 +19,7 @@ export class UserDoshopComponent implements OnInit {
   shopList = [];
 
   dataCard: { img: string; deteil: string; }[];
+  
 
 
   doshopForm: FormGroup;

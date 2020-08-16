@@ -12,8 +12,6 @@ export class UserShopmeComponent implements OnInit {
   productList: Array<any>;
   API_URL_IMG = environment.api_url + "/images/"
   product;
-  
-
 
 
   dataCard: { img: string; deteil: string; }[];
@@ -47,16 +45,19 @@ export class UserShopmeComponent implements OnInit {
     });
   }
 
-  
-
-
-  private getDataCard() {
-    const data = [
-      {
-        img: '/assets/image/a6.png',
-        deteil: 'ลูฟี่ กัปตันเรือ กลุ่มโจรสลัดหมวกฟาง'
-      },
-    ];
-    this.dataCard = data;
+  onEdit(data) {
+    this.shaerdService.getProductByPD_id(data.pd_id).subscribe((res) => {
+      console.log('LOGGGG LISTSHOP', res);
+      this.product = res;
+      this.router.navigate(['/user/editproduct']);
+    });
   }
+
+  deleteData(data: any) {
+    this.shaerdService.deleteProductByPD_id(data.pd_id).subscribe(() => {
+    window.location.reload();
+    });
+  }
+
+ 
 }

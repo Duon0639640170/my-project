@@ -2,7 +2,9 @@
   <div class="col-md-10 offset-md-1">
     <div class="card col-md-9 offset-md-2">
       <div class="card-body">
+        <div class="card-header">
           <h2 class="text-center">สร้างร้าน</h2><br>
+        </div><br>
         <div class="alert alert-danger" role="alert">
           *หมายเหตุ หากทำการสร้างร้านทางระบบจะทำการหัก <a href="#" class="alert-link">5%</a> ทุกสิ้นเดือน
         </div>
@@ -10,11 +12,18 @@
         <form [formGroup]="buildshopForm" accept-charset="UTF-8" autocomplete="off" class="col-md-9 offset-md-1">
 
           <fieldset>
+
             <div class="form-group">
               <label for="shop_img">เพิ่มรูปภาพ</label>
-              <input type="text" id="shop_img" class="form-control" placeholder="" formControlName="shop_img">
+              <div class="custom-file mb-3">
+                <input type="file" class="custom-file-input" id="shop_img" (change)="saveRange($event)"
+                  formControlName="shop_img" required>
+                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                <div class="invalid-feedback">Example invalid custom file feedback</div>
+              </div>
             </div>
 
+            <!-- <input type="text" id="" class="form-control" placeholder=""> -->
 
             <div class="form-group">
               <label for="shop_name">ชื่อร้าน</label>
@@ -42,14 +51,14 @@
             </div>
           </fieldset>
         </form>
-         <p class="text-center">
-              <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
-                ตกลง
-              </button>&nbsp; 
-              <button class="btn btn-lg btn-outline-danger" routerLink="/user/home">
-                ยกเลิก
-              </button>
-            </p>
+        <p class="text-center">
+          <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
+            ตกลง
+          </button>&nbsp;
+          <button class="btn btn-lg btn-outline-danger" routerLink="/user/home">
+            ยกเลิก
+          </button>
+        </p>
       </div>
     </div>
   </div>

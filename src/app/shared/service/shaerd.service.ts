@@ -64,6 +64,14 @@ export class ShaerdService {
 
 
 
+  public orderReport(): any {
+    return this.http.get<any>(this.API_URL + '/report/orderReport/{shop_id}"', { responseType: 'blob' as 'json' }).pipe(map(respose => {
+      return new Blob([respose], { type: 'application/pdf' });
+    })
+    );
+  }
+
+
   public generateReport(): any {
     return this.http.get<any>(this.API_URL + '/report/generateReport', { responseType: 'blob' as 'json' }).pipe(map(respose => {
       return new Blob([respose], { type: 'application/pdf' });

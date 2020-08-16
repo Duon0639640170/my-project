@@ -11,7 +11,6 @@ const routes: Routes = [
     { path: 'register', component: HomeRegisterComponent },
     { path: 'doproduct/:pd_id', component: HomeDoproductComponent },
     { path: 'homepage', component: HomePageComponent },
-    
 ];
 
 @NgModule({

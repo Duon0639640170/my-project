@@ -11,6 +11,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 })
 export class HomeLoginComponent implements OnInit {
 
+  loading = false;
   loginForm: FormGroup;
 
   constructor(
@@ -27,15 +28,16 @@ export class HomeLoginComponent implements OnInit {
   }
 
   login() {
+    this.loading = true;
     if (this.loginForm.invalid) {
+      this.loading = false;
       return false;
     } else {
-      console.log(this.loginForm.value);
-      const userType = 'user';
-      this.homeService.$userType = of(userType);
-      this.router.navigate([`${userType}`]);
-      localStorage.setItem('shop', '5');
-      localStorage.setItem('user', 'joy');
+      this.homeService.authentication(this.loginForm.value);
+      setTimeout(() => {
+        this.loading = false;
+        this.loginForm.reset();
+      }, 3000);
     }
   }
 

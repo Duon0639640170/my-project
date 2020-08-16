@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/shared/service/user.service';
 import { Router } from '@angular/router';
+import { ShaerdService } from 'src/app/shared/service/shaerd.service';
 
 @Component({
   selector: 'app-user-report',
@@ -8,38 +9,38 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-report.component.css']
 })
 export class UserReportComponent implements OnInit {
-  public dataList: Array<any>;
+  public paymentList: Array<any>;
+  payment;
+
+  dataCard: { img: string; deteil: string; }[];
 
   constructor(
-    private userService: UserService,
+    // private fb: FormBuilder,
+    private shaerdService: ShaerdService,
+    // private activatedroute: ActivatedRoute,
+    // private userService: UserService,
     private router: Router
-  ) {
-    this.dataList = userService.getUserReport();
-  }
+  ) { }
+
 
   ngOnInit(): void {
   }
-  deleteData(data) {
-    console.log('LOG FN() delete >>::', data);
+
+  submitForm() {
+    // debugger
+    this.shaerdService.orderReport().subscribe(data => {
+      if (data != null) {
+        this.openFile(data);
+      } else {
+        alert('fail')
+      }
+
+    });
   }
- 
 
-  onClickTable(data) {
-    console.log('LOG FN() delete >>::', data);
-    if (data.order_number === '1') {
-      const userType = 'home';
-      this.router.navigate([`${userType}`]);
-    } else if (data.order_number === '100') {
-      const userType = 'admin';
-      this.router.navigate([`${userType}`]);
-    } else if (data.order_number === '111') {
-      const userType = 'user';
-      this.router.navigate([`${userType}`]);
-    } else {
-      const userType = 'home';
-      this.router.navigate([`${userType}`]);
-    }
-
+  openFile(blob: Blob) {
+    const url = window.URL.createObjectURL(blob);
+    window.open(url);
   }
 
 
