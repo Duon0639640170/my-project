@@ -30,15 +30,21 @@ export class AdminPaymentComponent implements OnInit {
   getPaymentList() {
     this.shaerdService.getAllPayment().subscribe((data) => {
       console.log('LOGGGG LISTSHOP', data);
-      this.paymentList = data
+      this.paymentList = data;
     });
   }
 
-
-
-  deleteData(data) {
-    console.log('LOG FN() delete >>::', data);
+  onEdit(data) {
+    this.shaerdService.getPaymentByShop(data.pm_id).subscribe((res) => {
+      console.log('LOGGGG LISTSHOP', res);
+      this.payment = res;
+      this.router.navigate(['/admin/checkpayment']);
+    });
   }
+
+  // deleteData(data) {
+  //   console.log('LOG FN() delete >>::', data);
+  // }
 
 
 

@@ -18,17 +18,15 @@ export class ShaerdService {
     }),
   };
 
-  // public findAll(body: any) {
-  //   return this.http.get<any>(this.APIREGISTER_URL + '/user/all',);
-  // }
-
   public register(body: any) {
     return this.http.post<any>(this.APIREGISTER_URL + '/user/save', body, this.httpOption);
   }
 
-  public update(body: any) {
-    const http = 'http://localhost:9000';
-    return this.http.post<any>(`${http}` + '/user/update', body, this.httpOption);
+  public update(body: object) {
+    console.log('LOG API update  URL>>>>:', this.APIREGISTER_URL + '/user/update');
+
+    console.log('LOG API update  body>>>>:', body);
+    return this.http.post<any>(this.APIREGISTER_URL + '/user/update', body, this.httpOption);
   }
 
   public saveresgister(body: any) {
@@ -45,38 +43,41 @@ export class ShaerdService {
     const http = 'http://localhost:9081';
     return this.http.post<any>(`${http}` + '/it-api/shop/save', body, this.httpOption);
   }
+
   public saveProduct(body: any) {
     const http = 'http://localhost:9081';
     return this.http.post<any>(`${http}` + '/it-api/product/save', body, this.httpOption);
   }
+
   public updateShop(body: any) {
     const http = 'http://localhost:9081';
     return this.http.post<any>(`${http}` + '/it-api/shop/update', body, this.httpOption);
   }
+
   public updatePayment(body: any) {
     const http = 'http://localhost:9081';
     return this.http.post<any>(`${http}` + '/it-api/payment/update', body, this.httpOption);
   }
+
   public savePayment(body: any) {
     const http = 'http://localhost:9081';
     return this.http.post<any>(`${http}` + '/it-api/payment/save', body, this.httpOption);
   }
 
-
-
-  public orderReport(): any {
-    return this.http.get<any>(this.API_URL + '/report/orderReport/{shop_id}"', { responseType: 'blob' as 'json' }).pipe(map(respose => {
-      return new Blob([respose], { type: 'application/pdf' });
-    })
-    );
+  public orderReport(shopId: any) {
+    return this.http.get<any>(this.API_URL + '/report/orderReport/' + `${shopId}`,
+      { responseType: 'blob' as 'json' }).pipe(map(respose => {
+        return new Blob([respose], { type: 'application/pdf' });
+      })
+      );
   }
 
-
   public generateReport(): any {
-    return this.http.get<any>(this.API_URL + '/report/generateReport', { responseType: 'blob' as 'json' }).pipe(map(respose => {
-      return new Blob([respose], { type: 'application/pdf' });
-    })
-    );
+    return this.http.get<any>(this.API_URL + '/report/generateReport', { responseType: 'blob' as 'json' })
+      .pipe(map(respose => {
+        return new Blob([respose], { type: 'application/pdf' });
+      })
+      );
   }
 
   public getUser(username: string) {
@@ -150,6 +151,6 @@ export class ShaerdService {
   //http://localhost:9081/it-api/order
 
   //http://localhost:9081/it-api/report/generateReport
-
+  //http://localhost:9000/user/update
   //http://localhost:9000/user/all
 }

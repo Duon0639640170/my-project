@@ -17,7 +17,7 @@ export class AdminCheckpaymentComponent implements OnInit {
   pm_id: any
   pm_img: string = ''
   paymentList = [];
-
+ 
 
   dataCard: { img: string; deteil: string; }[];
 

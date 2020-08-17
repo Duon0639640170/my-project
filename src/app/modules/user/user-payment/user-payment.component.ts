@@ -23,7 +23,7 @@ export class UserPaymentComponent implements OnInit {
     private router: Router
   ) { }
 
- 
+
   ngOnInit(): void {
     this.getPaymentList();
   }
@@ -31,15 +31,15 @@ export class UserPaymentComponent implements OnInit {
   getPaymentList() {
     this.shaerdService.getAllPayment().subscribe((data) => {
       console.log('LOGGGG LISTSHOP', data);
-      this.paymentList = data
+      this.paymentList = data;
     });
   }
 
 
 
-  deleteData(data) {
-    console.log('LOG FN() delete >>::', data);
-  }
+  // deleteData(data) {
+  //   console.log('LOG FN() delete >>::', data);
+  // }
 
 
 
@@ -62,19 +62,19 @@ export class UserPaymentComponent implements OnInit {
 
 
   // }
-    // if (data.order_number === '1') {
-    //   const userType = 'home';
-    //   this.router.navigate([`${userType}`]);
-    // } else if (data.order_number === '100') {
-    //   const userType = 'admin';
-    //   this.router.navigate([`${userType}`]);
-    // } else if (data.order_number === '111') {
-    //   const userType = 'user';
-    //   this.router.navigate([`${userType}`]);
-    // } else {
-    //   const userType = 'home';
-    //   this.router.navigate([`${userType}`]);
-    // }
+  // if (data.order_number === '1') {
+  //   const userType = 'home';
+  //   this.router.navigate([`${userType}`]);
+  // } else if (data.order_number === '100') {
+  //   const userType = 'admin';
+  //   this.router.navigate([`${userType}`]);
+  // } else if (data.order_number === '111') {
+  //   const userType = 'user';
+  //   this.router.navigate([`${userType}`]);
+  // } else {
+  //   const userType = 'home';
+  //   this.router.navigate([`${userType}`]);
+  // }
   //   this.shaerdService.getAllShopByShop('3').subscribe((res) => {
   //     console.log('LOGGGG LISTSHOP', res);
   //     this.homeService.$userType = of(res);

@@ -8,7 +8,6 @@ import { DatePipe } from '@angular/common';
 import { AuthenInterceptor } from './helpers/authen.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +19,7 @@ import { ErrorInterceptor } from './helpers/error.interceptor';
     HttpClientModule,
   ],
   providers: [
+    DatePipe
   // { provide: HTTP_INTERCEPTORS, useClass: AuthenInterceptor, multi: true },
   // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 

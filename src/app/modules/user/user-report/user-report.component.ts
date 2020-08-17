@@ -28,7 +28,7 @@ export class UserReportComponent implements OnInit {
 
   submitForm() {
     // debugger
-    this.shaerdService.orderReport().subscribe(data => {
+    this.shaerdService.orderReport('').subscribe(data => {
       if (data != null) {
         this.openFile(data);
       } else {

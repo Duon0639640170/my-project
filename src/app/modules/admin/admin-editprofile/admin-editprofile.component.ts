@@ -44,7 +44,7 @@ export class AdminEditprofileComponent implements OnInit {
 
   initFormGroup() {
     this.editprofileForm = this.fb.group({
-      id:[''],
+      id: [''],
       first_name: ['', [Validators.required]],
       last_name: ['', [Validators.required]],
       username: ['', [Validators.required]],
@@ -52,21 +52,21 @@ export class AdminEditprofileComponent implements OnInit {
       address: ['', [Validators.required]],
       tel: ['', [Validators.required]],
       gender: ['', [Validators.required]],
-     
+
     });
   }
 
   async patchValueForm() {
     // get pd_id in request parameter router
-    this.id = this.activatedroute.snapshot.paramMap.get("user");
+    this.username = localStorage.getItem('user');
     console.log('patchValueForm : username => ', this.username);
 
     await this.shaerdService.getUser(this.username).subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
-     
+
       // patch value to form
       this.editprofileForm.patchValue({
-        
+
         id: res.id,
         first_name: res.first_name,
         last_name: res.last_name,
@@ -76,8 +76,7 @@ export class AdminEditprofileComponent implements OnInit {
         tel: res.tel,
         gender: res.gender
       });
-
-     
+      console.log(this.editprofileForm.value);
     });
   }
 
@@ -107,10 +106,14 @@ export class AdminEditprofileComponent implements OnInit {
     } else { // case success
       console.log(this.editprofileForm.value);
       console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.editprofileForm.value);
-      this.router.navigate(['/admin/profile']);
+
       // register
       this.shaerdService.update(this.editprofileForm.value).subscribe((res) => {
         console.log('LOGGGG LISTSHOP', res);
+        // if (res.id) {
+        this.router.navigate(['/admin/profile']);
+        // }
+
       });
     }
   }
