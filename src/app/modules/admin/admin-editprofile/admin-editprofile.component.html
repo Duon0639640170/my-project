@@ -1,10 +1,10 @@
 <div class="container">
-    <div class="card">
-        <ul class="nav navbar-nav navbar-right">
-            <div class="card ">
+    <div class="col-md-10 offset-md-1">
+            <div class="card col-md-9 offset-md-2">
                 <div class="card-body">
-                    <h5 class="card-title text-center">ข้อมูลส่วนตัว</h5>
-                    <p class="card-text"> </p>
+                    <div class="card-header">
+                        <h2 class="text-center">แก้ไขข้อมูลส่วนตัว</h2><br>
+                      </div><br>
                     <form [formGroup]="editprofileForm" accept-charset="UTF-8" autocomplete="off">
                         <fieldset>
                             <div class="form-group">
@@ -65,10 +65,10 @@
 
                             <div class="card-title text-center">
 
-                                <button class="btn btn-lg btn-success " (click)="submitForm()">
+                                <button class="btn btn-lg btn-outline-success " (click)="submitForm()">
                                     ตกลง
                                 </button>&nbsp;
-                                <button class="btn btn-lg btn-danger " routerLink="/admin/profile">
+                                <button class="btn btn-lg btn-outline-danger " routerLink="/admin/profile">
                                     ยกเลิก
                                 </button>
                             </div>
@@ -76,6 +76,5 @@
                     </form>
                 </div>
             </div>
-        </ul>
     </div>
 </div>

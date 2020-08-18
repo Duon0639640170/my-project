@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class UserOrderComponent implements OnInit {
   public orderList: Array<any>;
   order;
+  page: any;
 
   dataCard: { img: string; deteil: string; }[];
 

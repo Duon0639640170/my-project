@@ -27,14 +27,27 @@ export class UserReportComponent implements OnInit {
   }
 
   submitForm() {
-    // debugger
-    this.shaerdService.orderReport('').subscribe(data => {
-      if (data != null) {
-        this.openFile(data);
-      } else {
-        alert('fail')
-      }
 
+
+    // get userId for get Shop id in shop API
+    const userId = localStorage.getItem('shop');
+
+    // get Shop id in Shop api
+    this.shaerdService.getShopByUserId(userId).subscribe(response => {
+      if (response) {
+        const shop_id = response.shop_id;
+        // call order report
+        this.shaerdService.orderReport(shop_id).subscribe(data => {
+          if (data != null) {
+            this.openFile(data);
+          } else {
+            alert('Open PDF Fail Data is Null!');
+          }
+        });
+
+      } else {
+        alert('Print Report Fail in Step Get Shop Id!');
+      }
     });
   }
 

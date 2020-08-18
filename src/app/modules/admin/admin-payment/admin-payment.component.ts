@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminService } from 'src/app/shared/service/admin.service';
 import { ShaerdService } from 'src/app/shared/service/shaerd.service';
 import { Router } from '@angular/router';
 
@@ -9,16 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-payment.component.css']
 })
 export class AdminPaymentComponent implements OnInit {
-  public paymentList: Array<any>;
+  paymentList: Array<any>;
   payment;
-
+  page: any;
+  term: string;
+  
   dataCard: { img: string; deteil: string; }[];
-
   constructor(
-    // private fb: FormBuilder,
     private shaerdService: ShaerdService,
-    // private activatedroute: ActivatedRoute,
-    // private userService: UserService,
     private router: Router
   ) { }
 
@@ -42,17 +39,4 @@ export class AdminPaymentComponent implements OnInit {
     });
   }
 
-  // deleteData(data) {
-  //   console.log('LOG FN() delete >>::', data);
-  // }
-
-
-
-  // onEdit(data) {
-  //   this.shaerdService.getPaymentByShop(data.pm_id).subscribe((res) => {
-  //     console.log('LOGGGG LISTSHOP', res);
-  //     this.payment = res;
-  //     this.router.navigate(['/user/editpayment']);
-  //   });
-  // }
 }

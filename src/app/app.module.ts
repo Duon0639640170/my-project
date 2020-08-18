@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DatePipe } from '@angular/common';
 import { AuthenInterceptor } from './helpers/authen.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { ErrorInterceptor } from './helpers/error.interceptor';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [
     DatePipe

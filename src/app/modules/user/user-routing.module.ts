@@ -31,7 +31,7 @@ const routes: Routes = [
     { path: 'payment', component: UserPaymentComponent },
     { path: 'doparcel', component: UserDoparcelComponent },
     { path: 'report', component: UserReportComponent },
-    { path: 'editprofile/:id', component: UserEditprofileComponent },
+    { path: 'editprofile', component: UserEditprofileComponent },
     { path: 'editpayment/:pm_id', component: UserEditpaymentComponent },
     { path: 'order', component: UserOrderComponent },
     { path: 'doorder/:order_id', component: UserDoorderComponent },

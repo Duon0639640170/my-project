@@ -61,10 +61,10 @@ export class UserEditshopComponent implements OnInit {
 
   async patchValueForm() {
     // get pd_id in request parameter router
-    this.shop_id =  localStorage.getItem('shop');
-    console.log('patchValueForm : shop_id => ', this.shop_id);
+    const userId =  localStorage.getItem('shop');
+    console.log('patchValueForm : userId => ', userId);
 
-    await this.shaerdService.getShopByShop_id(this.shop_id).subscribe((res) => {
+    await this.shaerdService.getShopByUserId(userId).subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
 
       // patch value to form

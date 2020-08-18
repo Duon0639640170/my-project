@@ -12,7 +12,7 @@ import { ShaerdService } from 'src/app/shared/service/shaerd.service';
 export class UserPaymentComponent implements OnInit {
   public paymentList: Array<any>;
   payment;
-
+  page: any;
   dataCard: { img: string; deteil: string; }[];
 
   constructor(

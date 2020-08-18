@@ -10,16 +10,9 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-  [x: string]: any;
   profileList: Array<any>;
-  API_URL_IMG = environment.api_url + "/images/"
-  username: any;
-  id: any
- 
-  userList = [];
-
- 
-
+  doshop: any;
+  username: string;
 
   profileForm: FormGroup;
 
@@ -35,18 +28,18 @@ export class UserProfileComponent implements OnInit {
     // init form group
     this.initFormGroup();
 
-    // patch value in response api to form 
+    // patch value in response api to form
     this.patchValueForm();
 
     // initShopSelect
-    this.initShopSelect();
+    // this.initShopSelect();
 
   }
 
 
   initFormGroup() {
     this.profileForm = this.fb.group({
-      id:[''],
+      id: [''],
       first_name: ['', [Validators.required]],
       last_name: ['', [Validators.required]],
       username: ['', [Validators.required]],
@@ -57,14 +50,14 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
-  async patchValueForm() {
-    // get id in request parameter router
-    this.id = this.activatedroute.snapshot.paramMap.get("id");
-    console.log('patchValueForm : id => ', this.id);
+  patchValueForm() {
+    // get shop_id in request parameter router
+    this.username = localStorage.getItem('user');
+    console.log('patchValueForm : username => ', this.username);
 
-    await this.shaerdService.getUser(this.username).subscribe((res) => {
+    this.shaerdService.getUser(this.username).subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
-     
+
       // patch value to form
       this.profileForm.patchValue({
         id: res.id,
@@ -74,19 +67,11 @@ export class UserProfileComponent implements OnInit {
         password: res.password,
         address: res.address,
         tel: res.tel,
-        gender: res.gender
+        gender: res.gender,
       });
-
-      // this.pd_img = res.pd_img;
+      console.log(this.profileForm.value);
     });
 
-  }
-  onEdit(data) {
-    this.shaerdService.getUser(this.username).subscribe((res) => {
-      console.log('LOGGGG LISTSHOP', res);
-      this.product = res;
-      this.router.navigate(['/user/editprofile']);
-    });
   }
 
   // initShopSelect() {
@@ -102,6 +87,23 @@ export class UserProfileComponent implements OnInit {
   //     shop_id: value
   //   });
   // }
+
+  submitForm() {
+    // debugger
+    // case notfound in condition
+    if (this.profileForm.invalid) {
+      return false;
+
+    } else { // case success
+      console.log(this.profileForm.value);
+      console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.profileForm.value);
+      this.router.navigate(['/user/editprofile']);
+      // register
+      // this.shaerdService.updateShop(this.profileForm.value).subscribe((res) => {
+      //   console.log('LOGGGG LISTSHOP', res);
+      // });
+    }
+  }
 
   get form() { return this.profileForm.controls; }
 

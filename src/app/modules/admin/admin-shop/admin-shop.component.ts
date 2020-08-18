@@ -12,7 +12,9 @@ import { Router } from '@angular/router';
 export class AdminShopComponent implements OnInit {
   shopList: Array<any>;
   API_URL_IMG = environment.api_url + "/images/"
-  shop;
+  shop: any;
+  page: any;
+  term: string;
 
   dataCard: { img: string; deteil: string; }[];
   constructor(
@@ -20,7 +22,6 @@ export class AdminShopComponent implements OnInit {
     private router: Router
   ) { }
 
-  
   ngOnInit(): void {
     this.getShopList();
   }

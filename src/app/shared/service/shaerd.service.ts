@@ -65,17 +65,26 @@ export class ShaerdService {
   }
 
   public orderReport(shopId: any) {
-    return this.http.get<any>(this.API_URL + '/report/orderReport/' + `${shopId}`,
-      { responseType: 'blob' as 'json' }).pipe(map(respose => {
-        return new Blob([respose], { type: 'application/pdf' });
+    return this.http.get<any>(this.API_URL + '/report/orderReport/' + `${shopId}`, { responseType: 'blob' as 'json' }).pipe(
+        map(respose => {
+        if (respose.size !== 0) {
+          return new Blob([respose], { type: 'application/pdf' });
+        } else {
+          return null;
+        }
       })
       );
   }
 
   public generateReport(): any {
     return this.http.get<any>(this.API_URL + '/report/generateReport', { responseType: 'blob' as 'json' })
-      .pipe(map(respose => {
-        return new Blob([respose], { type: 'application/pdf' });
+      .pipe(
+        map(respose => {
+        if (respose.size !== 0) {
+          return new Blob([respose], { type: 'application/pdf' });
+        } else {
+          return null;
+        }
       })
       );
   }
@@ -98,6 +107,10 @@ export class ShaerdService {
 
   public getShopByShop_id(body: any) {
     return this.http.get<any>(this.API_URL + '/shop/' + `${body}`);
+  }
+
+  public getShopByUserId(id: any) {
+    return this.http.get<any>(this.API_URL + '/shop-by-id/' + `${id}`);
   }
 
   // public getShopByShop_id(body: any) {

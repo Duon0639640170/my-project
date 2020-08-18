@@ -12,8 +12,10 @@ import { AdminDoproductComponent } from './admin-doproduct/admin-doproduct.compo
 import { AdminSlipComponent } from './admin-slip/admin-slip.component';
 import { AdminEditprofileComponent } from './admin-editprofile/admin-editprofile.component';
 import { AdminCheckpaymentComponent } from './admin-checkpayment/admin-checkpayment.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AdminUpparcelComponent } from './admin-upparcel/admin-upparcel.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -31,13 +33,14 @@ import { AdminUpparcelComponent } from './admin-upparcel/admin-upparcel.componen
     AdminEditprofileComponent,
     AdminCheckpaymentComponent,
     AdminUpparcelComponent,
-    
-    
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+    FormsModule
   ]
 })
 export class AdminModule { }

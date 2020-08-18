@@ -14,12 +14,11 @@ export class UserDoshopComponent implements OnInit {
   doshopList: Array<any>;
   API_URL_IMG = environment.api_url + '/images/';
   doshop: any;
-  shopId: any;
+  // shopId: any;
   public shopImg: string;
   shopList = [];
 
   dataCard: { img: string; deteil: string; }[];
-  
 
 
   doshopForm: FormGroup;
@@ -61,10 +60,10 @@ export class UserDoshopComponent implements OnInit {
 
   async patchValueForm() {
     // get shop_id in request parameter router
-    this.shopId = localStorage.getItem('shop');
-    console.log('patchValueForm : shop_id => ', this.shopId);
+    const userId = localStorage.getItem('shop');
+    console.log('patchValueForm : userId => ', userId);
 
-    await this.shaerdService.getShopByShop_id(this.shopId).subscribe((res) => {
+    await this.shaerdService.getShopByUserId(userId).subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
 
       // patch value to form

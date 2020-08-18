@@ -13,13 +13,15 @@ import { UserDoproductComponent } from './user-doproduct/user-doproduct.componen
 import { UserPaymentComponent } from './user-payment/user-payment.component';
 import { UserDoparcelComponent } from './user-doparcel/user-doparcel.component';
 import { UserReportComponent } from './user-report/user-report.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { UserEditprofileComponent } from './user-editprofile/user-editprofile.component';
 import { UserEditpaymentComponent } from './user-editpayment/user-editpayment.component';
 import { UserOrderComponent } from './user-order/user-order.component';
 import { UserDoorderComponent } from './user-doorder/user-doorder.component';
 import { UserDoshopComponent } from './user-doshop/user-doshop.component';
 import { UserEditshopComponent } from './user-editshop/user-editshop.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -46,7 +48,10 @@ import { UserEditshopComponent } from './user-editshop/user-editshop.component';
   imports: [
     CommonModule,
     UserRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+    FormsModule
   ]
 })
 export class UserModule { }

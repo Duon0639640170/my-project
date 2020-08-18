@@ -1,34 +1,25 @@
 <div class="container">
     <div class="row">
+
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="ค้นหาข้อมูล" [(ngModel)]="term">
+        </div>
+
         <table class="table table-hover bg-light">
-            <style>
-                table,
-                th,
-                td {
-                    border: 1px solid black;
-                    border-collapse: collapse;
-                }
-
-                th,
-                td {
-                    padding: 12px;
-                    text-align: center;
-                }
-            </style>
-            <thead class="alert alert-warning">
-                <tr>
-
-                    <th scope="col">หมายเลขคำสั่งซืื้อ</th>
-                    <th scope="col">ยอดเงินที่ชำระ</th>
-                    <th scope="col">วันที่ทำการจ่ายเงิน</th>
-                    <!-- <th scope="col">รหัสติดตามพัสดุ</th> -->
-                    <th scope="col">สถานะการชำระเงิน</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
+                <thead class="alert alert-warning">
+                    <tr>
+                        <th>ลำดับ</th>
+                        <th scope="col">หมายเลขคำสั่งซืื้อ</th>
+                        <th scope="col">ยอดเงินที่ชำระ</th>
+                        <th scope="col">วันที่ทำการจ่ายเงิน</th>
+                        <th scope="col">สถานะการชำระเงิน</th>
+                        <th></th>
+                    </tr>
+                </thead>
             <tbody>
-                <tr *ngFor="let data of paymentList">
-
+                <tr
+                    *ngFor="let data of paymentList | filter:term | paginate: { itemsPerPage: 5, currentPage: page };  let i = index">
+                    <td>{{ i + 1 }}</td>
                     <td>
                         {{data.pm_no}}
                     </td>
@@ -38,9 +29,6 @@
                     <td>
                         {{data.pm_date}}
                     </td>
-                    <!-- <td>
-                        {{data.tracking_no}}
-                    </td> -->
                     <td>
                         {{data.pm_status}}
                     </td>
@@ -54,6 +42,9 @@
                 </tr>
             </tbody>
         </table>
+        <div>
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
     </div>
 </div>
 

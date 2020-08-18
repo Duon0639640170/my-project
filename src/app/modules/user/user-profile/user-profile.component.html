@@ -1,10 +1,11 @@
 <div class="container">
-    <div class="card">
-        <ul class="nav navbar-nav navbar-right">
-            <div class="card ">
+    <div class="col-md-10 offset-md-1">
+        <div class="card col-md-9 offset-md-2">
+            <div class="card-body">
                 <div class="card-body">
-                    <h5 class="card-title text-center">ข้อมูลส่วนตัว</h5>
-                    <p class="card-text"> </p>
+                    <div class="card-header">
+                        <h2 class="text-center">ข้อมูลส่วนตัว</h2><br>
+                    </div><br>
                     <form [formGroup]="profileForm" accept-charset="UTF-8" autocomplete="off">
                         <fieldset>
                             <div class="form-group">
@@ -51,16 +52,15 @@
                                 <label for="inputEmail4">เพศ</label>
                                 <input class="form-control" placeholder="เพศ" formControlName="gender" name="gender"
                                     type="text" required disabled="disabled" />
-                                    
+
                             </div>
 
                             <div class="card-title text-center">
 
-                                <button class="btn btn-lg btn-outline-warning "
-                                    [routerLink]="['/user/editprofile', data.id]"
+                                <button class="btn btn-lg btn-outline-warning " [routerLink]="['/user/editprofile']"
                                     routerLinkActive="router-link-active">
                                     แก้ไข
-                                </button>
+                                </button>&nbsp;
                                 <button class="btn btn-lg btn-outline-danger " routerLink="/user/home">
                                     ยกเลิก
                                 </button>
@@ -72,6 +72,6 @@
                     </form>
                 </div>
             </div>
-        </ul>
+        </div>
     </div>
 </div>

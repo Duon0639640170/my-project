@@ -1,23 +1,14 @@
 <div class="container">
     <div class="row">
-        <table class="table table-hover bg-light">
-            <style>
-                table,
-                th,
-                td {
-                    border: 1px solid black;
-                    border-collapse: collapse;
-                }
 
-                th,
-                td {
-                    padding: 12px;
-                    text-align: center;
-                }
-            </style>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="ค้นหาข้อมูล" [(ngModel)]="term">
+        </div>
+
+        <table class="table table-hover bg-light">
             <thead class="alert alert-warning">
                 <tr>
-
+                    <th>ลำดับ</th>
                     <th scope="col">หมายเลขคำสั่งซืื้อ</th>
                     <th scope="col">ชื่อผู้ซื้อ</th>
                     <th scope="col">สถานะการชำระเงิน</th>
@@ -26,8 +17,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let data of dataList">
+                <tr *ngFor="let data of dataList | filter:term | paginate: { itemsPerPage: 5, currentPage: page };  let i = index">
 
+                    <td>{{ i + 1 }}</td>
                     <td>
                         {{data.pm_no}}
                     </td>
@@ -49,5 +41,8 @@
                 </tr>
             </tbody>
         </table>
+        <div>
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
     </div>
 </div>
