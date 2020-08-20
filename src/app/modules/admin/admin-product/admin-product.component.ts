@@ -12,6 +12,8 @@ export class AdminProductComponent implements OnInit {
   productList: Array<any>;
   API_URL_IMG = environment.api_url + "/images/"
   product;
+  page: any;
+  term: string;
 
   dataCard: { img: string; deteil: string; }[];
   constructor(

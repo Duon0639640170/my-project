@@ -101,6 +101,7 @@ export class UserEditshopComponent implements OnInit {
   submitForm() {
     // debugger
     // case notfound in condition
+    console.log(this.editshopForm.value);
     if (this.editshopForm.invalid) {
       return false;
 

@@ -13,6 +13,7 @@ export class UserPaymentComponent implements OnInit {
   public paymentList: Array<any>;
   payment;
   page: any;
+  term: string;
   dataCard: { img: string; deteil: string; }[];
 
   constructor(

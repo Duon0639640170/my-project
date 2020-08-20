@@ -59,6 +59,7 @@ export class UserDoshopComponent implements OnInit {
   }
 
   async patchValueForm() {
+    //debugger;
     // get shop_id in request parameter router
     const userId = localStorage.getItem('shop');
     console.log('patchValueForm : userId => ', userId);

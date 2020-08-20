@@ -3,74 +3,75 @@
         <div class="card col-md-9 offset-md-2">
             <div class="card-body">
                 <div class="card-header">
-                    <h2 class="text-center">ข้อมูลส่วนตัว</h2><br>
-                </div><br>
-                <form [formGroup]="profileForm" accept-charset="UTF-8" autocomplete="off">
-                    <fieldset>
-                        <div class="form-group">
-                            <label for="inputEmail4">ชื่อ</label>
-                            <input class="form-control" placeholder="firstname" formControlName="first_name" type="text"
-                                required disabled="disabled" />
-                        </div>
+                    <div class="card-header">
+                        <h2 class="text-center">ข้อมูลส่วนตัว</h2><br>
+                    </div><br>
+                    <form [formGroup]="profileForm" accept-charset="UTF-8" autocomplete="off">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="inputEmail4">ชื่อ</label>
+                                <input class="form-control" placeholder="firstname" formControlName="first_name"
+                                    type="text" required disabled="disabled" />
+                            </div>
 
 
-                        <div class="form-group">
-                            <label for="inputEmail4">นามสกุล</label>
-                            <input class="form-control" placeholder="lastname" formControlName="last_name" type="text"
-                                required disabled="disabled" />
-                        </div>
+                            <div class="form-group">
+                                <label for="inputEmail4">นามสกุล</label>
+                                <input class="form-control" placeholder="lastname" formControlName="last_name"
+                                    type="text" required disabled="disabled" />
+                            </div>
 
 
-                        <div class="form-group">
-                            <label for="inputEmail4">username</label>
-                            <input class="form-control" placeholder="username" formControlName="username" type="text"
-                                required disabled="disabled" />
-                        </div>
+                            <div class="form-group">
+                                <label for="inputEmail4">username</label>
+                                <input class="form-control" placeholder="username" formControlName="username"
+                                    type="text" required disabled="disabled" />
+                            </div>
 
-                        <div class="form-group">
-                            <label for="inputEmail4">Password</label>
-                            <input class="form-control" placeholder="Password" formControlName="password"
-                                type="password" required disabled="disabled" />
-                        </div>
+                            <div class="form-group">
+                                <label for="inputEmail4">Password</label>
+                                <input class="form-control" placeholder="Password" formControlName="password"
+                                    type="password" required disabled="disabled" />
+                            </div>
 
-                        <div class="form-group">
-                            <label for="inputEmail4">ที่อยู่</label>
-                            <input class="form-control" placeholder="ที่อยู่" formControlName="address" type="text"
-                                required disabled="disabled" />
-                        </div>
-
-
-                        <div class="form-group">
-                            <label for="inputEmail4">เบอร์โทร</label>
-                            <input class="form-control" placeholder="เบอร์โทร" formControlName="tel" type="text"
-                                required disabled="disabled" />
-                        </div>
+                            <div class="form-group">
+                                <label for="inputEmail4">ที่อยู่</label>
+                                <input class="form-control" placeholder="ที่อยู่" formControlName="address" type="text"
+                                    required disabled="disabled" />
+                            </div>
 
 
-                        <div class="form-group">
-                            <label for="inputEmail4">เพศ</label>
-                            <input class="form-control" placeholder="เพศ" formControlName="gender" name="gender"
-                                type="text" required disabled="disabled" />
+                            <div class="form-group">
+                                <label for="inputEmail4">เบอร์โทร</label>
+                                <input class="form-control" placeholder="เบอร์โทร" formControlName="tel" type="text"
+                                    required disabled="disabled" />
+                            </div>
 
-                        </div>
 
-                        <div class="card-title text-center">
+                            <div class="form-group">
+                                <label for="inputEmail4">เพศ</label>
+                                <input class="form-control" placeholder="เพศ" formControlName="gender" name="gender"
+                                    type="text" required disabled="disabled" />
 
-                            <button class="btn btn-lg btn-outline-warning " [routerLink]="['/admin/editprofile']"
-                                routerLinkActive="router-link-active">
-                                แก้ไข
-                            </button>&nbsp;
-                            <button class="btn btn-lg btn-outline-danger " routerLink="/admin/home">
-                                ยกเลิก
-                            </button>
-                        </div>
-                        <!-- <button class="btn btn-lg btn-danger btn-block" (click)="saveOrder()">
+                            </div>
+
+                            <div class="card-title text-center">
+
+                                <button class="btn btn-lg btn-outline-warning " [routerLink]="['/admin/editprofile']"
+                                    routerLinkActive="router-link-active">
+                                    แก้ไข
+                                </button>&nbsp;
+                                <button class="btn btn-lg btn-outline-danger " routerLink="/admin/home">
+                                    ยกเลิก
+                                </button>
+                            </div>
+                            <!-- <button class="btn btn-lg btn-danger btn-block" (click)="saveOrder()">
                                 สร้างออเดอร์
                             </button> -->
-                    </fieldset>
-                </form>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
-</div>

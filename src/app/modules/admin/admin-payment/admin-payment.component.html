@@ -1,49 +1,64 @@
 <div class="container">
-    <div class="row">
+    <div class="card col-md-20 ">
+        <div class="card-body">
+            <div class="card-header"><br>
+                <h3 class="text-center">ตรวจสอบการชำระเงิน</h3><br>
+            </div><br>
+            <div class="row"  class="car-body">
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <input type="text" class="form-control" placeholder="ค้นหาข้อมูล" [(ngModel)]="term">
+                    </div>
+                </div>
+                <table class="table table-hover bg-light">
+                    <thead class="alert alert-warning">
+                        <tr>
+                            <th>ลำดับ</th>
+                            <th scope="col">หมายเลขคำสั่งซืื้อ</th>
+                            <th scope="col">ยอดเงินที่ชำระ</th>
+                            <th scope="col">วันที่ทำการจ่ายเงิน</th>
+                            <th scope="col">สถานะการชำระเงิน</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            *ngFor="let data of paymentList | filter:term | paginate: { itemsPerPage: 5, currentPage: page };  let i = index">
+                            <td>{{ i + 1 }}</td>
+                            <td>
+                                {{data.pm_no}}
+                            </td>
+                            <td>
+                                {{data.pm_totalpric}}
+                            </td>
+                            <td>
+                                {{data.pm_date}}
+                            </td>
+                            <td>
+                                {{data.pm_status}}
+                            </td>
 
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="ค้นหาข้อมูล" [(ngModel)]="term">
-        </div>
-
-        <table class="table table-hover bg-light">
-                <thead class="alert alert-warning">
-                    <tr>
-                        <th>ลำดับ</th>
-                        <th scope="col">หมายเลขคำสั่งซืื้อ</th>
-                        <th scope="col">ยอดเงินที่ชำระ</th>
-                        <th scope="col">วันที่ทำการจ่ายเงิน</th>
-                        <th scope="col">สถานะการชำระเงิน</th>
-                        <th></th>
-                    </tr>
-                </thead>
-            <tbody>
-                <tr
-                    *ngFor="let data of paymentList | filter:term | paginate: { itemsPerPage: 5, currentPage: page };  let i = index">
-                    <td>{{ i + 1 }}</td>
-                    <td>
-                        {{data.pm_no}}
-                    </td>
-                    <td>
-                        {{data.pm_totalpric}}
-                    </td>
-                    <td>
-                        {{data.pm_date}}
-                    </td>
-                    <td>
-                        {{data.pm_status}}
-                    </td>
-
-                    <td>
-                        <button type="button" class="btn btn-outline-warning"
-                            [routerLink]="['/admin/checkpayment', data.pm_id]" routerLinkActive="router-link-active">
-                            ตรวจสอบ
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div>
-            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+                            <td>
+                                <button type="button" class="btn btn-outline-warning"
+                                    [routerLink]="['/admin/checkpayment', data.pm_id]"
+                                    routerLinkActive="router-link-active"><svg width="1em" height="1em"
+                                        viewBox="0 0 16 16" class="bi bi-file-earmark-check" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9 1H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h5v-1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h5v2.5A1.5 1.5 0 0 0 10.5 6H13v2h1V6L9 1z" />
+                                        <path fill-rule="evenodd"
+                                            d="M15.854 10.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708l1.146 1.147 2.646-2.647a.5.5 0 0 1 .708 0z" />
+                                    </svg>
+                                    ตรวจสอบ
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+                </div>
+            </div>
         </div>
     </div>
 </div>

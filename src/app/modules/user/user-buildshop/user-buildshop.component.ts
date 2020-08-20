@@ -19,9 +19,7 @@ export class UserBuildshopComponent implements OnInit {
 
   ngOnInit(): void {
     const userId = localStorage.getItem('shop');
-
     console.log('USER ID ::::: ' + userId);
-
     this.buildshopForm = this.fb.group({
       id: [userId, [Validators.required]],
       shop_img: ['', [Validators.required]],

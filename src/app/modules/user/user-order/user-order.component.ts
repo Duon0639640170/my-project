@@ -11,6 +11,7 @@ export class UserOrderComponent implements OnInit {
   public orderList: Array<any>;
   order;
   page: any;
+  term: string;
 
   dataCard: { img: string; deteil: string; }[];
 
