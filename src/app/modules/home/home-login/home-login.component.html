@@ -1,37 +1,39 @@
 <div class="container">
-  <div class="col-md-4 offset-md-4">
-    <div class="card text-center">
-      <div class="card-body">
-        <h5 class="card-title">Sign In</h5>
-        <div *ngIf="loading" class="spinner-grow text-primary" role="status">
-          <span class="sr-only">Loading...</span>
+  <div class="col-md-5 offset-md-1">
+    <div class="card col-md-9 offset-md-2">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Sign In</h5>
+          <div *ngIf="loading" class="spinner-grow text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
         </div>
-        <p class="card-text">
-          PROJECT
-        </p>
-        <form [formGroup]="loginForm" accept-charset="UTF-8" autocomplete="off">
-          <fieldset>
-            <div class="form-group">
-              <input class="form-control" placeholder="Username" formControlName="username" type="text" required />
-            </div>
-            <div class="form-group">
-              <input class="form-control" placeholder="Password" formControlName="password" type="password" required />
-              <small id="passwordHelpInline" class="text-muted">
-                Must be 5-20 characters long.
-              </small>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input name="remember" type="checkbox" value="Remember Me" />
-                Remember Me
-              </label>
-            </div>
-          </fieldset>
-        </form>
-        <button class="btn btn-lg btn-success btn-block" (click)="login()">
-          Login
-        </button>
       </div>
+      <form [formGroup]="loginForm" accept-charset="UTF-8" autocomplete="off">
+        <fieldset>
+          <div class="form-group">
+            <label for="inputEmail4">Username</label>
+            <input class="form-control" placeholder="" formControlName="username" type="text" required />
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail4">Password</label>
+            <input class="form-control" placeholder="" formControlName="password" type="password" required />
+            <small id="passwordHelpInline" class="text-muted">
+              Must be 5-20 characters long.
+            </small>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input name="remember" type="checkbox" value="Remember Me" />
+              Remember Me
+            </label>
+          </div>
+        </fieldset>
+      </form>
+      <button class="btn btn-lg btn-success btn-block" (click)="login()">
+        Login
+      </button>
     </div>
   </div>
 </div>

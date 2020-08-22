@@ -107,7 +107,7 @@ export class UserEditproductComponent implements OnInit {
     } else { // case success
       console.log(this.editproductForm.value);
       console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.editproductForm.value);
-      this.router.navigate(['/user/homeshop']);
+      this.router.navigate(['/user/shopme']);
       // register
       this.shaerdService.updateProduct(this.editproductForm.value).subscribe((res) => {
         console.log('LOGGGG LISTSHOP', res);

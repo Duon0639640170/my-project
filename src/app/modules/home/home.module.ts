@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HomeLoginComponent } from './home-login/home-login.component';
 import { HomeRegisterComponent } from './home-register/home-register.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from '../../shared/shared.module';
 import { HomeDoproductComponent } from './home-doproduct/home-doproduct.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -21,7 +22,9 @@ import { HomeDoproductComponent } from './home-doproduct/home-doproduct.componen
     CommonModule,
     ReactiveFormsModule,
     HomeRoutingModule,
-    SharedModule
+    SharedModule,
+    Ng2SearchPipeModule,
+    FormsModule
   ]
 })
 export class HomeModule { }

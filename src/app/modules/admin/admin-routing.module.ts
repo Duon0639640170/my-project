@@ -26,6 +26,8 @@ const routes: Routes = [
     { path: 'editprofile', component: AdminEditprofileComponent },
     { path: 'checkpayment/:pm_id', component: AdminCheckpaymentComponent },
     { path: 'upparcel/:pm_id', component: AdminUpparcelComponent },
+   
+    
     
 ];
 @NgModule({

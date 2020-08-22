@@ -12,6 +12,7 @@ export class AdminHomeComponent implements OnInit {
   productList: Array<any>;
   API_URL_IMG = environment.api_url + "/images/"
   product;
+  term: string;
  
 
 

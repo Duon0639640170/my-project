@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ShaerdService } from 'src/app/shared/service/shaerd.service';
 import { environment } from 'src/environments/environment';
 
+
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -12,7 +13,8 @@ export class HomePageComponent implements OnInit {
   productList: Array<any>;
   API_URL_IMG = environment.api_url + "/images/"
   product;
- 
+  page: any;
+  term: string;
 
 
   dataCard: { img: string; deteil: string; }[];

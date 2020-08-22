@@ -12,6 +12,8 @@ export class UserHomeComponent implements OnInit {
   productList: Array<any>;
   API_URL_IMG = environment.api_url + "/images/"
   product;
+  page: any;
+  term: string;
  
 
 
