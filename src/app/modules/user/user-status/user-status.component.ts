@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class UserStatusComponent implements OnInit {
   statusForm: FormGroup;
+  fileNameShow: any;
+  buildshopForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -48,5 +50,26 @@ export class UserStatusComponent implements OnInit {
     }
   }
  
+  uploadImage(event: any) {
+    const reader = new FileReader();
+    if (event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.fileNameShow = file.name;
+        this.buildshopForm.patchValue({
+          shop_img: file.name
+        });
+
+        // for upload
+        const formData = new FormData();
+        formData.append('file', file);
+        this.shaerdService.uploadImage(formData).subscribe(res => {
+          alert('UploadFile :: ' + res);
+        });
+
+      };
+    }
+  }
 
 }

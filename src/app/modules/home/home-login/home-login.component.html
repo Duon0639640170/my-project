@@ -1,14 +1,16 @@
-<div class="container">
-  <div class="col-md-5 offset-md-1">
-    <div class="card col-md-9 offset-md-2">
-      <div class="card text-center">
-        <div class="card-body">
-          <h5 class="card-title">Sign In</h5>
-          <div *ngIf="loading" class="spinner-grow text-primary" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
+<div class="container ">
+
+  <div class="card col-md-5 offset-md-4">
+    <div class="card-body ">
+      <div class="card-header">
+        <h4 class="text-center">เข้าสู่ระบบ</h4>
+        <div class="text-center">
+        <div *ngIf="loading" class="spinner-grow text-primary"  role="status">
+          <span class="sr-only">Loading...</span>
         </div>
       </div>
+      </div>
+
       <form [formGroup]="loginForm" accept-charset="UTF-8" autocomplete="off">
         <fieldset>
           <div class="form-group">
@@ -30,10 +32,16 @@
             </label>
           </div>
         </fieldset>
-      </form>
-      <button class="btn btn-lg btn-success btn-block" (click)="login()">
-        Login
-      </button>
+      </form><br>
+      <div class="form-row" class="text text-center">
+        <button class="btn btn-lg btn-outline-success " (click)="login()">
+          ตกลง
+        </button>&nbsp;
+        <button class="btn btn-lg btn-outline-danger " routerLink="/home/homepage">
+          ยกเลิก
+        </button>
+      </div><br>
     </div>
   </div>
+
 </div>

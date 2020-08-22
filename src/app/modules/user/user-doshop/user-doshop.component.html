@@ -12,13 +12,18 @@
                             </div><br>
 
                             <div class="form-row">
-                                <div class="form-group col-md-5">
+                                <!-- <div class="form-group col-md-5">
                                     <label for="inputEmail4">ชื่อร้าน</label>
                                     <select class="custom-select" (change)="changShopSelected($event.target.value)">
                                         <option selected>Open this select menu</option>
                                         <option *ngFor="let shop of shopList" [value]="shop.shop_id">{{shop.shop_name}}
                                         </option>
                                     </select>
+                                </div> -->
+                                <div class="form-group col-md-5">
+                                    <label for="inputEmail4">ชื่อร้าน</label>
+                                    <input class="form-control" placeholder="" formControlName="shop_name" type="text"
+                                        required />
                                 </div>
                                 <div class="form-group col-md-5">
                                     <label for="shop_address">ที่อยู่ร้าน</label>
@@ -57,11 +62,11 @@
 
                             <div class="row">
                                 <div class="col text-center">
-                                    <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
+                                    <!-- <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
                                         ตกลง
-                                    </button> &nbsp;
-                                    <button class="btn btn-lg btn-outline-danger" routerLink="/user/shopme">
-                                        ยกเลิก
+                                    </button> &nbsp; -->
+                                    <button class="btn btn-lg btn-outline-info" routerLink="/user/shopme">
+                                        ย้อนกลับ
                                     </button>
                                 </div>
                             </div>

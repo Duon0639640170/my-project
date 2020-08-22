@@ -11,7 +11,7 @@
 <div class="container" > 
   <div class="card text-center">
     <div class="card-header">
-      <h2 class="float-none">สินค้าชุมชน</h2>
+      <h3 class="float-none">สินค้าชุมชน</h3>
     </div>
     <div class="card-body">
       <div class="container">
@@ -23,7 +23,7 @@
         <div class="row">
        
           <div *ngFor="let data of productList | filter:term let i = index " class="col-xl-3">
-            <div class="card" style="width: 15rem; ">
+            <div class="card" style="width: 15rem;">
               <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top" alt="...">
               <div class="card-body">
                 <div class="card-body">

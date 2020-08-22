@@ -46,15 +46,5 @@ export class AdminHomeComponent implements OnInit {
     });
   }
 
-
-  private getDataCard() {
-    const data = [
-      {
-        img: '/assets/image/ff.jpg',
-        deteil: 'ลูฟี่ กัปตันเรือ กลุ่มโจรสลัดหมวกฟาง'
-      },
-    ];
-    this.dataCard = data;
-  }
 }
 

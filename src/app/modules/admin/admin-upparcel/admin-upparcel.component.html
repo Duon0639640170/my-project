@@ -1,20 +1,19 @@
 <div class="container">
-    <div class="card ">
-        <div class="card-body">
-
+    <div class="col-md-10 offset-md-1">
+        <div class="card col-md-9 offset-md-2"><br>
             <div class="card-header">
-                <h2 class="float-none" class="text-center">กรอกเลขพัสดุ</h2>
+                <h4 class="float-none" class="text-center">กรอกเลขพัสดุ</h4>
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <form [formGroup]="upparcelForm" accept-charset="UTF-8" autocomplete="off">
                     <fieldset>
-                        <div class="form-row" class="text text-center">
-                            <div class="form-group col-md-5" >
+                      
+                            <div class="form-group col-md-10 offset-md-1" >
                                 <label for="tracking_no"></label>
                                 <input class="form-control" placeholder="" formControlName="tracking_no" type="text"
                                     required />
                             </div>
-                        </div>
+                        
                         <div class="row">
                             <div class="col text-center">
                                 <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
@@ -24,7 +23,7 @@
                                     ยกเลิก
                                 </button>
                             </div>
-                        </div>
+                        </div><br>
                     </fieldset>
                 </form>
             </ul>

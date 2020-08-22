@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ShaerdService } from 'src/app/shared/service/shaerd.service';
 import { Router } from '@angular/router';
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class UserBuildshopComponent implements OnInit {
   buildshopForm: FormGroup;
+  fileNameShow: any;
 
   constructor(
     private fb: FormBuilder,
@@ -18,6 +19,8 @@ export class UserBuildshopComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.fileNameShow  = 'Upload file Name';
+
     const userId = localStorage.getItem('shop');
     console.log('USER ID ::::: ' + userId);
     this.buildshopForm = this.fb.group({
@@ -49,24 +52,26 @@ export class UserBuildshopComponent implements OnInit {
     }
   }
 
-  saveRange(event) {
+  uploadImage(event: any) {
     const reader = new FileReader();
     if (event.target.files && event.target.files.length) {
       const [file] = event.target.files;
       reader.readAsDataURL(file);
       reader.onload = () => {
-        console.log('LOGGGGGGGGG FILE NAME >>:', file.name);
-        console.log('LOGGGGGGGGG DATA saveRange>>:', reader.result);
-        // this.buildshopForm.get('shop_img').setValue(reader.result);
+        this.fileNameShow = file.name;
         this.buildshopForm.patchValue({
           shop_img: file.name
         });
 
-        // fot upload
+        // for upload
+        const formData = new FormData();
+        formData.append('file', file);
+        this.shaerdService.uploadImage(formData).subscribe(res => {
+          alert('UploadFile :: ' + res);
+        });
 
       };
     }
   }
-
 
 }

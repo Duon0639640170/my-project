@@ -18,6 +18,10 @@ export class ShaerdService {
     }),
   };
 
+  public uploadImage(body: any) {
+    return this.http.post<any>(this.API_URL + '/upload/file', body, {responseType: 'text' as 'json'});
+  }
+
   public register(body: any) {
     return this.http.post<any>(this.APIREGISTER_URL + '/user/save', body, this.httpOption);
   }

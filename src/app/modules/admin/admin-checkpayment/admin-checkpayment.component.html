@@ -1,7 +1,6 @@
 <div class="container">
-    <div class="card ">
-        <div class="card-body">
-
+    <div class="col-md-10 offset-md-1">
+        <div class="card col-md-9 offset-md-2"><br>
             <div class="card-header">
                 <h2 class="float-none" class="text-center">รายละเอียดการชำระเงิน</h2>
             </div>
@@ -25,53 +24,71 @@
                         <div class="form-row">
                             <div class="form-group col-md-5">
                                 <label for="id">ชื่อผู้ซื้อ</label>
-                                <input class="form-control" placeholder="" formControlName="id" type="text" required />
+                                <input class="form-control" placeholder="" formControlName="id" type="text" disabled="disabled" required />
                             </div>
-                            <div class="form-group col-md-2">
+
+                            <div class="form-group col-md-3">
                                 <label for="pm_totalpric">ยอดเงินที่ชำระ</label>
                                 <input class="form-control" placeholder="" formControlName="pm_totalpric" type="number"
-                                    min="0" required />
+                                    min="0" disabled="disabled" required />
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-3">
-                                <label for="pm_date">วันที่ทำการจ่ายเงิน</label>
-                                <textarea class="form-control" formControlName="pm_date" placeholder=""
-                                    rows=""></textarea>
+                        
+
+                            
+                                <div class="form-group col-md-4">
+                                    <label for="pm_date">วันที่ทำการจ่ายเงิน</label>
+                                    <textarea class="form-control" formControlName="pm_date" placeholder=""
+                                        rows="" disabled="disabled"></textarea>
+                                </div>
                             </div>
 
-                            <!-- <div class="form-group col-md-5">
-                            <label for="tracking_no">เลขพัสดุ</label>
-                            <input class="form-control" placeholder="" formControlName="tracking_no" type="text"
-                                required />
-                        </div> -->
-                        </div>
+                            <div class="form-group " class="form-check" >
+                                <div class="row">
+                                    <label class="col-form-label col-sm-3 pt-0"  for="pm_status">สถานะการชำระเงิน</label>
+                                    <div class="col-md-2">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios1" formControlName="pm_status" name="pm_status" value="Y" checked>
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            จ่ายแล้ว
+                                        </label>&nbsp;
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios1" formControlName="pm_status" name="pm_status" value="N">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            ยังไม่จ่าย
+                                        </label>
+                                    </div>
+                                </div>
+                            </div><br>
 
-                        <div class="form-group col-md-3" class="form-check">
-                            <label for="pm_status">สถานะการชำระเงิน</label><br>
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                formControlName="pm_status" name="pm_status" value="Y" checked>
-                            <label class="form-check-label" for="exampleRadios1">
-                                จ่ายแล้ว
-                            </label>
-                            <br>
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                formControlName="pm_status" name="pm_status" value="N">
-                            <label class="form-check-label" for="exampleRadios1">
-                                ยังไม่จ่าย
-                            </label>
-                        </div>
-
-                        <div class="row">
-                            <div class="col text-center">
-                                <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
-                                    ตกลง
-                                </button> &nbsp;
-                                <button class="btn btn-lg btn-outline-danger" routerLink="/admin/payment">
-                                    ยกเลิก
-                                </button>
-                            </div>
-                        </div>
+                                <!-- <div class="form-row">
+                                <div class="form-group col-md-3" class="form-check">
+                                    <label for="pm_status">สถานะการชำระเงิน</label><br>
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" formControlName="pm_status" name="pm_status" value="Yes"
+                                        checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        จ่ายแล้ว
+                                    </label>
+                                    <br>
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" formControlName="pm_status" name="pm_status" value="No">
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        ยังไม่จ่าย
+                                    </label>
+                                </div>
+                            </div> -->
+                            <div class="row">
+                                <div class="col text-center">
+                                    <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
+                                        ตกลง
+                                    </button> &nbsp;
+                                    <button class="btn btn-lg btn-outline-danger" routerLink="/admin/payment">
+                                        ยกเลิก
+                                    </button>
+                                </div>
+                            </div><br>
                     </fieldset>
                 </form>
             </ul>

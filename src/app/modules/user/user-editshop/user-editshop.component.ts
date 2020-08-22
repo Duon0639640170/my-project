@@ -49,7 +49,9 @@ export class UserEditshopComponent implements OnInit {
 
   initFormGroup() {
     this.editshopForm = this.fb.group({
+      id: [''],
       shop_id: [''],
+      shop_name: ['', [Validators.required]],
       shop_img: ['', [Validators.required]],
       shop_address: ['', [Validators.required]],
       shop_tel: ['', [Validators.required]],
@@ -69,7 +71,9 @@ export class UserEditshopComponent implements OnInit {
 
       // patch value to form
       this.editshopForm.patchValue({
+        id: userId,
         shop_id: res.shop_id,
+        shop_name: res.shop_name,
         shop_img: res.shop_img,
         shop_address: res.shop_address,
         shop_tel: res.shop_tel,
@@ -108,10 +112,15 @@ export class UserEditshopComponent implements OnInit {
     } else { // case success
       console.log(this.editshopForm.value);
       console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.editshopForm.value);
-      this.router.navigate(['/user/shopme']);
       // register
       this.shaerdService.updateShop(this.editshopForm.value).subscribe((res) => {
         console.log('LOGGGG LISTSHOP', res);
+        if (res !== null){
+          alert('Update Success!');
+          this.router.navigate(['/user/shopme']);
+        } else {
+          alert('Update Fail!');
+        }
       });
     }
   }

@@ -50,6 +50,7 @@ export class UserDoshopComponent implements OnInit {
   initFormGroup() {
     this.doproductForm = this.fb.group({
       shop_id: [''],
+      shop_name: [''],
       shop_img: ['', [Validators.required]],
       shop_address: ['', [Validators.required]],
       shop_tel: ['', [Validators.required]],
@@ -70,6 +71,7 @@ export class UserDoshopComponent implements OnInit {
       // patch value to form
       this.doproductForm.patchValue({
         shop_id: res.shop_id,
+        shop_name: res.shop_name,
         shop_img: res.shop_img,
         shop_address: res.shop_address,
         shop_tel: res.shop_tel,
@@ -98,21 +100,21 @@ export class UserDoshopComponent implements OnInit {
 
 
 
-  submitForm() {
-    // debugger
-    // case notfound in condition
-    if (this.doshopForm.invalid) {
-      return false;
+  // submitForm() {
+  //   // debugger
+  //   // case notfound in condition
+  //   if (this.doshopForm.invalid) {
+  //     return false;
 
-    } else { // case success
-      console.log(this.doshopForm.value);
-      console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.doshopForm.value);
-      this.router.navigate(['/user/shopme']);
-      // register
-      this.shaerdService.updateShop(this.doshopForm.value).subscribe((res) => {
-        console.log('LOGGGG LISTSHOP', res);
-      });
-    }
-  }
+  //   } else { // case success
+  //     console.log(this.doshopForm.value);
+  //     console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.doshopForm.value);
+  //     this.router.navigate(['/user/shopme']);
+  //     // register
+  //     this.shaerdService.updateShop(this.doshopForm.value).subscribe((res) => {
+  //       console.log('LOGGGG LISTSHOP', res);
+  //     });
+  //   }
+  // }
   // get form() { return this.doshopForm.controls; }
 }
