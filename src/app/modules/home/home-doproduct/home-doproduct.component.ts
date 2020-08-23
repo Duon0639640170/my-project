@@ -33,13 +33,13 @@ export class HomeDoproductComponent implements OnInit {
   ngOnInit(): void {
 
     // init form group
-    this.initFormGroup()
+    this.initFormGroup();
 
     // patch value in response api to form 
-    this.patchValueForm()
+    this.patchValueForm();
 
     // initShopSelect
-    this.initShopSelect()
+    this.initShopSelect();
 
   }
 
@@ -49,7 +49,7 @@ export class HomeDoproductComponent implements OnInit {
 
   initFormGroup() {
     this.doproductForm = this.fb.group({
-      pd_id:[''],
+      pd_id: [''],
       pd_img: ['', [Validators.required]],
       shop_id: ['', [Validators.required]],
       pd_name: ['', [Validators.required]],
@@ -76,7 +76,7 @@ export class HomeDoproductComponent implements OnInit {
         pd_price: res.pd_price,
         pd_details: res.pd_details,
         pd_number: res.pd_number
-      })
+      });
 
       this.pd_img = res.pd_img;
     });
@@ -91,40 +91,12 @@ export class HomeDoproductComponent implements OnInit {
   }
 
   changShopSelected(value: any) {
-    console.log('changShopSelected : value ==> ' + value)
+    console.log('changShopSelected : value ==> ' + value);
     this.doproductForm.patchValue({
       shop_id: value
-    })
+    });
   }
 
   get form() { return this.doproductForm.controls; }
 
-  // save
-  // submitForm() {
-  //   debugger
-  //   // case notfound in condition
-  //   if (this.doproductForm.invalid) {
-  //     return false;
-
-  //   } else { // case success
-  //     console.log(this.doproductForm.value);
-  //     console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.doproductForm.value);
-  //     this.router.navigate(['/home/homepage']);
-  //     // register
-  //     this.shaerdService.updateProduct(this.doproductForm.value).subscribe((res) => {
-  //       console.log('LOGGGG LISTSHOP', res);
-  //     });
-  //   }
-  // }
-
-  private getDataCard() {
-    const data = [
-      {
-        img: '/assets/image/1.jpg',
-        deteil: 'ลูฟี่ กัปตันเรือ กลุ่มโจรสลัดหมวกฟาง'
-      },
-    ];
-    this.dataCard = data;
-  }
-  
 }

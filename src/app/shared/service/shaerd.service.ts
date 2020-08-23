@@ -117,6 +117,9 @@ export class ShaerdService {
     return this.http.get<any>(this.API_URL + '/shop-by-id/' + `${id}`);
   }
 
+  public getProductByShop_id(shop_id: any) {
+    return this.http.get<any>(this.API_URL + '/product-by-shop_id/' + `${shop_id}`);
+  }
   // public getShopByShop_id(body: any) {
   //   console.log('LOGG >>> getShopByShop_id()>::', this.API_URL + '/shop/' + `${body}`); // http://localhost:9081/it-api/shop/&{3}
 
