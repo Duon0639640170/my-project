@@ -48,6 +48,7 @@ export class UserBuildshopComponent implements OnInit {
       // register
       this.shaerdService.saveshop(this.buildshopForm.value).subscribe((res) => {
         console.log('LOGGGG LISTSHOP', res);
+        window.location.reload();
       });
     }
   }

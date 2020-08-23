@@ -19,6 +19,10 @@ export class UserStatusComponent implements OnInit {
     private router: Router
   ) { }
   ngOnInit(): void {
+    this.fileNameShow  = 'Upload file Name';
+
+    const userId = localStorage.getItem('shop');
+    console.log('USER ID ::::: ' + userId);
     this.statusForm = this.fb.group({
       pd_img: ['', [Validators.required]],
       pd_name: ['', [Validators.required]],
@@ -35,6 +39,7 @@ export class UserStatusComponent implements OnInit {
   // save
   submitForm() {
     // case notfound in condition
+    console.log('LOG DATA FN() ON invalid >>>submitForm valuevalue<<<::', this.statusForm.value);
     if (this.statusForm.invalid) {
       return false;
 
@@ -57,8 +62,8 @@ export class UserStatusComponent implements OnInit {
       reader.readAsDataURL(file);
       reader.onload = () => {
         this.fileNameShow = file.name;
-        this.buildshopForm.patchValue({
-          shop_img: file.name
+        this.statusForm.patchValue({
+          pd_img: file.name
         });
 
         // for upload

@@ -30,7 +30,9 @@ export class AdminParcelComponent implements OnInit {
     this.shaerdService.getAllPayment().subscribe((data) => {
       console.log('LOGGGG LISTSHOP', data);
       this.dataList = data
+     
     });
+   
   }
 
 
