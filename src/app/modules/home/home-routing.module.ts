@@ -9,7 +9,7 @@ const routes: Routes = [
     { path: '', component: HomePageComponent },
     { path: 'login', component: HomeLoginComponent },
     { path: 'register', component: HomeRegisterComponent },
-    { path: 'doproduct/:pd_id', component: HomeDoproductComponent },
+    { path: 'doproduct', component: HomeDoproductComponent },
     { path: 'homepage', component: HomePageComponent },
 ];
 

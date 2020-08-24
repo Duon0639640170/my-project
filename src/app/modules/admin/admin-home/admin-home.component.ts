@@ -28,13 +28,12 @@ export class AdminHomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProductList();
-    
   }
 
   getProductList() {
     this.shaerdService.getAllProduct().subscribe((data) => {
       console.log('LOGGGG LISTSHOP', data);
-      this.productList = data
+      this.productList = data;
     });
   }
 

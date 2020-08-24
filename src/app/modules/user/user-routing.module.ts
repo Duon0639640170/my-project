@@ -27,7 +27,7 @@ const routes: Routes = [
     { path: 'status', component: UserStatusComponent },
     { path: 'editproduct/:pd_id', component: UserEditproductComponent },
     { path: 'homeshop', component: UserHomeshopComponent },
-    { path: 'doproduct', component: UserDoproductComponent },
+    { path: 'doproduct/:pd_id', component: UserDoproductComponent },
     { path: 'payment', component: UserPaymentComponent },
     { path: 'doparcel', component: UserDoparcelComponent },
     { path: 'report', component: UserReportComponent },

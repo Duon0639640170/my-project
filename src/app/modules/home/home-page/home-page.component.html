@@ -1,46 +1,48 @@
-<!-- <p>
-<nav class="navbar navbar-light bg-light" >
-  <ul></ul>
-  <form class="form-inline my-1 my-lg-0">
-    <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-1 my-sm-0" type="submit">Search</button>
-  </form>
-</nav>
-<ul></ul> -->
-
-<div class="container" > 
-  <div class="card text-center">
-    <div class="card-header">
-      <h3 class="float-none">สินค้าชุมชน</h3>
-    </div>
-    <div class="card-body">
-      <div class="container">
-        <div class="form-row">
-          <div class="form-group col-md-2">
-              <input type="text" class="form-control" placeholder="ค้นหาข้อมูล" [(ngModel)]="term">
-          </div>
-       </div>
-        <div class="row">
-       
-          <div *ngFor="let data of productList | filter:term let i = index " class="col-xl-3">
-            <div class="card" style="width: 15rem;">
-              <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <div class="card-body">
-                  <p class="card-text">ชื่อสินค้า : {{data.pd_name}} </p>
-                  <p class="card-text">ราคา : {{data.pd_price}} บาท</p>
-                  <p class="card-text">จำนวนสินค้า : {{data.pd_number}} ชิ้น</p>
-                  <ul>
-                    <button type="button" class="btn btn-outline-info" [routerLink]="['/home/doproduct', data.pd_id]"
-                      routerLinkActive="router-link-active">
-                      ดูสินค้า</button>
-
-                  </ul>
-                </div>
-              </div>
-            </div><br>
+<div class="container ">
+  <div class="card col-md-5 offset-md-4"><br>
+    <div class="alert alert-warning "role="alert">
+      <div class="card-body ">
+        <div class="card-header">
+          <h4 class="text-center">เข้าสู่ระบบ</h4>
+          <div class="text-center">
+            <div *ngIf="loading" class="spinner-grow text-primary" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
           </div>
         </div>
+        <form [formGroup]="loginForm" accept-charset="UTF-8" autocomplete="off">
+          <fieldset>
+            <div class="form-group">
+              <label for="inputEmail4">Username</label>
+              <input class="form-control" placeholder="" formControlName="username" type="text" required />
+            </div>
+
+            <div class="form-group">
+              <label for="inputEmail4">Password</label>
+              <input class="form-control" placeholder="" formControlName="password" type="password" required />
+              <small id="passwordHelpInline" class="text-muted">
+                Must be 5-20 characters long.
+              </small>
+            </div>
+
+
+              <a class="text-center" class="alert-link" routerLink="/home/register">สมัครสมาชิก</a>
+
+            <!-- <li class="nav-item">
+            <a class="nav-link" routerLink="/home/register">สมัครสมาชิก<span class="sr-only">(current)</span></a>
+          </li> -->
+
+
+          </fieldset>
+        </form><br>
+        <div class="form-row" class="text text-center">
+          <button class="btn btn-lg btn-outline-success " (click)="login()">
+            ตกลง
+          </button>&nbsp;
+          <button class="btn btn-lg btn-outline-danger " routerLink="/home/homepage">
+            ยกเลิก
+          </button>
+        </div><br>
       </div>
     </div>
   </div>

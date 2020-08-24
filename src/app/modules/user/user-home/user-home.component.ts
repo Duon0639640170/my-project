@@ -14,7 +14,6 @@ export class UserHomeComponent implements OnInit {
   product;
   page: any;
   term: string;
- 
 
 
   dataCard: { img: string; deteil: string; }[];
@@ -26,35 +25,43 @@ export class UserHomeComponent implements OnInit {
   ) {
 
   }
+  
 
   ngOnInit(): void {
-    this.getProductList();
-    
+    this.getRoomList();
+
   }
 
-  getProductList() {
-    this.shaerdService.getAllProduct().subscribe((data) => {
-      console.log('LOGGGG LISTSHOP', data);
-      this.productList = data
+  getRoomList() {
+    const shop = localStorage.getItem('shop');
+    console.log('patchValueForm : userId => ', shop);
+
+    this.shaerdService.getShopByUserId(shop).subscribe((dataUser) => {
+      console.log('LOGGGG dataUser', dataUser);
+
+      this.shaerdService.getProductByShop_id(dataUser.shop_id).subscribe((data) => {
+        console.log('LOGGGG dataDorm', data);
+        this.productList = data;
+      });
     });
   }
+
+  // getProductList(data) {
+  //   this.shaerdService.getProductByShop_id(data.shop_id).subscribe((res) => {
+  //     console.log('LOGGGG LISTSHOP', res);
+  //     this.productList = res;
+  //     this.router.navigate(['']);
+  //   });
+  // }
 
   onDoproduct(data) {
     this.shaerdService.getProductByPD_id(data.pd_id).subscribe((res) => {
       console.log('LOGGGG LISTSHOP', res);
       this.product = res;
-      this.router.navigate(['/user/doproduct']);
+      this.router.navigate(['']);
     });
   }
 
+ 
 
-  private getDataCard() {
-    const data = [
-      {
-        img: '/assets/image/ff.jpg',
-        deteil: 'ลูฟี่ กัปตันเรือ กลุ่มโจรสลัดหมวกฟาง'
-      },
-    ];
-    this.dataCard = data;
-  }
 }

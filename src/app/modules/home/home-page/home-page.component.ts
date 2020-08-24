@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShaerdService } from 'src/app/shared/service/shaerd.service';
 import { environment } from 'src/environments/environment';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { HomeService } from 'src/app/shared/service/home.service';
 
 
 @Component({
@@ -10,52 +12,35 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  productList: Array<any>;
-  API_URL_IMG = environment.api_url + "/images/"
-  product;
-  page: any;
-  term: string;
-
-
-  dataCard: { img: string; deteil: string; }[];
-
+  loading = false;
+  loginForm: FormGroup;
 
   constructor(
-    private shaerdService: ShaerdService,
+    private fb: FormBuilder,
+    private homeService: HomeService,
     private router: Router
-  ) {
-
-  }
+  ) { }
 
   ngOnInit(): void {
-    this.getProductList();
-    
-  }
-
-  getProductList() {
-    this.shaerdService.getAllProduct().subscribe((data) => {
-      console.log('LOGGGG LISTSHOP', data);
-      this.productList = data
-     
-    });
-  };
-
-   onEdit(data) {
-    this.shaerdService.getProductByPD_id(data.pd_id).subscribe((res) => {
-      console.log('LOGGGG LISTSHOP', res);
-      this.product = res;
-      this.router.navigate(['/home/doproduct']);
+    this.loginForm = this.fb.group({
+      username: ['', [Validators.required, Validators.minLength(4)]],
+      password: ['', [Validators.required, Validators.minLength(4)]],
     });
   }
 
-
-  private getDataCard() {
-    const data = [
-      {
-        img: '/assets/image/ff.jpg',
-        deteil: 'ลูฟี่ กัปตันเรือ กลุ่มโจรสลัดหมวกฟาง'
-      },
-    ];
-    this.dataCard = data;
+  login() {
+    this.loading = true;
+    if (this.loginForm.invalid) {
+      this.loading = false;
+      return false;
+    } else {
+      this.homeService.authentication(this.loginForm.value);
+      setTimeout(() => {
+        this.loading = false;
+        this.loginForm.reset();
+      }, 3000);
+    }
   }
+
+  get form() { return this.loginForm.controls; }
 }

@@ -99,32 +99,12 @@ export class UserDoproductComponent implements OnInit {
 
   get form() { return this.doproductForm.controls; }
 
-  // save
-  // submitForm() {
-  //   debugger
-  //   // case notfound in condition
-  //   if (this.doproductForm.invalid) {
-  //     return false;
-
-  //   } else { // case success
-  //     console.log(this.doproductForm.value);
-  //     console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.doproductForm.value);
-  //     this.router.navigate(['/home/homepage']);
-  //     // register
-  //     this.shaerdService.updateProduct(this.doproductForm.value).subscribe((res) => {
-  //       console.log('LOGGGG LISTSHOP', res);
-  //     });
-  //   }
-  // }
-
-  private getDataCard() {
-    const data = [
-      {
-        img: '/assets/image/1.jpg',
-        deteil: 'ลูฟี่ กัปตันเรือ กลุ่มโจรสลัดหมวกฟาง'
-      },
-    ];
-    this.dataCard = data;
+  onDoproduct(data) {
+    this.shaerdService.getProductByPD_id(data.pd_id).subscribe((res) => {
+      console.log('LOGGGG LISTSHOP', res);
+      this.product = res;
+      this.router.navigate(['/user/doproduct']);
+    });
   }
   
 }

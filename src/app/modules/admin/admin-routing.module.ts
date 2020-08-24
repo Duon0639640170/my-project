@@ -21,7 +21,7 @@ const routes: Routes = [
     { path: 'payment', component: AdminPaymentComponent },
     { path: 'parcel', component: AdminParcelComponent },
     { path: 'report', component: AdminReportComponent },
-    { path: 'doproduct', component: AdminDoproductComponent },
+    { path: 'doproduct/:pd_id', component: AdminDoproductComponent },
     { path: 'slip', component: AdminSlipComponent },
     { path: 'editprofile', component: AdminEditprofileComponent },
     { path: 'checkpayment/:pm_id', component: AdminCheckpaymentComponent },
