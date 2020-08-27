@@ -12,14 +12,14 @@ export class AdminPaymentComponent implements OnInit {
   payment;
   page: any;
   term: string;
-  
+  status = '1';
   dataCard: { img: string; deteil: string; }[];
   constructor(
     private shaerdService: ShaerdService,
     private router: Router
   ) { }
 
- 
+
   ngOnInit(): void {
     this.getPaymentList();
   }

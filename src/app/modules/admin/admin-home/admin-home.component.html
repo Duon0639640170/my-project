@@ -1,32 +1,48 @@
-<div class="container" >
-  <div class="card text-center">
-    <div class="card-header">
-      <h2 class="float-none">สินค้าชุมชน</h2>
-    </div>
-    <div class="card-body">
-      <div class="form-row">
-        <div class="form-group col-md-2">
-          <input type="text" class="form-control" placeholder="ค้นหาข้อมูล" [(ngModel)]="term">
-        </div>
+<div class="row">
+  <div class="row col-md-2">
+    <ul >
+      <select class="custom-select ">
+        <option selected>ประเภทสินค้า</option>
+        <option value="1">ผัก</option>
+        <option value="2">ผลไม้</option>
+        <option value="3">อาหาาร</option>
+        <option value="4">เสื้อผ้า</option>
+        <option value="5">เครื่องจักสาน</option>
+        <option value="6">อื่นๆ</option>
+      </select>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="card text-center">
+      <div class="card-header">
+        <h2 class="float-none">สินค้าชุมชน</h2>
       </div>
       <div class="card-body">
-        <div class="row">
-          <div *ngFor="let data of productList  | filter:term let i = index " class="col-xl-3">
-            <div class="card" style="width: 15rem; ">
-              <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top" alt="...">
-              <div class="card-body">
+        <div class="form-row">
+          <div class="form-group col-md-2">
+            <input type="text" class="form-control" placeholder="ค้นหาข้อมูล" [(ngModel)]="term">
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div *ngFor="let data of productList  | filter:term let i = index " class="col-xl-3">
+              <div class="card" style="width: 15rem; ">
+                <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <p class="card-text">ชื่อสินค้า : {{data.pd_name}}</p>
-                  <p class="card-text">ราคา : {{data.pd_price}} บาท</p>
-                  <p class="card-text">จำนวนสินค้า : {{data.pd_number}} ชิ้น</p>
-                  <ul>
-                    <button type="button" class="btn btn-outline-info btn-block "
-                      [routerLink]="['/admin/doproduct', data.pd_id]" routerLinkActive="router-link-active">
-                      ดูสินค้า</button>
-                  </ul>
+                  <div class="card-body">
+                    <p class="card-text">ชื่อสินค้า : {{data.pd_name}}</p>
+                    <p class="card-text">ราคา : {{data.pd_price}} บาท</p>
+                    <p class="card-text">จำนวนสินค้า : {{data.pd_number}} ชิ้น</p>
+                    <ul>
+                      <button type="button" class="btn btn-outline-info btn-block "
+                        [routerLink]="['/admin/doproduct', data.pd_id]" routerLinkActive="router-link-active">
+                        ดูสินค้า</button>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </div><br>
+              </div><br>
+            </div>
           </div>
         </div>
       </div>

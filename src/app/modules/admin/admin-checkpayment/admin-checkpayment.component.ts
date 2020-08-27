@@ -17,7 +17,7 @@ export class AdminCheckpaymentComponent implements OnInit {
   pm_id: any
   pm_img: string = ''
   paymentList = [];
- 
+
 
   dataCard: { img: string; deteil: string; }[];
 
@@ -58,6 +58,9 @@ export class AdminCheckpaymentComponent implements OnInit {
       pm_totalpric: [''],
       pm_date: [''],
       tracking_no: [''],
+      order_ref: [''],
+      dr_adress: [''],
+      dr_status: ['', [Validators.required]],
       pm_status: ['', [Validators.required]],
 
     });
@@ -80,6 +83,9 @@ export class AdminCheckpaymentComponent implements OnInit {
         pm_img: res.pm_img,
         pm_no: res.pm_no,
         tracking_no: res.tracking_no,
+        order_ref: res.order_ref,
+        dr_adress: res.dr_adress,
+        dr_status: res.dr_status,
         pm_status: res.pm_status
       });
 

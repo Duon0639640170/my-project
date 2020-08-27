@@ -2,9 +2,9 @@
     <div class="card col-md-20 ">
         <div class="card-body">
             <div class="card-header"><br>
-                <h3 class="text-center">ตรวจสอบการชำระเงิน</h3><br>
+                <h3 class="text-center">สรุปการชำระเงิน</h3><br>
             </div><br>
-            <div class="row"  class="car-body">
+            <div class="row" class="car-body">
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <input type="text" class="form-control" placeholder="ค้นหาข้อมูล" [(ngModel)]="term">
@@ -17,6 +17,7 @@
                             <th scope="col">หมายเลขคำสั่งซืื้อ</th>
                             <th scope="col">ยอดเงินที่ชำระ</th>
                             <th scope="col">วันที่ทำการจ่ายเงิน</th>
+                            <th scope="col">สถานะการส่งของ</th>
                             <th scope="col">สถานะการชำระเงิน</th>
                             <th></th>
                         </tr>
@@ -33,6 +34,12 @@
                             </td>
                             <td>
                                 {{data.pm_date}}
+                            </td>
+                            <td *ngIf="status === '1'" >
+                                {{data.dr_status}}<span class="badge badge-pill badge-danger">ยังไม่ส่ง</span> 
+                            </td>
+                            <td *ngIf="status === '2'">
+                                {{data.dr_status}} <span class="badge badge-pill badge-warning">นำส่ง</span>
                             </td>
                             <td>
                                 {{data.pm_status}}
