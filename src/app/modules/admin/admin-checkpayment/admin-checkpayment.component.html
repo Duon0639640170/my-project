@@ -16,24 +16,18 @@
                         <div class="form-row">
                             <div class="form-group col-md-5">
                                 <label for="pm_no">หมายเลขการสั่งซื้อ</label>
-                                <input class="form-control" placeholder="" formControlName="pm_no" type="text"
-                                    disabled required />
+                                <input class="form-control" placeholder="" formControlName="pm_no" type="text" disabled
+                                    required />
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="id">ชื่อผู้ซื้อ</label>
-                                <input class="form-control" placeholder="" formControlName="id" type="text"
-                                    disabled required />
+                                <input class="form-control" placeholder="" formControlName="id" type="text" disabled
+                                    required />
                             </div>
                         </div>
 
                         <div class="form-row">
-                            <div class="form-group col-md-7">
-                                <label for="order_ref">รายการสั่งซื้อ</label>
-                                <textarea class="form-control" formControlName="order_ref" placeholder="" rows=""
-                                    disabled></textarea>
-                            </div>
-
                             <div class="form-group col-md-5">
                                 <label for="dr_adress">ที่อยู่จัดส่ง</label>
                                 <textarea class="form-control" formControlName="dr_adress" placeholder="" rows=""
@@ -55,16 +49,47 @@
                                     disabled></textarea>
                             </div>
                         </div>
+                        <br>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="pm_date">รายการสั่งซื้อ</label>
 
-                        <div class="col-4 mx-auto text-center">
-                            <div class="form-group text-center">
-                                <label for="pm_img"></label>
-                                <div class="card" style="width: 18rem; ">
-                                    <img [src]="API_URL_IMG + pm_img" class="card-img-top" cl alt="...">
-                                </div>
-                                <!-- <textarea class="form-control" formControlName="pm_img" rows="3" ></textarea> -->
+                                <table class="table table-hover bg-light">
+                                    <thead class="alert alert-warning">
+                                        <tr>
+                                            <th scope="col">ชื่อสินค้า</th>
+                                            <th scope="col">จำนวน</th>
+                                            <th scope="col">ราคา</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let data of productList">
+                                            <td>
+                                                {{data.pd_name}}
+                                            </td>
+                                            <td>
+
+                                                {{data.pd_number}}
+                                            </td>
+                                            <td>
+
+                                                {{data.pd_price}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                        </div><br>
+
+                            <div class="col-6 text-center">
+                                <div class="form-group text-center">
+                                    <label for="pm_img"></label>
+                                    <div class="card" style="width: 13rem; ">
+                                        <img [src]="API_URL_IMG + pm_img" class="card-img-top" cl alt="...">
+                                    </div>
+                                    <!-- <textarea class="form-control" formControlName="pm_img" rows="3" ></textarea> -->
+                                </div>
+                            </div><br>
+                        </div>
 
                         <div class="form-group " class="form-check">
                             <div class="row">
@@ -87,23 +112,28 @@
                             </div>
                         </div><br>
 
-                        <!-- <div class="form-row">
-                                <div class="form-group col-md-3" class="form-check">
-                                    <label for="pm_status">สถานะการชำระเงิน</label><br>
-                                    <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" formControlName="pm_status" name="pm_status" value="Yes"
-                                        checked>
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        จ่ายแล้ว
-                                    </label>
-                                    <br>
-                                    <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" formControlName="pm_status" name="pm_status" value="No">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        ยังไม่จ่าย
-                                    </label>
+                        <!-- 
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div *ngFor="let data of productList " class="col-xl-3">
+                                    <div class="card" style="width: 15rem; ">
+                                        <div class="card-body">
+                                            <div class="card-body">
+                                                <p class="card-text">ชื่อสินค้า :</p>
+                                                <p class="card-text">ราคา : บาท</p>
+                                                <p class="card-text">จำนวนสินค้า : ชิ้น</p>
+                                                <ul>
+                                                    <button type="button" class="btn btn-outline-info btn-block "
+                                                        routerLinkActive="router-link-active">
+                                                        ดูสินค้า</button>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div><br>
                                 </div>
-                            </div> -->
+                            </div>
+                        </div> -->
                         <div class="row">
                             <div class="col text-center">
                                 <button class="btn btn-lg btn-outline-success" (click)="submitForm()">

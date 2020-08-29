@@ -154,6 +154,10 @@ export class ShaerdService {
     return this.http.get<any>(this.API_URL + '/order');
   }
 
+  public getTypeByTypeId(typeId: any) {
+    return this.http.get<any>(this.API_URL + '/type/' + typeId);
+  }
+
   //http://localhost:9000/user/{username}
   // http://localhost:9000/user/all
   // http://localhost:9081/it-api/order/save
@@ -173,4 +177,5 @@ export class ShaerdService {
   //http://localhost:9081/it-api/report/generateReport
   //http://localhost:9000/user/update
   //http://localhost:9000/user/all
+  //http://localhost:9081/it-api/type/
 }

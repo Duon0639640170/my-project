@@ -13,6 +13,7 @@ export class AdminPaymentComponent implements OnInit {
   page: any;
   term: string;
   status = '1';
+  paymentstatus = 'N';
   dataCard: { img: string; deteil: string; }[];
   constructor(
     private shaerdService: ShaerdService,

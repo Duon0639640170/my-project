@@ -24,6 +24,7 @@ export class UserStatusComponent implements OnInit {
     const userId = localStorage.getItem('shop');
     console.log('USER ID ::::: ' + userId);
     this.statusForm = this.fb.group({
+      type_id: [''],
       pd_img: ['', [Validators.required]],
       pd_name: ['', [Validators.required]],
       shop_address: ['', [Validators.required]],
@@ -75,6 +76,14 @@ export class UserStatusComponent implements OnInit {
 
       };
     }
+  }
+
+  initTypeSelect(data) {
+    this.shaerdService.getTypeByTypeId(data.type_id).subscribe((res) => {
+      this.statusForm = res;
+     
+    });
+
   }
 
 }

@@ -40,9 +40,12 @@
                             <!-- <td>
                         {{data.tracking_no}}
                     </td> -->
-                            <td>
-                                {{data.pm_status}}
-                            </td>
+                    <td *ngIf="data.pm_status === 'Y'">
+                        จ่ายแล้ว
+                     </td>
+                     <td *ngIf="data.pm_status === 'N'">
+                         ยังไม่จ่าย
+                     </td>
                             <td>
                                 <button type="button" class="btn btn-outline-warning"
                                     [routerLink]="['/user/editpayment', data.pm_id]"

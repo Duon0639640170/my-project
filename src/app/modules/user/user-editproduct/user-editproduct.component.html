@@ -15,30 +15,29 @@
                                 </div><br>
 
                                 <div class="form-row">
-                                    <!-- <div class="form-group col-md-5">
-                                    <label for="inputEmail4">ชื่อร้าน</label>
-                                    <select class="custom-select" (change)="changShopSelected($event.target.value)"
-                                        formControlName="shop_id" [value]="form.shop_id">
-                                        <option selected>Open this select menu</option>
-                                        <option *ngFor="let shop of shopList" [value]="shop.shop_id">{{shop.shop_name}}
-                                        </option>
-                                    </select>
-                                </div> -->
-
-                                    <!-- <div class="form-group col-md-5">
-                                    <label for="inputEmail4">ชื่อร้าน</label>
-                                    <input class="form-control" placeholder="" formControlName="shop_name" type="text"
-                                        required />
-                                </div> -->
-
                                     <div class="form-group col-md-5">
-                                        <label for="inputPassword4">ชื่อสินค้า</label>
+                                        <label for="">ชื่อสินค้า</label>
                                         <input class="form-control" placeholder="" formControlName="pd_name" type="text"
                                             required />
                                     </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="">ประเภทสินค้า</label>
+                                        <input class="form-control" placeholder="" formControlName="type_id" type="text"
+                                            required />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
                                     <div class="form-group col-md-2">
                                         <label for="inputPassword4">ราคา</label>
                                         <input class="form-control" placeholder="" formControlName="pd_price"
+                                            type="number" min="0" required />
+                                    </div>
+
+                                    <div class="form-group  col-md-2">
+                                        <label for="pd_number">จำนวน</label>
+                                        <input class="form-control" placeholder="" formControlName="pd_number"
                                             type="number" min="0" required />
                                     </div>
                                 </div>
@@ -47,13 +46,6 @@
                                     <div class="form-group col-md-6">
                                         <label for="pd_details">รายละเอียด</label>
                                         <textarea class="form-control" formControlName="pd_details" rows="2"></textarea>
-                                    </div>
-
-
-                                    <div class="form-group  col-md-2">
-                                        <label for="pd_number">จำนวน</label>
-                                        <input class="form-control" placeholder="" formControlName="pd_number"
-                                            type="number" min="0" required />
                                     </div>
                                 </div>
 

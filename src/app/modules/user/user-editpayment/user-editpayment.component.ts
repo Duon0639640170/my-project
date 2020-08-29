@@ -10,12 +10,14 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./user-editpayment.component.css']
 })
 export class UserEditpaymentComponent implements OnInit {
-  productList: Array<any>;
+ 
   API_URL_IMG = environment.api_url + "/images/"
   editpayment: any;
   pm_id: any
   pm_img: string = ''
   paymentList = [];
+  paymentstatus = 'N';
+  productList = [];
 
 
   dataCard: { img: string; deteil: string; }[];
@@ -50,10 +52,15 @@ export class UserEditpaymentComponent implements OnInit {
   initFormGroup() {
     this.editpaymentForm = this.fb.group({
       id:[''],
-  
+      pm_id: ['', [Validators.required]],
+      pm_img: ['', [Validators.required]],
+      pm_no: ['', [Validators.required]],
       pm_totalpric: ['', [Validators.required]],
       pm_date: ['', [Validators.required]],
       tracking_no: ['', [Validators.required]],
+      order_ref: ['', [Validators.required]],
+      dr_adress: ['', [Validators.required]],
+      dr_status: ['', [Validators.required]],
       pm_status: ['', [Validators.required]],
      
     });
@@ -63,20 +70,28 @@ export class UserEditpaymentComponent implements OnInit {
     // get pd_id in request parameter router
     this.pm_id = this.activatedroute.snapshot.paramMap.get("pm_id");
     console.log('patchValueForm : pm_id => ', this.pm_id);
-
     await this.shaerdService.getPaymentByShop(this.pm_id).subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
      
       // patch value to form
       this.editpaymentForm.patchValue({
-        
         id: res.id,
         pm_totalpric: res.pm_totalpric,
         pm_date: res.pm_date,
+        pm_id: res.pm_id,
+        pm_img: res.pm_img,
+        pm_no: res.pm_no,
         tracking_no: res.tracking_no,
+        order_ref: res.order_ref,
+        dr_adress: res.dr_adress,
+        dr_status: res.dr_status,
         pm_status: res.pm_status
       });
-
+      res.orders.map((data: any) => {
+        this.shaerdService.getProductByPD_id(data.pd_id).subscribe((resProduct) => {
+          this.productList.push(resProduct);
+        });
+      });
       this.pm_img = res.pm_img;
     });
   }
