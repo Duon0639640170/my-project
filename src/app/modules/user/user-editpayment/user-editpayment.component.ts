@@ -46,7 +46,7 @@ export class UserEditpaymentComponent implements OnInit {
   }
 
   getUrlImg(): string {
-    return this.API_URL_IMG + this.pm_img
+    return this.API_URL_IMG + this.pm_img;
   }
 
   initFormGroup() {

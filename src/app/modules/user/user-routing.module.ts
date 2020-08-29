@@ -17,6 +17,7 @@ import { UserOrderComponent } from './user-order/user-order.component';
 import { UserDoorderComponent } from './user-doorder/user-doorder.component';
 import { UserDoshopComponent } from './user-doshop/user-doshop.component';
 import { UserEditshopComponent } from './user-editshop/user-editshop.component';
+import { UserTrackingComponent } from './user-tracking/user-tracking.component';
 
 const routes: Routes = [
     { path: '', component: UserHomeComponent },
@@ -29,7 +30,7 @@ const routes: Routes = [
     { path: 'homeshop', component: UserHomeshopComponent },
     { path: 'doproduct/:pd_id', component: UserDoproductComponent },
     { path: 'payment', component: UserPaymentComponent },
-    { path: 'doparcel', component: UserDoparcelComponent },
+    { path: 'doparcel/:pm_id', component: UserDoparcelComponent },
     { path: 'report', component: UserReportComponent },
     { path: 'editprofile', component: UserEditprofileComponent },
     { path: 'editpayment/:pm_id', component: UserEditpaymentComponent },
@@ -37,6 +38,8 @@ const routes: Routes = [
     { path: 'doorder/:order_id', component: UserDoorderComponent },
     { path: 'doshop', component: UserDoshopComponent },
     { path: 'editshop', component: UserEditshopComponent },
+    { path: 'tracking', component: UserTrackingComponent },
+    
 ];
 
 @NgModule({

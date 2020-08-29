@@ -10,7 +10,9 @@ import { environment } from 'src/environments/environment';
 })
 export class UserHomeComponent implements OnInit {
   productList: Array<any>;
-  API_URL_IMG = environment.api_url + "/images/"
+  productListType: Array<any>;
+  statusType = '';
+  API_URL_IMG = environment.api_url + '/images/';
   product;
   page: any;
   term: string;
@@ -25,25 +27,37 @@ export class UserHomeComponent implements OnInit {
   ) {
 
   }
-  
+
 
   ngOnInit(): void {
-    this.getRoomList();
+    this.getProductList('shop_id');
 
   }
 
-  getRoomList() {
+  getProductList(event) {
+
     const shop = localStorage.getItem('shop');
     console.log('patchValueForm : userId => ', shop);
-
+    this.statusType = event;
     this.shaerdService.getShopByUserId(shop).subscribe((dataUser) => {
       console.log('LOGGGG dataUser', dataUser);
+      if (event === 'shop_id') {
+        this.shaerdService.getProductByShop_id(dataUser.shop_id).subscribe((data) => {
 
-      this.shaerdService.getProductByShop_id(dataUser.shop_id).subscribe((data) => {
-        console.log('LOGGGG dataDorm', data);
-        this.productList = data;
-      });
+          console.log('LOGGGG 1 LISTSHOP', data);
+          this.productList = data.filter((item: any) => item.shop_id === dataUser.shop_id);
+          console.log('LOGGGG 222  this.productList::', this.productList);
+        });
+      } else {
+        this.shaerdService.getProductByTypeId(event).subscribe((data) => {
+          console.log(shop, 'LOGGGG 2 LISTSHOP', data);
+          this.productListType = data.filter((item: any) => item.shop_id === dataUser.shop_id);
+
+          console.log('LOGGGG 22233  this.productList::', this.productListType);
+        });
+      }
     });
+
   }
 
   // getProductList(data) {
@@ -62,6 +76,6 @@ export class UserHomeComponent implements OnInit {
     });
   }
 
- 
+
 
 }

@@ -12,6 +12,7 @@ export class UserOrderComponent implements OnInit {
   order;
   page: any;
   term: string;
+  status = '1';
 
   dataCard: { img: string; deteil: string; }[];
 

@@ -22,6 +22,7 @@ import { UserDoshopComponent } from './user-doshop/user-doshop.component';
 import { UserEditshopComponent } from './user-editshop/user-editshop.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { UserTrackingComponent } from './user-tracking/user-tracking.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     UserDoorderComponent,
     UserDoshopComponent,
     UserEditshopComponent,
+    UserTrackingComponent,
   ],
 
   imports: [

@@ -50,12 +50,14 @@ export class UserDoproductComponent implements OnInit {
   initFormGroup() {
     this.doproductForm = this.fb.group({
       pd_id:[''],
+      type_id:[''],
       pd_img: ['', [Validators.required]],
       shop_id: ['', [Validators.required]],
       pd_name: ['', [Validators.required]],
       pd_price: ['', [Validators.required]],
       pd_details: ['', [Validators.required]],
       pd_number: ['', [Validators.required]],
+      type_name: ['', [Validators.required]],
     });
   }
 
@@ -70,12 +72,14 @@ export class UserDoproductComponent implements OnInit {
       // patch value to form
       this.doproductForm.patchValue({
         pd_id: res.pd_id,
+        type_id: res.type_id,
         pd_img: res.pd_img,
         shop_id: res.shop_id,
         pd_name: res.pd_name,
         pd_price: res.pd_price,
         pd_details: res.pd_details,
-        pd_number: res.pd_number
+        pd_number: res.pd_number,
+        type_name: res.productType.type_name
       });
 
       this.pd_img = res.pd_img;

@@ -19,6 +19,7 @@
                             <th scope="col">รหัสสินค้า</th>
                             <th scope="col">จำนวนสินค้า</th>
                             <th scope="col">วันที่สั่งซื้อ</th>
+                            <!-- <th scope="col">สถานะการจัดส่ง</th> -->
                             <th></th>
                         </tr>
                     </thead>
@@ -41,6 +42,12 @@
                             <td>
                                 {{data.order_date}}
                             </td>
+                            <!-- <td *ngIf="status === '1'">
+                                <span class="badge badge-pill badge-danger">ยังไม่ส่ง</span>
+                            </td>
+                            <td *ngIf="status === '2'">
+                               <span class="badge badge-pill badge-warning">นำส่ง</span>
+                            </td> -->
 
                             <td>
                                 <button type="button" class="btn btn-outline-warning"

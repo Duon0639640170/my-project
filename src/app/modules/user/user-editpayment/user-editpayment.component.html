@@ -60,7 +60,7 @@
                                 <label for="pm_date">รายการสั่งซื้อ</label>
 
                                 <table class="table table-hover bg-light">
-                                    <thead class="alert alert-warning">
+                                    <thead class="alert alert-warning" >
                                         <tr>
                                             <th scope="col">ชื่อสินค้า</th>
                                             <th scope="col">จำนวน</th>
@@ -84,23 +84,21 @@
                                     </tbody>
                                 </table>
                             </div>
-
+                        </div>
+                        <ul class="form-group offset-md-4">
                             <div class="col-6 text-center">
                                 <div class="form-group text-center">
                                     <label for="pm_img"></label>
                                     <div class="card" style="width: 13rem; ">
                                         <img [src]="API_URL_IMG + pm_img" class="card-img-top" cl alt="...">
                                     </div>
-                                    <!-- <textarea class="form-control" formControlName="pm_img" rows="3" ></textarea> -->
                                 </div>
-                            </div><br>
-                        </div>
+                            </div>
+                        </ul>
+
 
                         <div class="row">
                             <div class="col text-center">
-                                <!-- <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
-                                    ตกลง
-                                </button> &nbsp; -->
                                 <button class="btn btn-lg btn-outline-danger" routerLink="/user/payment">
                                     ยกเลิก
                                 </button>

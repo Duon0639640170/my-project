@@ -5,17 +5,19 @@
         <a class="list-group-item " data-toggle="list"
           class="list-group-item list-group-item-action list-group-item-warning">ประเภทสินค้า</a>
         <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" role="tab"
-          aria-controls="profile">ผัก</a>
+          aria-controls="profile" (click)="getProductList('1')">ผัก</a>
         <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" role="tab"
-          aria-controls="messages">ผลไม้</a>
+          aria-controls="messages" (click)="getProductList('2')">ผลไม้</a>
         <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" role="tab"
-          aria-controls="settings">อาหาาร</a>
+          aria-controls="settings" (click)="getProductList('3')">อาหาาร</a>
         <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" role="tab"
-          aria-controls="settings">เสื้อผ้า</a>
+          aria-controls="settings" (click)="getProductList('4')">เสื้อผ้า</a>
         <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" role="tab"
-          aria-controls="settings">เครื่องจักสาน</a>
+          aria-controls="settings" (click)="getProductList('5')">เครื่องจักสาน</a>
         <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" role="tab"
-          aria-controls="settings">อื่นๆ</a>
+          aria-controls="settings" (click)="getProductList('6')">อื่นๆ</a>
+        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" role="tab"
+          aria-controls="settings" (click)="getProductList('shop_id')">สินค้าทั้งหมด</a>
       </div>
     </ul>
   </div>
@@ -32,13 +34,37 @@
       </div>
       <div class="card-body">
         <div class="row">
+          <div *ngIf="statusType === 'shop_id'">
+            <div  class="col-xl-3"
+              *ngFor="let data of productList | filter:term | paginate: { itemsPerPage: 5, currentPage: page };  let i = index" >
+              <div class="card" style="width: 15rem;">
+                <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top " alt="{{data.pd_img}}">
+                <div class="card-body">
+                  <h5 class="card-title">111ชื่อสินค้า : {{data.pd_name}}</h5>
+                  <p class="card-text">ราคา : {{data.pd_price}} บาท</p>
+                  <p class="card-text">จำนวนสินค้า : {{data.pd_number}} ชิ้น</p>
+                </div>
+                <ul>
+                  <button type="button" class="btn btn-outline-info  " [routerLink]="['/user/doproduct', data.pd_id]"
+                    routerLinkActive="router-link-active">
+                    ดูสินค้า</button>
+                </ul>
+              </div><br>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="row">
+          <div *ngIf="statusType !== 'shop_id'">
           <div
-            *ngFor="let data of productList | filter:term | paginate: { itemsPerPage: 5, currentPage: page };  let i = index"
+            *ngFor="let data of productListType | filter:term | paginate: { itemsPerPage: 5, currentPage: page };  let i = index"
             class="col-xl-3">
             <div class="card" style="width: 15rem;">
               <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top " alt="{{data.pd_img}}">
               <div class="card-body">
-                <h5 class="card-title">ชื่อสินค้า : {{data.pd_name}}</h5>
+                <h5 class="card-title">222ชื่อสินค้า : {{data.pd_name}}</h5>
                 <p class="card-text">ราคา : {{data.pd_price}} บาท</p>
                 <p class="card-text">จำนวนสินค้า : {{data.pd_number}} ชิ้น</p>
               </div>
@@ -48,6 +74,7 @@
                   ดูสินค้า</button>
               </ul>
             </div><br>
+          </div>
           </div>
         </div>
       </div>
