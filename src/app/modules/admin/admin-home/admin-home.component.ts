@@ -10,10 +10,12 @@ import { Router } from '@angular/router';
 })
 export class AdminHomeComponent implements OnInit {
   productList: Array<any>;
+  productListType: Array<any>;
+  statusType = '';
   API_URL_IMG = environment.api_url + "/images/"
   product;
   term: string;
- 
+
 
 
   dataCard: { img: string; deteil: string; }[];
@@ -27,14 +29,27 @@ export class AdminHomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getProductList();
+    this.getProductList('0');
+
   }
 
-  getProductList() {
-    this.shaerdService.getAllProduct().subscribe((data) => {
-      console.log('LOGGGG LISTSHOP', data);
-      this.productList = data;
-    });
+  getProductList(event) {
+    console.log('LOG event >>:', event);
+
+    this.statusType = event;
+    console.log('LOGGGG 1  this.productList::', this.productList);
+    if (event === '0') {
+      this.shaerdService.getAllProduct().subscribe((data) => {
+        console.log('LOGGGG 1 LISTSHOP', data);
+        this.productList = data;
+        console.log('LOGGGG 222  this.productList::', this.productList);
+      });
+    } else {
+      this.shaerdService.getProductByTypeId(event).subscribe((data) => {
+        console.log('LOGGGG 2 LISTSHOP', data);
+        this.productListType = data;
+      });
+    }
   }
 
   onDoproduct(data) {

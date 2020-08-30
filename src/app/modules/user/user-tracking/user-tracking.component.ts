@@ -13,7 +13,7 @@ export class UserTrackingComponent implements OnInit {
   page: any;
   term: string;
   status = '1';
-  paymentstatus = 'N';
+  paymentstatus = 'Y';
   dataCard: { img: string; deteil: string; }[];
   constructor(
     private shaerdService: ShaerdService,

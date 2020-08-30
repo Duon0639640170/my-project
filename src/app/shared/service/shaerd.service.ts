@@ -158,6 +158,12 @@ export class ShaerdService {
     return this.http.get<any>(this.API_URL + '/type/' + typeId);
   }
 
+  public getProductByTypeId(body: any) {
+    return this.http.get<any>(this.API_URL + '/product-by-type-id/' + `${body}`);
+  }
+
+  
+
   //http://localhost:9000/user/{username}
   // http://localhost:9000/user/all
   // http://localhost:9081/it-api/order/save

@@ -35,12 +35,15 @@
                             <td>
                                 {{data.pm_date}}
                             </td>
-                            <td *ngIf="status === '1'">
+                            <td *ngIf="data.dr_status ==='N'">
                                 <span class="badge badge-pill badge-danger">ยังไม่ส่ง</span>
                             </td>
-                            <td *ngIf="status === '2'">
-                               <span class="badge badge-pill badge-warning">นำส่ง</span>
+                            <td *ngIf="data.dr_status ==='D'">
+                               <span class="badge badge-pill badge-warning">กำลังนำส่ง</span>
                             </td>
+                            <td *ngIf="data.dr_status ==='Y'">
+                                <span class="badge badge-pill badge-warning">จัดส่งสำเร็จ</span>
+                             </td>
                             <td *ngIf="data.pm_status === 'Y'">
                                 จ่ายแล้ว
                              </td>

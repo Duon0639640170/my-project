@@ -89,6 +89,7 @@ export class UserDoparcelComponent implements OnInit {
       return false;
 
     } else { // case success
+      this.addtrackingForm.patchValue({dr_status: 'D'});
       console.log(this.addtrackingForm.value);
       console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.addtrackingForm.value);
       // register

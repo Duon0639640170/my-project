@@ -31,12 +31,15 @@
                                 {{data.tracking_no}}
                             </td>
                             
-                            <td *ngIf="data.tracking_no === ''">
+                            <td *ngIf="data.dr_status ==='N'">
                                 <span class="badge badge-pill badge-danger">ยังไม่ส่ง</span>
                             </td>
-                            <td *ngIf="data.tracking_no !== 'D'">
-                               <span class="badge badge-pill badge-warning">นำส่ง</span>
+                            <td *ngIf="data.dr_status ==='D'">
+                               <span class="badge badge-pill badge-warning">กำลังนำส่ง</span>
                             </td>
+                            <td *ngIf="data.dr_status ==='Y'">
+                                <span class="badge badge-pill badge-warning">จัดส่งสำเร็จ</span>
+                             </td>
                            
 
                             <td>

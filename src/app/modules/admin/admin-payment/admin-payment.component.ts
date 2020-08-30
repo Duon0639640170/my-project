@@ -12,7 +12,7 @@ export class AdminPaymentComponent implements OnInit {
   payment;
   page: any;
   term: string;
-  status = '1';
+ status = '1';
   paymentstatus = 'N';
   dataCard: { img: string; deteil: string; }[];
   constructor(
