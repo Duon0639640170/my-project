@@ -78,6 +78,7 @@ export class UserDoorderComponent implements OnInit {
         order_date: res.order_date,
         pd_name: res.productType.pd_name,
         pd_img: res.productType.pd_img,
+
       });
       this.pd_img = res.productType.pd_img;
     });
