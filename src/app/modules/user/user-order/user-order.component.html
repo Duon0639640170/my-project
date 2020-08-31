@@ -16,8 +16,8 @@
                         <tr>
                             <th>ลำดับ</th>
                             <th scope="col">หมายเลขออเดอร์</th>
-                            <th scope="col">รหัสสินค้า</th>
-                            <th scope="col">จำนวนสินค้า</th>
+                            <th scope="col">ชื่อสินค้า</th>
+                            <!-- <th scope="col">จำนวนสินค้า</th> -->
                             <th scope="col">วันที่สั่งซื้อ</th>
                             <!-- <th scope="col">สถานะการจัดส่ง</th> -->
                             <th></th>
@@ -30,15 +30,15 @@
                             <td scope="row">{{ i + 1 }}</td>
 
                             <td>
-                                {{data.order_id}}
+                                {{data.order_ref}}
                             </td>
 
                             <td>
-                                {{data.pd_id}}
+                                {{data.pd_name}}
                             </td>
-                            <td>
+                            <!-- <td>
                                 {{data.order_number}}
-                            </td>
+                            </td> -->
                             <td>
                                 {{data.order_date}}
                             </td>

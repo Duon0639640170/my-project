@@ -118,14 +118,4 @@ export class UserEditproductComponent implements OnInit {
       });
     }
   }
-
-  private getDataCard() {
-    const data = [
-      {
-        img: '/assets/image/1.jpg',
-        deteil: 'ลูฟี่ กัปตันเรือ กลุ่มโจรสลัดหมวกฟาง'
-      },
-    ];
-    this.dataCard = data;
-  }
 }

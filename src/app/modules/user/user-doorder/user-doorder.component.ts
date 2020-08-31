@@ -41,6 +41,10 @@ export class UserDoorderComponent implements OnInit {
 
   }
 
+  getUrlImg(): string {
+    return this.API_URL_IMG + this.pd_img
+  }
+
   initFormGroup() {
     this.doorderForm = this.fb.group({
       order_id: [''],
@@ -50,6 +54,9 @@ export class UserDoorderComponent implements OnInit {
       order_name: [''],
       order_number: ['', [Validators.required]],
       order_date: ['', [Validators.required]],
+      pd_name: ['', [Validators.required]],
+      pd_img: ['', [Validators.required]],
+
 
     });
   }
@@ -69,7 +76,10 @@ export class UserDoorderComponent implements OnInit {
         order_name: res.order_name,
         order_number: res.order_number,
         order_date: res.order_date,
+        pd_name: res.productType.pd_name,
+        pd_img: res.productType.pd_img,
       });
+      this.pd_img = res.productType.pd_img;
     });
   }
 

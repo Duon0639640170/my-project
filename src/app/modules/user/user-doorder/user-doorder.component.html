@@ -8,51 +8,60 @@
                 <form [formGroup]="doorderForm" accept-charset="UTF-8" autocomplete="off">
                     <!-- <fieldset> -->
 
+                    <div class="col-4 mx-auto text-center">
+                        <div class="card" style="width: 15rem;">
+                            <img [src]="API_URL_IMG + pd_img" class="card-img-top" alt="...">
+                        </div>
+                    </div><br>
+
                     <div class="form-row">
 
-                        <div class="form-group col-md-5">
+                        <div class="form-group col-md-4">
                             <label>ชื่อผู้ซื้อ</label>
-                            <input class="form-control" placeholder="" formControlName="id" type="text"
-                                    min="0" disabled="disabled" required />
-                            <!-- <input class="form-control" placeholder="" formControlName="id" type="text"
-                                required></input> -->
+                            <input class="form-control" placeholder="" formControlName="id" type="text" min="0"
+                                disabled="disabled" required />
                         </div>
 
                         <div class="form-group col-md-3">
                             <label>หมายเลขออเดอร์</label>
-                            <input class="form-control" placeholder="" formControlName="order_id" type="text"
-                                    min="0" disabled="disabled" required />
-                            <!-- <label class="form-control" placeholder="" formControlName="order_id" type="text"
-                                required></label> -->
+                            <input class="form-control" placeholder="" formControlName="order_id" type="text" min="0"
+                                disabled="disabled" required />
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label>ชื่อสินค้า</label>
+                            <input class="form-control" placeholder="" formControlName="pd_name" type="text" min="0"
+                                disabled="disabled" required />
                         </div>
                     </div>
+
+
+
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <label>หมายเลขรหัสสินค้า</label>
-                            <input class="form-control" placeholder="" formControlName="pd_id" type="text"
-                                    min="0" disabled="disabled" required />
+                            <input class="form-control" placeholder="" formControlName="pd_id" type="text" min="0"
+                                disabled="disabled" required />
                             <!-- <label class="form-control" placeholder="" formControlName="pd_id" type="number" min="0"
                                 required></label> -->
                         </div>
                         <div class="form-group col-md-2">
                             <label>จำนวนสินค้า</label>
                             <input class="form-control" placeholder="" formControlName="order_number" type="text"
-                                    min="0" disabled="disabled" required />
-                            <!-- <label class="form-control" formControlName="order_number"></label> -->
-                        </div>
-                    </div>
-                    <div class="form-group col-md-5">
-                        <label>วันที่สั่งซื้อ</label>
-                        <input class="form-control" placeholder="" formControlName="order_date" type="text"
                                 min="0" disabled="disabled" required />
-                        <!-- <label class="form-control" placeholder="" formControlName="order_date" type="text"
-                            required></label> -->
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label>วันที่สั่งซื้อ</label>
+                            <input class="form-control" placeholder="" formControlName="order_date" type="text" min="0"
+                                disabled="disabled" required />
+                        </div>
+
                     </div>
+
                     <div class="row">
                         <div class="col text-center">
-                            <!-- <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
-                                    ตกลง
-                                </button> &nbsp; -->
+
                             <button class="btn btn-lg btn-outline-danger" routerLink="/user/order">
                                 ยกเลิก
                             </button>
