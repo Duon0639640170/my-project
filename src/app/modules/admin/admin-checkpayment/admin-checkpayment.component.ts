@@ -63,6 +63,7 @@ export class AdminCheckpaymentComponent implements OnInit {
       dr_adress: ['', [Validators.required]],
       dr_status: ['', [Validators.required]],
       pm_status: ['', [Validators.required]],
+ 
 
     });
   }
@@ -84,7 +85,8 @@ export class AdminCheckpaymentComponent implements OnInit {
         order_ref: res.order_ref,
         dr_adress: res.dr_adress,
         dr_status: res.dr_status,
-        pm_status: res.pm_status
+        pm_status: res.pstatum_s
+        
       });
       res.orders.map((data: any) => {
         this.shaerdService.getProductByPD_id(data.pd_id).subscribe((resProduct) => {

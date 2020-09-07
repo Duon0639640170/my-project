@@ -48,7 +48,8 @@ export class UserDoorderComponent implements OnInit {
   initFormGroup() {
     this.doorderForm = this.fb.group({
       order_id: [''],
-      id: ['', [Validators.required]],
+      id: [''],
+      full_name: ['', [Validators.required]],
       shop_id: [''],
       pd_id: ['', [Validators.required]],
       order_name: [''],
@@ -63,10 +64,20 @@ export class UserDoorderComponent implements OnInit {
 
   async patchValueForm() {
     // get pd_id in request parameter router
-    this.pd_id = this.activatedroute.snapshot.paramMap.get("order_id");
+    this.pd_id = this.activatedroute.snapshot.paramMap.get('order_id');
     console.log('patchValueForm : order_id => ', this.pd_id);
     await this.shaerdService.getOrderByOrder(this.pd_id).subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
+
+      // get name using userId
+      this.shaerdService.getUserByUserId(res.id).subscribe((data) => {
+        console.log('getUserByUserId :: ');
+        console.log(data);
+        this.doorderForm.patchValue({
+          full_name: data.first_name + ' ' + data.last_name
+        });
+      });
+
       // patch value to form
       this.doorderForm.patchValue({
         order_id: res.order_id,

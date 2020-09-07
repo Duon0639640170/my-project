@@ -20,7 +20,7 @@
                                     required />
                             </div>
 
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-7">
                                 <label for="id">ชื่อผู้ซื้อ</label>
                                 <input class="form-control" placeholder="" formControlName="id" type="text" disabled
                                     required />
@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="form-row">
-                            <div class="form-group col-md-5">
+                            <div class="form-group col-md-12">
                                 <label for="dr_adress">ที่อยู่จัดส่ง</label>
                                 <textarea class="form-control" formControlName="dr_adress" placeholder="" rows=""
                                     disabled></textarea>
@@ -37,13 +37,13 @@
 
                         <div class="form-row">
 
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-6">
                                 <label for="pm_totalpric">ยอดเงินที่ชำระ</label>
                                 <input class="form-control" placeholder="" formControlName="pm_totalpric" type="number"
                                     min="0" disabled required />
                             </div>
 
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label for="pm_date">วันที่ทำการจ่ายเงิน</label>
                                 <textarea class="form-control" formControlName="pm_date" placeholder="" rows="1"
                                     disabled></textarea>
@@ -92,7 +92,7 @@
                             </ul>
                         </div>
 
-                        <div class="form-group " class="form-check">
+                        <!-- <div class="form-group " class="form-check">
                             <div class="row">
                                 <label class="col-form-label col-sm-3 pt-0" for="pm_status">สถานะการชำระเงิน</label>
                                 <div class="col-md-2">
@@ -111,7 +111,7 @@
                                     </label>
                                 </div>
                             </div>
-                        </div><br>
+                        </div><br> -->
 
                         <!-- 
 
@@ -136,12 +136,12 @@
                             </div>
                         </div> -->
                         <div class="row">
-                            <div class="col text-center">
-                                <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
+                             <div class="col text-center">
+                                <!-- <button class="btn btn-lg btn-outline-success" (click)="submitForm()">
                                     ตกลง
-                                </button> &nbsp;
-                                <button class="btn btn-lg btn-outline-danger" routerLink="/admin/payment">
-                                    ยกเลิก
+                                </button> &nbsp;  -->
+                                <button class="btn btn-lg btn-outline-info" routerLink="/admin/payment">
+                                    ย้อนกลับ
                                 </button>
                             </div>
                         </div><br>

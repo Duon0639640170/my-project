@@ -18,8 +18,8 @@ export class ShaerdService {
     }),
   };
 
-  public uploadImage(body: any) {
-    return this.http.post<any>(this.API_URL + '/upload/file', body, {responseType: 'text' as 'json'});
+  public getUserByUserId(userId: number) {
+    return this.http.get<any>(this.APIREGISTER_URL + '/user-by-user/' + `${userId}`);
   }
 
   public register(body: any) {
@@ -33,10 +33,21 @@ export class ShaerdService {
     return this.http.post<any>(this.APIREGISTER_URL + '/user/update', body, this.httpOption);
   }
 
-  public saveresgister(body: any) {
-    const http = 'http://localhost:9000';
-    return this.http.post<any>(`${http}` + '/user/save', body, this.httpOption);
+  public getUser(username: string) {
+    return this.http.get<any>(this.APIREGISTER_URL + '/user/' + `${username}`);
   }
+
+  public listUser() {
+    return this.http.get<any>(this.APIREGISTER_URL + '/user/all');
+  }
+
+  public saveresgister(body: any) {
+    return this.http.post<any>(this.APIREGISTER_URL + '/user/save', body, this.httpOption);
+  }
+
+  public uploadImage(body: any) {
+    return this.http.post<any>(this.API_URL + '/upload/file', body, {responseType: 'text' as 'json'});
+  } 
 
   public updateProduct(body: any) {
     const http = 'http://localhost:9081';
@@ -91,14 +102,6 @@ export class ShaerdService {
         }
       })
       );
-  }
-
-  public getUser(username: string) {
-    return this.http.get<any>(this.APIREGISTER_URL + '/user/' + `${username}`);
-  }
-
-  public listUser() {
-    return this.http.get<any>(this.APIREGISTER_URL + '/user/all');
   }
 
   public getAllShop() {
