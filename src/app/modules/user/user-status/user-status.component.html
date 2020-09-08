@@ -11,24 +11,21 @@
                     <form [formGroup]="statusForm" accept-charset="UTF-8" autocomplete="off">
                         <fieldset class="body-body-center">
 
-
-                            <div class="form-group col-md-7">
-                                <label for="pd_img">เพิ่มรูปภาพ</label>
-                                <div class="custom-file mb-3">
-                                    <input type="file" class="custom-file-input" id="pd_img"
-                                        (change)="uploadImage($event)" required>
-                                    <label class="custom-file-label" for="validatedCustomFile">{{fileNameShow}}</label>
-                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                            <div class="form-row ">
+                                <div class="form-group col-md-12">
+                                    <label for="pd_img">เพิ่มรูปภาพ</label>
+                                    <div class="custom-file mb-3">
+                                        <input type="file" class="custom-file-input" id="pd_img"
+                                            (change)="uploadImage($event)" required>
+                                        <label class="custom-file-label"
+                                            for="validatedCustomFile">{{fileNameShow}}</label>
+                                        <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- <div class="form-group col-md-5">
-                                <label for="pd_img">เพิ่มรูปภาพ</label>
-                                <input type="text" id="disabledTextInput" class="text-center" class="form-control"
-                                    formControlName="pd_img" placeholder="">
-                            </div> -->
 
-                            <div class="form-row  ">
-                                <div class="form-group col-md-5">
+                            <div class="form-row ">
+                                <div class="form-group col-md-6">
                                     <label for="pd_name">ชื่อสินค้า</label>
                                     <input class="form-control" placeholder="" formControlName="pd_name" type="text"
                                         required>
@@ -48,38 +45,40 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="form-group col-md-7">
-                                <label for="shop_address">ที่อยู่ร้าน</label>
-                                <textarea class="form-control" placeholder="" formControlName="shop_address" type="text"
-                                rows="2" required></textarea>
-                            </div>
 
-
-                            <div class="row">
-                                <div class="form-row  ">
-                                    <div class="form-group col-md-4">
-                                        <label for="shop_tel">เบอร์โทร</label>
-                                        <input class="form-control" placeholder="" formControlName="shop_tel"
-                                            type="text" required>
-                                    </div>
-
-                                    <div class="form-group col-md-3">
-                                        <label for="pd_price">ราคา</label>
-                                        <input class="form-control" placeholder="" formControlName="pd_price"
-                                            type="text" required>
-                                    </div>
-
-                                    <div class="form-group  col-md-3">
-                                        <label for="pd_number">จำนวน</label>
-                                        <input class="form-control" placeholder="" formControlName="pd_number"
-                                            type="number" min="0" required />
-                                    </div>
+                            <div class="form-row ">
+                                <div class="form-group col-md-12">
+                                    <label for="shop_address">ที่อยู่ร้าน</label>
+                                    <textarea class="form-control" placeholder="" formControlName="shop_address"
+                                        type="text" rows="2" required></textarea>
                                 </div>
                             </div>
 
-                            <div class="form-group col-md-6">
-                                <label for="pd_details">รายละเอียด</label>
-                                <textarea class="form-control" formControlName="pd_details" rows="3"></textarea>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="shop_tel">เบอร์โทร</label>
+                                    <input class="form-control" placeholder="" formControlName="shop_tel" type="text"
+                                        required>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="pd_price">ราคา</label>
+                                    <input class="form-control" placeholder="" formControlName="pd_price" type="text"
+                                        required>
+                                </div>
+
+                                <div class="form-group  col-md-4">
+                                    <label for="pd_number">จำนวน</label>
+                                    <input class="form-control" placeholder="" formControlName="pd_number" type="number"
+                                        min="0" required />
+                                </div>
+                            </div>
+
+                            <div class="form-row ">
+                                <div class="form-group col-md-12">
+                                    <label for="pd_details">รายละเอียด</label>
+                                    <textarea class="form-control" formControlName="pd_details" rows="3"></textarea>
+                                </div>
                             </div>
 
                             <div class="row">

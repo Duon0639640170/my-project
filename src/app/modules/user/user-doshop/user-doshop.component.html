@@ -14,18 +14,20 @@
                                         <img [src]="API_URL_IMG + shopImg" class="card-img-top" alt="...">
                                     </div>
                                 </div><br>
-                                <div class="form-group col-md-5">
-                                    <label for="inputEmail4">ชื่อร้าน</label>
-                                    <input class="form-control" placeholder="" formControlName="shop_name" type="text"
-                                        required />
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="inputEmail4">ชื่อร้าน</label>
+                                        <input class="form-control" placeholder="" formControlName="shop_name"
+                                            type="text" required />
+                                    </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-6">
                                         <label for="shop_address">ที่อยู่ร้าน</label>
                                         <input class="form-control" placeholder="" formControlName="shop_address"
                                             type="text" min="0" required />
                                     </div>
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-6">
                                         <label for="shop_tel">เบอร์โทร</label>
                                         <input class="form-control" placeholder="" formControlName="shop_tel"
                                             type="text" min="0" required />
@@ -33,20 +35,19 @@
                                 </div>
 
                                 <div class="form-row">
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-6">
                                         <label for="bank_name">ชื่อธนาคาร</label>
                                         <input class="form-control" placeholder="" formControlName="bank_name"
                                             type="text" min="0" required />
                                     </div>
 
-                                    <div class="form-row">
-                                        <div class="form-group  col-md-12">
-                                            <label for="bank_account_no">บัญชีธนาคาร</label>
-                                            <input class="form-control" placeholder="" formControlName="bank_account_no"
-                                                type="text" min="0" required />
-                                        </div>
+                                    <div class="form-group  col-md-6">
+                                        <label for="bank_account_no">บัญชีธนาคาร</label>
+                                        <input class="form-control" placeholder="" formControlName="bank_account_no"
+                                            type="text" min="0" required />
                                     </div>
                                 </div>
+
                                 <div class="row">
                                     <div class="col text-center">
                                         <button class="btn btn-lg btn-outline-info" routerLink="/user/shopme">
