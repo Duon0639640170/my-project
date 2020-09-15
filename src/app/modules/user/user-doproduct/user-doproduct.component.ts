@@ -36,10 +36,10 @@ export class UserDoproductComponent implements OnInit {
     this.initFormGroup()
 
     // patch value in response api to form 
-    this.patchValueForm()
+    this.patchValueForm();
 
     // initShopSelect
-    this.initShopSelect()
+    this.initShopSelect();
 
   }
 
@@ -49,8 +49,8 @@ export class UserDoproductComponent implements OnInit {
 
   initFormGroup() {
     this.doproductForm = this.fb.group({
-      pd_id:[''],
-      type_id:[''],
+      pd_id: [''],
+      type_id: [''],
       pd_img: ['', [Validators.required]],
       shop_id: ['', [Validators.required]],
       pd_name: ['', [Validators.required]],
@@ -63,12 +63,11 @@ export class UserDoproductComponent implements OnInit {
 
   async patchValueForm() {
     // get pd_id in request parameter router
-    this.pd_id = this.activatedroute.snapshot.paramMap.get("pd_id");
+    this.pd_id = this.activatedroute.snapshot.paramMap.get('pd_id');
     console.log('patchValueForm : pd_id => ', this.pd_id);
 
     await this.shaerdService.getProductByPD_id(this.pd_id).subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
-     
       // patch value to form
       this.doproductForm.patchValue({
         pd_id: res.pd_id,

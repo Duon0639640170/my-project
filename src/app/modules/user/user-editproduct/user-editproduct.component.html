@@ -14,6 +14,26 @@
                                     </div>
                                 </div><br>
 
+                                <!-- <div class="form-group col-md-6">
+                                    <label for="inputEmail4">ชื่อร้าน</label>
+                                    <select class="custom-select" (change)="changShopSelected($event.target.value)"
+                                        formControlName="shop_id" [value]="form.shop_id" disabled="disabled">
+                                        <option selected>Open this select menu</option>
+                                        <option *ngFor="let shop of shopList" [value]="shop.shop_id">{{shop.shop_name}}
+                                        </option>
+                                    </select>
+                                </div> -->
+                                <div class="form-row">
+                                    <div class="form-group col-md-7">
+                                        <label for="">ชื่อร้านค้า</label>
+                                        <!-- <input class="form-control" (change)="changShopSelected($event.target.value)"
+                                        formControlName="shop_id" [value]="form.shop_id" /> -->
+                                        <option class="form-control" *ngFor="let shop of shopList"
+                                            [value]="shop.shop_id">{{shop.shop_name}}
+                                        </option>
+                                    </div>
+                                </div>
+
                                 <div class="form-row">
                                     <div class="form-group col-md-7">
                                         <label for="">ชื่อสินค้า</label>
@@ -23,8 +43,8 @@
 
                                     <div class="form-group col-md-5">
                                         <label for="">ประเภทสินค้า</label>
-                                        <input class="form-control" placeholder="" formControlName="type_name" type="text"
-                                            required />
+                                        <input class="form-control" placeholder="" formControlName="type_name"
+                                            type="text" required />
                                     </div>
                                 </div>
 

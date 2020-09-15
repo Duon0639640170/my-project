@@ -53,6 +53,7 @@ export class AdminCheckpaymentComponent implements OnInit {
     // debugger
     this.checkpaymentForm = this.fb.group({
       id: [''],
+      full_name: [''],
       pm_id: ['', [Validators.required]],
       pm_img: ['', [Validators.required]],
       pm_no: ['', [Validators.required]],
@@ -71,8 +72,18 @@ export class AdminCheckpaymentComponent implements OnInit {
   async patchValueForm() {
     // get pd_id in request parameter router
     this.pm_id = this.activatedroute.snapshot.paramMap.get('pm_id');
-    await this.shaerdService.getPaymentByShop(this.pm_id).subscribe((res) => {
+    this.shaerdService.getPaymentByShop(this.pm_id).subscribe((res) => {
       console.log('patchValueForm  getPaymentByShop: Response => ', res);
+
+      // get name using userId
+      this.shaerdService.getUserByUserId(res.id).subscribe((data) => {
+        console.log('getUserByUserId :: ');
+        console.log(data);
+        this.checkpaymentForm.patchValue({
+          full_name: data.first_name + ' ' + data.last_name
+        });
+      });
+
       // patch value to form
       this.checkpaymentForm.patchValue({
         id: res.id,
@@ -86,7 +97,6 @@ export class AdminCheckpaymentComponent implements OnInit {
         dr_adress: res.dr_adress,
         dr_status: res.dr_status,
         pm_status: res.pstatum_s
-        
       });
       res.orders.map((data: any) => {
         this.shaerdService.getProductByPD_id(data.pd_id).subscribe((resProduct) => {

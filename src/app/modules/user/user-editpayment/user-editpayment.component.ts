@@ -37,7 +37,7 @@ export class UserEditpaymentComponent implements OnInit {
     // init form group
     this.initFormGroup();
 
-    // patch value in response api to form 
+    // patch value in response api to form
     this.patchValueForm();
 
     // initShopSelect

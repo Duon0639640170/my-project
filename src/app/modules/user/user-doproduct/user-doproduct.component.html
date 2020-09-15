@@ -16,14 +16,13 @@
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="inputEmail4">ชื่อร้าน</label>
-                                    <select class="custom-select" (change)="changShopSelected($event.target.value)"
-                                        formControlName="shop_id" [value]="form.shop_id" disabled="disabled">
-                                        <option selected>Open this select menu</option>
-                                        <option *ngFor="let shop of shopList" [value]="shop.shop_id">{{shop.shop_name}}
-                                        </option>
-                                    </select>
+                                    <label for="">ชื่อร้านค้า</label>
+                                    <option class="form-control"  *ngFor="let shop of shopList" disabled
+                                        [value]="shop.shop_id">{{shop.shop_name}} 
+                                    </option>
                                 </div>
+                            
+
                                 <div class="form-group col-md-6">
                                     <label for="inputPassword4">ชื่อสินค้า</label>
                                     <input class="form-control" placeholder="" formControlName="pd_name" type="text"

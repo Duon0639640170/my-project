@@ -51,7 +51,7 @@ export class UserEditproductComponent implements OnInit {
       pd_id: [''],
       type_id: [''],
       pd_img: ['', [Validators.required]],
-      shop_id: ['', [Validators.required]],
+      shop_id: [''],
       pd_name: ['', [Validators.required]],
       pd_price: ['', [Validators.required]],
       pd_details: ['', [Validators.required]],
@@ -62,7 +62,7 @@ export class UserEditproductComponent implements OnInit {
 
   async patchValueForm() {
     // get pd_id in request parameter router
-    this.pd_id = this.activatedroute.snapshot.paramMap.get("pd_id");
+    this.pd_id = this.activatedroute.snapshot.paramMap.get('pd_id');
     console.log('patchValueForm : pd_id => ', this.pd_id);
 
     await this.shaerdService.getProductByPD_id(this.pd_id).subscribe((res) => {
