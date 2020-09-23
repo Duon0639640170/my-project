@@ -79,8 +79,9 @@ export class ShaerdService {
     return this.http.post<any>(`${http}` + '/it-api/payment/save', body, this.httpOption);
   }
 
-  public orderReport(shopId: any) {
-    return this.http.get<any>(this.API_URL + '/report/orderReport/' + `${shopId}`, { responseType: 'blob' as 'json' }).pipe(
+  public generateOrderReport(shopId: any, dateFrom: any, dateTo: any) {
+    return this.http.get<any>(this.API_URL + '/report/generateOrderReport/' + `${shopId}` + '?dateFrom=' + `${dateFrom}` + '&dateTo=' + `${dateTo}`,
+     { responseType: 'blob' as 'json' }).pipe(
         map(respose => {
         if (respose.size !== 0) {
           return new Blob([respose], { type: 'application/pdf' });
@@ -91,8 +92,9 @@ export class ShaerdService {
       );
   }
 
-  public generateReport(): any {
-    return this.http.get<any>(this.API_URL + '/report/generateReport', { responseType: 'blob' as 'json' })
+  public generateAdminReport(): any {
+    return this.http.get<any>(this.API_URL + '/report/generateAdminReport',
+    { responseType: 'blob' as 'json' })
       .pipe(
         map(respose => {
         if (respose.size !== 0) {

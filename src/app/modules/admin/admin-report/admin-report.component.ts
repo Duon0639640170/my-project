@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/shared/service/admin.service';
 import { ShaerdService } from 'src/app/shared/service/shaerd.service';
 import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-report',
@@ -13,6 +14,8 @@ export class AdminReportComponent implements OnInit {
   payment;
 
   dataCard: { img: string; deteil: string; }[];
+
+  reportForm: FormGroup;
 
   constructor(
     // private fb: FormBuilder,
@@ -27,12 +30,11 @@ export class AdminReportComponent implements OnInit {
   }
 
   submitForm() {
-    // debugger
-    this.shaerdService.generateReport().subscribe(data => {
+    this.shaerdService.generateAdminReport().subscribe(data => {
       if (data != null) {
         this.openFile(data);
       } else {
-        alert('fail')
+        alert('fail');
       }
 
     });

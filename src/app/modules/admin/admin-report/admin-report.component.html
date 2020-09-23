@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="card">
         <div class="col-md-10 offset-md-1">
             <div class="col text-center"><br>
@@ -15,53 +15,57 @@
             </div><br>
         </div>
     </div>
-</div>
-
-
-
-
-<!-- <div class="container">
-    <div class="row">
-        <table class="table table-hover bg-light">
-            <thead>
-                <tr>
-                    <th scope="col">รหัสสินค้า</th>
-                    <th scope="col">ชื่อผู้ซื้อ</th>
-                    <th scope="col">ว/ด/ป สั่งซื้อ</th>
-                    <th scope="col">ยอดรวม</th>
-                    <th scope="col">สลิปการโอน</th>
-                    <th scope="col">แนบสลิปการโอนให้ร้าน</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let data of dataList" >
-                   
-                    <td>
-                        {{data.pd_id}}
-                    </td>
-                    <td>
-                        {{data.first_name}}
-                    </td>
-                    <td>
-                        {{data.pm_date}}
-                    </td>
-
-                    <td>
-                        {{data.pm_totalpric}}
-                    </td>
-                    <td>
-                        {{data.pd_img}}
-                    </td>
-                    
-                    
-                    <td>
-                       
-                        <button type="button" class="btn btn-outline-dark" routerLink="/admin/slip" >
-                            แนบสลิป
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
 </div> -->
+
+
+
+
+<div class="container">
+    <div class="col-md-10 offset-md-1">
+        <div class="card col-md-9 offset-md-2" class="card-header" class="alert alert-warning"><br>
+            <div class="card-header">
+                <h2 class="float-none" class="text-center">รายงาน</h2>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <form [formGroup]="reportForm" accept-charset="UTF-8" autocomplete="off">
+                    <fieldset>
+                        <div class="col-4 mx-auto text-center">
+                            <!-- <div class="card" style="width: 18rem;">
+                                <img [src]="API_URL_IMG + pm_img" class="card-img-top" alt="...">
+                            </div> -->
+                        </div><br>
+                        <div class="form-row">
+                            <div class="form-group col-md-6 offset-md-3">
+                                <label for="">ร้านค้า</label>
+                                <select class="custom-select ">
+                                    <option selected>เลือกร้านค้า</option>
+                                    <option formControlName=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col text-center">
+                                <button type="button" class="btn btn-outline-primary btn-lg"
+                                    (click)="submitForm() "><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                        class="bi bi-download" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M.5 8a.5.5 0 0 1 .5.5V12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8.5a.5.5 0 0 1 1 0V12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8.5A.5.5 0 0 1 .5 8z" />
+                                        <path fill-rule="evenodd"
+                                            d="M5 7.5a.5.5 0 0 1 .707 0L8 9.793 10.293 7.5a.5.5 0 1 1 .707.707l-2.646 2.647a.5.5 0 0 1-.708 0L5 8.207A.5.5 0 0 1 5 7.5z" />
+                                        <path fill-rule="evenodd"
+                                            d="M8 1a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8A.5.5 0 0 1 8 1z" />
+                                    </svg> ปริ้น</button>&nbsp;
+                                <button class="btn btn-lg btn-outline-danger" routerLink="/admin/home">
+                                    ยกเลิก
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </ul>
+
+        </div>
+    </div>
+</div>

@@ -64,7 +64,7 @@ export class AdminCheckpaymentComponent implements OnInit {
       dr_adress: ['', [Validators.required]],
       dr_status: ['', [Validators.required]],
       pm_status: ['', [Validators.required]],
- 
+
 
     });
   }
