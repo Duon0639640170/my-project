@@ -66,7 +66,7 @@ export class AdminDoproductComponent implements OnInit {
 
     await this.shaerdService.getProductByPD_id(this.pd_id).subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
-     
+
       // patch value to form
       this.doproductForm.patchValue({
         pd_id: res.pd_id,

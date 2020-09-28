@@ -33,6 +33,7 @@ export class UserShopmeComponent implements OnInit {
   }
 
   getRoomList() {
+    debugger;
     const shop = localStorage.getItem('shop');
     console.log('patchValueForm : userId => ', shop);
 

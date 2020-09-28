@@ -29,17 +29,15 @@
             <ul class="nav navbar-nav navbar-right">
                 <form [formGroup]="reportForm" accept-charset="UTF-8" autocomplete="off">
                     <fieldset>
-                        <div class="col-4 mx-auto text-center">
-                            <!-- <div class="card" style="width: 18rem;">
-                                <img [src]="API_URL_IMG + pm_img" class="card-img-top" alt="...">
-                            </div> -->
-                        </div><br>
                         <div class="form-row">
                             <div class="form-group col-md-6 offset-md-3">
                                 <label for="">ร้านค้า</label>
-                                <select class="custom-select ">
-                                    <option selected>เลือกร้านค้า</option>
-                                    <option formControlName=""></option>
+                                <select class="custom-select " formControlName="">
+                                    <option selected >เลือกร้านค้า</option>
+                                    <!-- <option  formControlName="shop_name"></option> -->
+                                    <option class="form-control" *ngFor="let shop of shopList"
+                                            [value]="shop.shop_id">{{shop.shop_name}}
+                                        </option>
                                 </select>
                             </div>
                         </div>
@@ -69,3 +67,27 @@
         </div>
     </div>
 </div>
+
+
+<!-- <div *ngIf="(formstep2.value.instrCode == 6 || formstep2.value.instrCode == 17)" class="form-group row content">
+    <div class="col-lg-12">
+      <div class="form-group-inline row mb-3">
+        <div class="col-3">
+          <div class="title-id control-label text-right">
+            <label>รายการ<span class="text-red">*</span></label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div>
+            <ef-validation-field-group [nonBackgroundImage]="true" [sub-class]="'text-left'"
+              [formSubmitAttempt]='formSubmitAttempt' controlName="subTypeCode" [requiredSelect]="true"
+              [group]="instrTypeFrom">
+              <ng-select [items]="formstep2.value.datatype.actionType[0].subActionType" bindLabel="desc"
+                bindValue="code" [formControlName]="'subTypeCode'" (value)="'code'" (click)="selectData()">
+              </ng-select>
+            </ef-validation-field-group>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->

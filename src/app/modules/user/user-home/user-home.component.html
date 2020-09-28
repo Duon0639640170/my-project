@@ -41,7 +41,7 @@
         <div *ngIf="statusType === 'shop_id'">
           <div class="row row-cols-1 row-cols-md-3">
             <div class="col mb-4"
-              *ngFor="let data of productList | filter:term | paginate: { itemsPerPage: 5, currentPage: page };  let i = index">
+              *ngFor="let data of productList | filter:term   let i = index">
               <div class="card">
                 <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top " alt="{{data.pd_img}}">
                 <div class="card-body">
@@ -62,7 +62,7 @@
         <div *ngIf="statusType !== 'shop_id'">
           <div class="row row-cols-1 row-cols-md-3">
             <div class="col mb-4"
-              *ngFor="let data of productListType | filter:term | paginate: { itemsPerPage: 5, currentPage: page };  let i = index">
+              *ngFor="let data of productListType | filter:term   let i = index">
               <div class="card">
                 <img src="{{API_URL_IMG + data.pd_img}}" class="card-img-top " alt="{{data.pd_img}}">
                 <div class="card-body">
