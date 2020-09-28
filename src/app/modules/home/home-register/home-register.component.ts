@@ -19,7 +19,7 @@ export class HomeRegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
-      role: ['2', [Validators.required]],
+      role: ['3', [Validators.required]],
       first_name: ['', [Validators.required, Validators.minLength(4)]],
       last_name: ['', [Validators.required, Validators.minLength(4)]],
       username: ['', [Validators.required, Validators.minLength(4)]],
@@ -40,7 +40,7 @@ export class HomeRegisterComponent implements OnInit {
     } else { // case success
       console.log(this.registerForm.value);
       console.log('LOG DATA FN() >>>submitForm<<<::', this.registerForm.value);
-      this.router.navigate(['/home/login']);
+      this.router.navigate(['/home/homepage']);
       // register
       this.shaerdService.register(this.registerForm.value).subscribe(
         (error) => console.log(error)
@@ -55,21 +55,21 @@ export class HomeRegisterComponent implements OnInit {
 
   get form() { return this.registerForm.controls; }
 
-  saveOrder() {
-    const data = {
-      "id": 0,
-      "order_date": "111",
-      "order_id": 333,
-      "order_name": "2222",
-      "order_number": 444,
-      "pd_id": 555,
-      "shop_id": 0
-    }
-    console.log('LOG DATA FN() >>>saveOrder<<<::', data);
+  // saveOrder() {
+  //   const data = {
+  //     "id": 0,
+  //     "order_date": "111",
+  //     "order_id": 333,
+  //     "order_name": "2222",
+  //     "order_number": 444,
+  //     "pd_id": 555,
+  //     "shop_id": 0
+  //   }
+  //   console.log('LOG DATA FN() >>>saveOrder<<<::', data);
 
-    this.shaerdService.saveProduct(data).subscribe(
-      (error) => console.log(error)
-    );
-  }
+  //   this.shaerdService.saveProduct(data).subscribe(
+  //     (error) => console.log(error)
+  //   );
+  // }
 
 }

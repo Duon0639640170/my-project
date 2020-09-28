@@ -40,11 +40,16 @@
                                         <input class="form-control" placeholder="" formControlName="pd_name" type="text"
                                             required />
                                     </div>
-
-                                    <div class="form-group col-md-5">
-                                        <label for="">ประเภทสินค้า</label>
-                                        <input class="form-control" placeholder="" formControlName="type_name"
-                                            type="text" disabled required />
+                                    <div class="row col-md-5">
+                                        <ul><label for="type_id">ประเภทสินค้า</label>
+                                            <select class="custom-select " formControlName="type_id">
+                                                <option selected>ประเภทสินค้า</option>
+                                                <option value="1">อาหาาร</option>
+                                                <option value="2">เสื้อผ้า</option>
+                                                <option value="3">เครื่องจักสาน</option>
+                                                <option value="4">อื่นๆ</option>
+                                            </select>
+                                        </ul>
                                     </div>
                                 </div>
 

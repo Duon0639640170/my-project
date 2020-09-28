@@ -50,8 +50,13 @@
 
                             <div class="form-group">
                                 <label for="inputEmail4">เพศ</label>
-                                <input class="form-control" placeholder="เพศ" formControlName="gender" name="gender"
-                                    type="text" required disabled="disabled" />
+                                <input class="form-control" placeholder="เพศ" 
+                                    type="text" value="" formControlName="gender" name="gender"  required disabled="disabled" >
+                                <!-- <label class="form-control" for="exampleRadios1" formControlName="gender" name="gender"
+                                    value="F" disabled="disabled">
+                                    หญิง
+                                </label> -->
+                           
 
                             </div>
 
@@ -61,7 +66,7 @@
                                     routerLinkActive="router-link-active">
                                     แก้ไข
                                 </button>&nbsp;
-                                <button class="btn btn-lg btn-outline-danger " routerLink="/admin/home">
+                                <button class="btn btn-lg btn-outline-danger " routerLink="/admin/">
                                     ยกเลิก
                                 </button>
                             </div>

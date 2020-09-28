@@ -30,11 +30,15 @@
                         d="M2 7.846V7H1v.437c.291.207.632.35 1 .409zm-1 .737c.311.14.647.232 1 .271V15H1V8.583zm13 .271a3.354 3.354 0 0 0 1-.27V15h-1V8.854zm1-1.417c-.291.207-.632.35-1 .409V7h1v.437zM3 9.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5V15H7v-5H4v5H3V9.5zm6 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-4zm1 .5v3h2v-3h-2z" />
                 </svg> ร้านฉัน</h1><br>
 
-            <div class="form-row">
-                <div class="form-group col-md-2">
-                    <input type="text" class="form-control" placeholder="ค้นหาข้อมูล" [(ngModel)]="term">
-                </div>
-            </div>
+                <div class="col-md-5">
+                    <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">ค้นหาข้อมูล</div>
+                      </div>
+                      <input type="text" class="form-control" placeholder="กรุณากรอกข้อมูลเพื่อค้นหา" [(ngModel)]="term">
+                    </div>
+                  </div>
 
             <div class="card-body">
                 <div class="container">

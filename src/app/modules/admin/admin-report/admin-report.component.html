@@ -33,7 +33,6 @@
                             <div class="form-group col-md-6 offset-md-3">
                                 <label for="">ร้านค้า</label>
                                 <select class="custom-select " formControlName="">
-                                    <option selected >เลือกร้านค้า</option>
                                     <!-- <option  formControlName="shop_name"></option> -->
                                     <option class="form-control" *ngFor="let shop of shopList"
                                             [value]="shop.shop_id">{{shop.shop_name}}

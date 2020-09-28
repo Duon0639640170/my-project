@@ -51,6 +51,14 @@ export class AdminReportComponent implements OnInit {
     });
   }
   patchValueForm() {
+
+ // get shop_id in request parameter router
+//  this.shop_id = this.activatedroute.snapshot.paramMap.get('shop_id');
+//  console.log('patchValueForm : shop_id => ', this.shop_id);
+//  await this.shaerdService.generateAdminReport(this.shop_id).subscribe((res) => {
+//    console.log('patchValueForm : Response => ', res);
+
+
     // get shop_id in request parameter router
     this.shaerdService.getAllShop().subscribe((res) => {
       console.log('patchValueForm : Response => ', res);
@@ -72,7 +80,7 @@ export class AdminReportComponent implements OnInit {
 
   initShopSelect() {
     this.shaerdService.getAllShop().subscribe((res) => {
-      debugger
+      //debugger
       this.shopList = res;
     });
   }

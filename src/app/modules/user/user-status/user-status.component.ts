@@ -21,10 +21,10 @@ export class UserStatusComponent implements OnInit {
     private router: Router
   ) { }
   ngOnInit(): void {
-    
+
     this.patchValueForm();
 
-    this.fileNameShow  = 'Upload file Name';
+    this.fileNameShow = 'Upload file Name';
 
     const userId = localStorage.getItem('shop');
     console.log('USER ID ::::: ' + userId);
@@ -44,7 +44,7 @@ export class UserStatusComponent implements OnInit {
   }
 
   patchValueForm() {
-    debugger;
+    //debugger;
     this.user_id = localStorage.getItem('shop');
     console.log('patchValueForm : shop => ', this.user_id);
     this.shaerdService.getShopByUserId(this.user_id).subscribe((res) => {
@@ -77,22 +77,23 @@ export class UserStatusComponent implements OnInit {
     if (this.statusForm.invalid) {
       return false;
 
-  } else { // case success
-    this.statusForm.patchValue({
-      shop_id: this.shop.shop_id,
-    });
+    } else { // case success
+      this.statusForm.patchValue({
+        shop_id: this.shop.shop_id,
+      });
 
-    console.log(this.statusForm.value);
-    console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.statusForm.value);
-    this.router.navigate(['/user/shopme']);
-    // register
-    this.shaerdService.saveProduct(this.statusForm.value).subscribe((res) => {
-      console.log('LOGGGG LISTSHOP', res);
-      window.location.reload();
-    });
+      console.log(this.statusForm.value);
+      console.log('LOG DATA FN() ON invalid >>>submitForm<<<::', this.statusForm.value);
+      this.router.navigate(['/user/shopme']);
+      // register
+      this.shaerdService.saveProduct(this.statusForm.value).subscribe((res) => {
+        console.log('LOGGGG LISTSHOP', res);
+        window.location.reload();
+
+      });
     }
   }
- 
+
   uploadImage(event: any) {
     const reader = new FileReader();
     if (event.target.files && event.target.files.length) {
